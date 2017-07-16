@@ -1,0 +1,58 @@
+﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+@model EbaNews.Web.Areas.Admin.Models.Home.LoginViewModel
+@{
+    ViewBag.Title = strings.LoginTitle;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @using (Html.BeginForm("Login", "Home"))
+                    {
+                        @Html.AntiForgeryToken();
+                        <fieldset>
+                            <div class="row">
+                                <div class="profile-img">
+                                    <i class="fa fa-user-circle-o text-muted" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            @Html.TextBoxFor(x => x.Login, new { @class = "form-control", @placeholder = strings.LoginFieldPlaceholder })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-lock"></i>
+                                            </span>
+                                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @type = "password", @placeholder = strings.PasswordFieldPlaceholder })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label> @Html.CheckBoxFor(x => x.KeepSigned) @strings.Remember</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="@strings.LoginButton">
+                                    </div>
+                                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </fieldset>
+                    }
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
