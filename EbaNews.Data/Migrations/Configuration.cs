@@ -1,4 +1,3 @@
-using EbaNews.Core.Entities;
 using EbaNews.Core.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -17,16 +16,22 @@ namespace EbaNews.Data.Migrations
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userRole = new IdentityRole { Name = "user" };
             var adminRole = new IdentityRole { Name = "admin" };
-            var password = new PasswordHasher().HashPassword("1488");
-            var admin = new ApplicationUser { Email = "admin@tkn.ua", UserName = "admin", PasswordHash = password };
+            var ownerRole = new IdentityRole { Name = "owner" };
+            var password = new PasswordHasher().HashPassword("qwerty");
+            var admin = new ApplicationUser { Email = "email@email.com", UserName = "God", PasswordHash = password };
 
             var createdUserResult = userManager.Create(admin);
-            var createdRoleResult = roleManager.Create(adminRole);
+            roleManager.Create(userRole);
+            roleManager.Create(adminRole);
+            roleManager.Create(ownerRole);
 
-            if (createdUserResult.Succeeded && createdRoleResult.Succeeded)
+            if (createdUserResult.Succeeded)
             {
+                userManager.AddToRole(admin.Id, userRole.Name);
                 userManager.AddToRole(admin.Id, adminRole.Name);
+                userManager.AddToRole(admin.Id, ownerRole.Name);
             }
         }
     }

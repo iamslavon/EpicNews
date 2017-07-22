@@ -132,8 +132,14 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>Create user</value>
+  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current password</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -150,6 +156,9 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="NewPassword" xml:space="preserve">
     <value>New password</value>
   </data>
@@ -161,5 +170,11 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>Admin</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UsersTitle" xml:space="preserve">
+    <value>Users</value>
   </data>
 </root>

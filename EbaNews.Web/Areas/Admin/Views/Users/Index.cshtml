@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EbaNews.Web.Areas.Admin.Models.Users.UserViewModel>
+@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+@{
+    ViewBag.Title = @strings.UsersTitle;
+}
+
+<div class="container">
+    <div class=" margin-top-30 col-xs-12 col-sm-6 col-sm-offset-3">
+        <table class="table table-bordered">
+            <thead class="">
+                <tr class="warning">
+                    <th>@strings.Name</th>
+                    <th>@strings.Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

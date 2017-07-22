@@ -1,7 +1,5 @@
 ﻿using EbaNews.Core.Interfaces;
 using EbaNews.Data;
-using EbaNews.Services.Membership;
-using Microsoft.Owin.Security;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;

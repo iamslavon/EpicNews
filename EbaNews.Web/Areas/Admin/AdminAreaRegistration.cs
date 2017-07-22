@@ -37,6 +37,12 @@ namespace EbaNews.Web.Areas.Admin
                 url: "mngmnt/password/change",
                 defaults: new { area = "Admin", controller = "Home", action = "ChangePassword" }
             );
+
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/users",
+                defaults: new { area = "Admin", controller = "Users", action = "Index" }
+            );
         }
     }
 }
