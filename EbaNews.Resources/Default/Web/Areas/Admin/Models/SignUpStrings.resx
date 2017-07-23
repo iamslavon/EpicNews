@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UserAccessDeny" xml:space="preserve">
-    <value>Your account wasn't approved by administrator. Try again later</value>
+  <data name="ConfirmPasswordNotTheSame" xml:space="preserve">
+    <value>Confirm password must match the new password</value>
   </data>
-  <data name="WrongLoginOrPassword" xml:space="preserve">
-    <value>Wrong login or password</value>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Confirm password field required</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email field required</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Name field required</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Password field required</value>
+  </data>
+  <data name="WrongEmail" xml:space="preserve">
+    <value>Please enter valid email</value>
   </data>
 </root>

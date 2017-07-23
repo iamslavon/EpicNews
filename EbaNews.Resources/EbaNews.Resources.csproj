@@ -56,6 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginViewModelStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Default\Web\Areas\Admin\Models\SignUpStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignUpStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Default\Web\Areas\Admin\Views\HomeStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +80,10 @@
     <EmbeddedResource Include="Default\Web\Areas\Admin\Models\LoginViewModelStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginViewModelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default\Web\Areas\Admin\Models\SignUpStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SignUpStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Default\Web\Areas\Admin\Views\HomeStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -1,15 +1,15 @@
-﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
-@model EbaNews.Web.Areas.Admin.Models.Home.LoginViewModel
+﻿@model EbaNews.Web.Areas.Admin.Models.Home.SignUpViewModel
+@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
 @{
-    ViewBag.Title = strings.LoginTitle;
+    ViewBag.Title = strings.SignUpTitle;
 }
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4 margin-top-30">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    @using (Html.BeginForm("Login", "Home"))
+                    @using (Html.BeginForm("SignUp", "Home"))
                     {
                         @Html.AntiForgeryToken();
                         <fieldset>
@@ -25,7 +25,15 @@
                                             <span class="input-group-addon">
                                                 <i class="glyphicon glyphicon-user"></i>
                                             </span>
-                                            @Html.TextBoxFor(x => x.Login, new { @class = "form-control", @placeholder = strings.LoginFieldPlaceholder })
+                                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = strings.Name })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-envelope"></i>
+                                            </span>
+                                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = strings.Email })
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -37,12 +45,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="checkbox">
-                                            <label> @Html.CheckBoxFor(x => x.KeepSigned) @strings.Remember</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-lock"></i>
+                                            </span>
+                                            @Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control", @type = "password", @placeholder = strings.ConfirmPassword })
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="@strings.LoginButton">
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="@strings.Register">
                                     </div>
                                     @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                                 </div>

@@ -1,8 +1,10 @@
-﻿using EbaNews.Services.Membership;
+﻿using EbaNews.Core.Identity;
+using EbaNews.Services.Membership;
 using EbaNews.Web.Areas.Admin.Models.Home;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using strings = EbaNews.Resources.Default.Web.Areas.Admin.Controllers.HomeStrings;
@@ -33,7 +35,6 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         public ActionResult Login()
         {
             var model = new LoginViewModel();
-
             return View(model);
         }
 
@@ -48,8 +49,13 @@ namespace EbaNews.Web.Areas.Admin.Controllers
 
             if (user == null)
             {
-                ModelState.AddModelError("", strings.WrongLoginOrPassword);
+                AddModelError(strings.WrongLoginOrPassword);
+                return View(model);
+            }
 
+            if (!userManager.IsInRole(user.Id, "admin"))
+            {
+                AddModelError(strings.UserAccessDeny);
                 return View(model);
             }
 
@@ -68,6 +74,42 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         public ActionResult Logout()
         {
             authenticationManager.SignOut();
+
+            return RedirectToAction("Login", "Home");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult SignUp()
+        {
+            authenticationManager.SignOut();
+            var model = new SignUpViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> SignUp(SignUpViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var passwordHash = new PasswordHasher().HashPassword(model.Password);
+            var user = new ApplicationUser(model.Name, model.Email, passwordHash);
+            var result = await userManager.CreateAsync(user);
+
+            if (result.Succeeded)
+            {
+                await userManager.AddToRoleAsync(user.Id, "user");
+            }
+            else
+            {
+                AddModelErrors(result.Errors);
+                return View(model);
+            }
 
             return RedirectToAction("Login", "Home");
         }

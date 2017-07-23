@@ -12,5 +12,10 @@ namespace EbaNews.Web.Areas.Admin.Controllers
                 ModelState.AddModelError("", error);
             }
         }
+
+        protected void AddModelError(string error)
+        {
+            ModelState.AddModelError("", error);
+        }
     }
 }
