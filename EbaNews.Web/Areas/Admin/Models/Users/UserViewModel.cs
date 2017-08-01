@@ -1,4 +1,5 @@
 ﻿using EbaNews.Core.Identity;
+using System.Collections.Generic;
 
 namespace EbaNews.Web.Areas.Admin.Models.Users
 {
@@ -18,5 +19,7 @@ namespace EbaNews.Web.Areas.Admin.Models.Users
         public string Name { get; set; }
 
         public string Email { get; set; }
+
+        public IList<string> Roles { get; set; }
     }
 }

@@ -20,6 +20,12 @@ namespace EbaNews.Web.Areas.Admin
                 defaults: new { area = "Admin", controller = "Home", action = "Index" }
             );
 
+            RegisterAccountRoutes(context);
+            RegisterUserRoutes(context);
+        }
+
+        public void RegisterAccountRoutes(AreaRegistrationContext context)
+        {
             context.MapRoute(
                 name: "",
                 url: "mngmnt/login",
@@ -43,11 +49,26 @@ namespace EbaNews.Web.Areas.Admin
                 url: "mngmnt/password/change",
                 defaults: new { area = "Admin", controller = "Home", action = "ChangePassword" }
             );
+        }
 
+        public void RegisterUserRoutes(AreaRegistrationContext context)
+        {
             context.MapRoute(
                 name: "",
                 url: "mngmnt/users",
                 defaults: new { area = "Admin", controller = "Users", action = "Index" }
+            );
+
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/users/get",
+                defaults: new { area = "Admin", controller = "Users", action = "GetUsers" }
+            );
+
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/users/role/switch",
+                defaults: new { area = "Admin", controller = "Users", action = "SwitchRole" }
             );
         }
     }

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>EbaNews</value>
   </data>
@@ -162,6 +165,9 @@
   <data name="NewPassword" xml:space="preserve">
     <value>New password</value>
   </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
   <data name="PasswordFieldPlaceholder" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -176,6 +182,9 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>Admin</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
   </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>

@@ -61,6 +61,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EbaNews.
         /// </summary>
         public static string ApplicationName {
@@ -196,6 +205,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Owner.
+        /// </summary>
+        public static string Owner {
+            get {
+                return ResourceManager.GetString("Owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string PasswordFieldPlaceholder {
@@ -237,6 +255,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         

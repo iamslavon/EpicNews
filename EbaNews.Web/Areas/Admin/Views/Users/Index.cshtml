@@ -1,27 +1,37 @@
-﻿@model IEnumerable<EbaNews.Web.Areas.Admin.Models.Users.UserViewModel>
-@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
 @{
     ViewBag.Title = @strings.UsersTitle;
 }
 
 <div class="container">
-    <div class=" margin-top-30 col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class=" margin-top-30 col-xs-12 col-sm-8 col-sm-offset-2">
         <table class="table table-bordered">
-            <thead class="">
+            <thead>
                 <tr class="warning">
-                    <th>@strings.Name</th>
-                    <th>@strings.Email</th>
+                    <th class="text-center">@strings.Name</th>
+                    <th class="text-center hidden-xs">@strings.Email</th>
+                    <th class="text-center col-xs-1">@strings.User</th>
+                    <th class="text-center col-xs-1">@strings.Admin</th>
+                    <th class="text-center col-xs-1">@strings.Owner</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach (var user in Model)
-                {
-                    <tr>
-                        <td>@user.Name</td>
-                        <td>@user.Email</td>
-                    </tr>
-                }
+            <tbody data-bind="foreach: users">
+                <tr data-bind="css: { 'bg-info': Name == '@Context.User.Identity.Name' }">
+                    <td data-bind="text: Name"></td>
+                    <td class="hidden-xs" data-bind="text: Email"></td>
+                    <td class="text-center">
+                        <i data-bind="visible: $parent.isInRole($data, 'user')" class="fa fa-check" aria-hidden="true"></i>
+                    </td>
+                    <td class="text-center">
+                        <input data-bind="checked: $parent.isInRole($data, 'admin'), click: $parent.switchAdminRole" type="checkbox" />
+                    </td>
+                    <td class="text-center">
+                        <input data-bind="checked: $parent.isInRole($data, 'owner'), click: $parent.switchOwnerRole" type="checkbox" />
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+<script src="~/Scripts/Areas/Admin/usersController.js"></script>

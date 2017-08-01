@@ -167,6 +167,7 @@
     <Compile Include="Areas\Admin\Models\Home\ChangePasswordViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\LoginViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\SignUpViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Users\SwitchRoleViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\UserViewModel.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +207,7 @@
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\SignUp.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\Areas\Admin\usersController.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -217,6 +219,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
