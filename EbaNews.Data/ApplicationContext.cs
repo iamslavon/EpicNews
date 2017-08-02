@@ -1,4 +1,5 @@
-﻿using EbaNews.Core.Identity;
+﻿using EbaNews.Core.Entities;
+using EbaNews.Core.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
@@ -12,6 +13,10 @@ namespace EbaNews.Data
         {
             return new ApplicationContext();
         }
+
+        public DbSet<News> News { get; set; }
+
+        public DbSet<Language> Languages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,7 +32,5 @@ namespace EbaNews.Data
             modelBuilder.Entity<IdentityUserRole>()
                     .ToTable("UserRoles", "dbo");
         }
-
-        //public DbSet<Person> People { get; set; }
     }
 }

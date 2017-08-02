@@ -1,6 +1,8 @@
+using EbaNews.Core.Entities;
 using EbaNews.Core.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 
 namespace EbaNews.Data.Migrations
@@ -20,7 +22,12 @@ namespace EbaNews.Data.Migrations
             var adminRole = new IdentityRole { Name = "admin" };
             var ownerRole = new IdentityRole { Name = "owner" };
             var password = new PasswordHasher().HashPassword("qwerty");
-            var admin = new ApplicationUser { Email = "email@email.com", UserName = "God", PasswordHash = password };
+            var admin = new ApplicationUser
+            {
+                Email = "email@email.com",
+                UserName = "God",
+                PasswordHash = password
+            };
 
             var createdUserResult = userManager.Create(admin);
             roleManager.Create(userRole);
@@ -33,6 +40,15 @@ namespace EbaNews.Data.Migrations
                 userManager.AddToRole(admin.Id, adminRole.Name);
                 userManager.AddToRole(admin.Id, ownerRole.Name);
             }
+
+            var langugeList = new List<Language>
+            {
+                new Language("ENG"),
+                new Language("RUS"),
+                new Language("UKR")
+            };
+
+            context.Languages.AddRange(langugeList);
         }
     }
 }
