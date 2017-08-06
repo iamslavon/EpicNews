@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace EbaNews.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "owner")]
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private readonly ApplicationUserManager userManager;
 

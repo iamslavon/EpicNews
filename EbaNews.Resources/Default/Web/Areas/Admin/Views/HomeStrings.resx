@@ -165,6 +165,9 @@
   <data name="NewPassword" xml:space="preserve">
     <value>New password</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
   <data name="Owner" xml:space="preserve">
     <value>Owner</value>
   </data>

@@ -59,6 +59,8 @@
     <Compile Include="Entities\News.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\Services\INewsService.cs" />
+    <Compile Include="PagedResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

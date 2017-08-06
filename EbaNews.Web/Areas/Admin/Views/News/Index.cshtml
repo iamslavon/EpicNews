@@ -1,0 +1,49 @@
+﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+@{
+    ViewBag.Title = @strings.UsersTitle;
+}
+
+<div class="container">
+    <div class=" margin-top-30 col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="text-center" data-bind="visible: loading()">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
+        <table class="table table-bordered" data-bind="visible: !loading()">
+            <thead>
+                <tr class="warning">
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Link to source</th>
+                    <th class="text-center">Publication date</th>
+                    <th class="text-center">Language</th>
+                    <th class="text-center">Online</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: newsList">
+                <tr>
+                    <td data-bind="text: Title"></td>
+                    <td class="text-center">
+                        <a data-bind="visible: LinkToArticle() != '' && LinkToArticle() != null, attr: { href: LinkToArticle, target: '_blank' }">
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center" data-bind="text: PublicationDate"></td>
+                    <td class="text-center" data-bind="text: Language.Name"></td>
+                    <td class="text-center">
+                        <input data-bind="checked: Online, click: $parent.switchOnlineStatus" type="checkbox" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation" class="text-center" data-bind="visible: !loading() && totalPages() > 1">
+            <ul class="pagination" data-bind="foreach: new Array(totalPages())">
+                <li data-bind="css: {active: $parent.page() == $index()+1}">
+                    <a href="#" data-bind='text: $index()+1, click: function(data, event) { $parent.setPage(data, event, $index()+1) }'></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script src="~/Scripts/Areas/Admin/newsController.js"></script>

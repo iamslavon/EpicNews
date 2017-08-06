@@ -9,6 +9,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/moment")
     @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
@@ -19,6 +20,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink(strings.Home, "Index", "Home")</li>
+                        <li>@Html.ActionLink(strings.News, "Index", "News")</li>
                         @if (Context.User.IsInRole("owner"))
                         {
                             <li>@Html.ActionLink(strings.Users, "Index", "Users")</li>

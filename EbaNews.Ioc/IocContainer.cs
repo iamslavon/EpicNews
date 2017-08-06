@@ -1,5 +1,7 @@
 ﻿using EbaNews.Core.Interfaces;
+using EbaNews.Core.Interfaces.Services;
 using EbaNews.Data;
+using EbaNews.Services;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
@@ -27,6 +29,7 @@ namespace EbaNews.Ioc
         {
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
             container.Register(typeof(IRepository<>), typeof(Repository<>));
+            container.Register<INewsService, NewsService>();
         }
     }
 }
