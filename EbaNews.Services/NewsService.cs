@@ -48,7 +48,6 @@ namespace EbaNews.Services
 
         public void SwitchOnlineStatus(int newsId, bool online)
         {
-            // test this shit
             repository.Get(newsId).Online = online;
             repository.SaveChanges();
         }

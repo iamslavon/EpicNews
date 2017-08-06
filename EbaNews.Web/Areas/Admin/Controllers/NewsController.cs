@@ -35,5 +35,11 @@ namespace EbaNews.Web.Areas.Admin.Controllers
 
             return Json(response, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public void SwitchOnlineStatus(int newsId, bool online)
+        {
+            newsService.SwitchOnlineStatus(newsId, online);
+        }
     }
 }

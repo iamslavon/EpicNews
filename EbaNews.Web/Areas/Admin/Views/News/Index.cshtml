@@ -30,7 +30,7 @@
                     <td class="text-center" data-bind="text: PublicationDate"></td>
                     <td class="text-center" data-bind="text: Language.Name"></td>
                     <td class="text-center">
-                        <input data-bind="checked: Online, click: $parent.switchOnlineStatus" type="checkbox" />
+                        <input data-bind="click: $parent.switchOnlineStatus, checked: Online()" type="checkbox" />
                     </td>
                 </tr>
             </tbody>

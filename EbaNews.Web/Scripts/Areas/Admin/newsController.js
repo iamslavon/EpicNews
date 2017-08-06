@@ -62,14 +62,21 @@
         });
     };
 
-    self.switchOnlineStatus = function () {
+    self.switchOnlineStatus = function (news) {
+        var request = {
+            newsId: news.Id,
+            online: !news.Online()
+        };
 
+        $.post("/mngmnt/news/online/switch", request, function () {
+            news.Online(!news.Online());
+        });
     };
 
     self.setPage = function (data, event, page) {
         self.page(page);
         self.getNews();
-    }
+    };
 
     self.getNews();
 };
