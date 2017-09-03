@@ -13,5 +13,7 @@ namespace EbaNews.Core.Entities
         public bool Online { get; set; }
 
         public virtual Language Language { get; set; }
+
+        public int LanguageId { get; set; }
     }
 }

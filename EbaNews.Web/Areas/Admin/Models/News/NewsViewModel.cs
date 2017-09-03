@@ -5,6 +5,8 @@ namespace EbaNews.Web.Areas.Admin.Models.News
 {
     public class NewsViewModel
     {
+        public NewsViewModel() { }
+
         public NewsViewModel(Core.Entities.News news)
         {
             Id = news.Id;
@@ -36,7 +38,7 @@ namespace EbaNews.Web.Areas.Admin.Models.News
                 Online = Online,
                 PublicationDate = PublicationDate,
                 Title = Title,
-                Language = Language
+                LanguageId = Language.Id
             };
         }
     }

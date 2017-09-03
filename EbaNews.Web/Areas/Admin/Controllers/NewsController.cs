@@ -41,5 +41,14 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         {
             newsService.SwitchOnlineStatus(newsId, online);
         }
+
+        [HttpPost]
+        public JsonResult AddNews(NewsViewModel model)
+        {
+            var news = model.ToNews();
+            var id = newsService.AddNews(news);
+
+            return Json(id);
+        }
     }
 }

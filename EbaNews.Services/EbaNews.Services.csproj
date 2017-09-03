@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LanguageService.cs" />
     <Compile Include="Membership\ApplicationRoleManager.cs" />
     <Compile Include="Membership\ApplicationUserManager.cs" />
     <Compile Include="NewsService.cs" />

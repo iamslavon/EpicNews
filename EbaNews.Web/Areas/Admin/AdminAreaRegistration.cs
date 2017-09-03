@@ -23,6 +23,7 @@ namespace EbaNews.Web.Areas.Admin
             RegisterAccountRoutes(context);
             RegisterUserRoutes(context);
             RegisterNewsRoutes(context);
+            RegisterLanguageRoutes(context);
         }
 
         public void RegisterAccountRoutes(AreaRegistrationContext context)
@@ -89,8 +90,23 @@ namespace EbaNews.Web.Areas.Admin
 
             context.MapRoute(
                 name: "",
+                url: "mngmnt/news/add",
+                defaults: new { area = "Admin", controller = "News", action = "AddNews" }
+            );
+
+            context.MapRoute(
+                name: "",
                 url: "mngmnt/news/online/switch",
                 defaults: new { area = "Admin", controller = "News", action = "SwitchOnlineStatus" }
+            );
+        }
+
+        public void RegisterLanguageRoutes(AreaRegistrationContext context)
+        {
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/languages/get",
+                defaults: new { area = "Admin", controller = "Language", action = "GetLanguages" }
             );
         }
     }

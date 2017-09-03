@@ -32,10 +32,16 @@ namespace EbaNews.Services
         public PagedResponse<News> GetNews(int page, int pageSize)
         {
             var total = repository.GetAll().Count();
+            var news = repository
+                .GetAll()
+                .OrderByDescending(x => x.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
 
             return new PagedResponse<News>
             {
-                Data = repository.GetAll().Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                Data = news,
                 Total = total
             };
         }
