@@ -1,96 +1,108 @@
-﻿var ViewModel = function () {
-    var self = this;
+﻿var app = angular.module("app", []);
 
-    self.newsList = ko.observableArray();
-    self.languages = ko.observableArray();
+app.controller("newsController", function ($scope, $http) {
+    $scope.newsList = [];
+    $scope.languages = [];
+    $scope.total = 0;
+    $scope.page = 1;
+    $scope.pageSize = 10;
+    $scope.loading = false;
+    $scope.newNews = {};
+    $scope.editingNews = {};
 
-    self.total = ko.observable(0);
-    self.page = ko.observable(1);
-    self.pageSize = 10;
-    self.loading = ko.observable(false);
-    self.totalPages = ko.computed(function () {
-        return Math.ceil(self.total() / self.pageSize);
-    });
-
-    self.newsModel = function () {
-        this.Id = 0;
-        this.Title = ko.observable();
-        this.LinkToArticle = ko.observable();
-        this.PublicationDate = moment().format('DD.MM.YYYY');
-        this.Online = ko.observable();
-        this.Language = null;
+    $scope.totalPages = function () {
+        return Math.ceil($scope.total / $scope.pageSize);
     };
 
-    self.news = ko.observable(new self.newsModel());
-    self.editingNews = ko.observable(new self.newsModel());
-
-    self.mapNews = function (data) {
-        self.newsList([]);
-
-        for (var i = 0; i < data.length; i++) {
-            data[i].PublicationDate = moment(data[i].PublicationDate).format('DD.MM.YYYY');
-            var news = ko.mapping.fromJS(data[i]);
-            self.newsList.push(news);
-        }
+    $scope.pages = function () {
+        return new Array($scope.totalPages());
     };
 
-    self.startLoading = function () {
-        self.loading(true);
+    $scope.convertDate = function (date) {
+        return moment(date).format('DD.MM.YYYY [-] HH:mm');
     };
 
-    self.stopLoading = function () {
-        self.loading(false);
+    $scope.startLoading = function () {
+        $scope.loading = true;
     };
 
-    self.getNews = function () {
-        self.startLoading();
-
-        var request = {
-            page: self.page,
-            pageSize: self.pageSize
-        };
-
-        $.get("/mngmnt/news/get", request, function (response) {
-            self.mapNews(response.Data);
-            self.total(response.Total);
-            self.stopLoading();
-        });
+    $scope.stopLoading = function () {
+        $scope.loading = false;
     };
 
-    self.getLanguages = function () {
-        $.get("/mngmnt/languages/get", function (response) {
-            self.languages(response);
-        });
+    $scope.setPage = function (data) {
+        $scope.page = data;
+        $scope.getNews();
     };
 
-    self.setPage = function (data, event, page) {
-        self.page(page);
-        self.getNews();
-    };
-
-    self.switchOnlineStatus = function (news) {
+    $scope.switchOnlineStatus = function (news) {
         var request = {
             newsId: news.Id,
-            online: !news.Online()
+            online: news.Online
         };
 
-        $.post("/mngmnt/news/online/switch", request, function () {
-            news.Online(!news.Online());
-        });
+        $http.post("/mngmnt/news/online/switch", request);
     };
 
-    self.addNews = function () {
-        var data = ko.toJS(self.news);
+    $scope.getNews = function () {
+        $scope.startLoading();
 
-        $.post("/mngmnt/news/add", data, function (response) {
-            $('#add-modal').modal('hide');
-            self.news(new self.newsModel());
-            self.getNews();
-        });
+        var request = {
+            params: {
+                page: $scope.page,
+                pageSize: $scope.pageSize
+            }
+        };
+
+        $http.get("/mngmnt/news/get", request)
+            .then(function (response) {
+                $scope.newsList = response.data.Data;
+                $scope.total = response.data.Total;
+                $scope.stopLoading();
+            });
+    };
+
+    $scope.openAddNewsModal = function () {
+        $scope.newNews.Language = $scope.languages[1];
+        $('#add-modal').modal('show');
+    };
+
+    $scope.addNews = function () {
+        $http.post("/mngmnt/news/add", $scope.newNews)
+            .then(function (response) {
+                $('#add-modal').modal('hide');
+                $scope.newNews = {};
+                $scope.getNews();
+            });
+    };
+
+    $scope.openEditModal = function (news) {
+        angular.copy(news, $scope.editingNews);
+        $scope.editingNews.Language = $scope.languages
+            .find(language => language.Id === news.Language.Id);
+        $('#edit-modal').modal('show');
+    };
+
+    $scope.editNews = function () {
+        var formatedDate = moment($scope.editingNews.PublicationDate).format();
+        $scope.editingNews.PublicationDate = formatedDate;
+
+        $http.post("/mngmnt/news/edit", $scope.editingNews)
+            .then(function () {
+                $('#edit-modal').modal('hide');
+                $scope.getNews();
+            });
+    };
+
+    $scope.getLanguages = function () {
+        $http.get("/mngmnt/languages/get")
+            .then(function (response) {
+                $scope.languages = response.data;
+            });
     };
 
     // validation
-    self.isInvalidField = function (field) {
+    $scope.isInvalidField = function (field) {
         return (
             field === null ||
             field === undefined ||
@@ -98,13 +110,13 @@
         );
     };
 
-    self.addNewsValidation = {
+    $scope.addNewsValidation = {
         titleInvalid: function () {
-            return self.isInvalidField(self.news().Title());
+            return $scope.isInvalidField($scope.newNews.Title);
         },
 
         linkInvalid: function () {
-            return self.isInvalidField(self.news().LinkToArticle());
+            return $scope.isInvalidField($scope.newNews.LinkToArticle);
         },
 
         formInvalid: function () {
@@ -112,13 +124,13 @@
         }
     };
 
-    self.editNewsValidation = {
+    $scope.editNewsValidation = {
         titleInvalid: function () {
-            return self.isInvalidField(self.editingNews().Title());
+            return $scope.isInvalidField($scope.editingNews.Title);
         },
 
         linkInvalid: function () {
-            return self.isInvalidField(self.editingNews().LinkToArticle());
+            return $scope.isInvalidField($scope.editingNews.LinkToArticle);
         },
 
         formInvalid: function () {
@@ -126,23 +138,6 @@
         }
     };
 
-    self.openEditModal = function (news) {
-        var copy = ko.mapping.fromJS(ko.toJS(news));
-        self.editingNews(copy);
-        $('#edit-modal').modal('show');
-    };
-
-    self.editNews = function () {
-        var data = ko.toJS(self.editingNews);
-
-        $.post("/mngmnt/news/edit", data, function () {
-            $('#edit-modal').modal('hide');
-            self.getNews();
-        });
-    };
-
-    self.getNews();
-    self.getLanguages();
-};
-
-ko.applyBindings(new ViewModel());
+    $scope.getNews();
+    $scope.getLanguages();
+});

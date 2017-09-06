@@ -3,14 +3,14 @@
     ViewBag.Title = @strings.UsersTitle;
 }
 
-<div class="container">
+<div class="container" ng-app="app" ng-controller="newsController">
     <div class=" margin-top-30 col-xs-12 col-sm-10 col-sm-offset-1">
-        <button class="btn btn-primary margin-bot-20" data-toggle="modal" data-target="#add-modal">+ Add news</button>
-        <div class="text-center" data-bind="visible: loading">
+        <button class="btn btn-primary margin-bot-20" ng-click="openAddNewsModal()">+ Add news</button>
+        <div class="text-center" ng-if="loading">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
             <span class="sr-only">Loading...</span>
         </div>
-        <table class="table table-bordered" data-bind="visible: !loading()">
+        <table class="table table-bordered" ng-if="!loading">
             <thead>
                 <tr class="warning">
                     <th class="text-center">Title</th>
@@ -21,21 +21,21 @@
                     <th class="text-center">Edit</th>
                 </tr>
             </thead>
-            <tbody data-bind="foreach: newsList">
-                <tr>
-                    <td data-bind="text: Title"></td>
+            <tbody>
+                <tr ng-repeat="news in newsList">
+                    <td ng-bind="news.Title"></td>
                     <td class="text-center">
-                        <a data-bind="visible: LinkToArticle() != '' && LinkToArticle() != null, attr: { href: LinkToArticle, target: '_blank' }">
+                        <a ng-if="news.LinkToArticle != '' && news.LinkToArticle != null" href="{{news.LinkToArticle}}" target="_blank">
                             <i class="fa fa-external-link" aria-hidden="true"></i>
                         </a>
                     </td>
-                    <td class="text-center" data-bind="text: PublicationDate"></td>
-                    <td class="text-center" data-bind="text: Language.Name"></td>
+                    <td class="text-center" ng-bind="convertDate(news.PublicationDate)"></td>
+                    <td class="text-center" ng-bind="news.Language.Name"></td>
                     <td class="text-center">
-                        <input data-bind="click: $parent.switchOnlineStatus, checked: Online()" type="checkbox" />
+                        <input ng-click="switchOnlineStatus(news)" ng-model="news.Online" type="checkbox" />
                     </td>
                     <td class="text-center">
-                        <a href="javascript:void(0);" data-bind="click: $parent.openEditModal">
+                        <a href="javascript:void(0);" ng-click="openEditModal(news)">
                             <i class="fa fa-cog" aria-hidden="true"></i>
                         </a>
                     </td>
@@ -43,77 +43,77 @@
             </tbody>
         </table>
 
-        <nav aria-label="Page navigation" class="text-center" data-bind="visible: !loading() && totalPages() > 1">
-            <ul class="pagination" data-bind="foreach: new Array(totalPages())">
-                <li data-bind="css: {active: $parent.page() == $index()+1}">
-                    <a href="#" data-bind='text: $index()+1, click: function(data, event) { $parent.setPage(data, event, $index()+1) }'></a>
+        <nav aria-label="Page navigation" class="text-center" ng-if="!loading && totalPages() > 1">
+            <ul class="pagination" >
+                <li ng-class="{ active: page == $index + 1}" ng-repeat="n in pages() track by $index">
+                    <a href="#" ng-bind="$index + 1" ng-click="setPage($index + 1)"></a>
                 </li>
             </ul>
         </nav>
     </div>
-</div>
 
-<!-- Add modal -->
-<div id="add-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">Add news</h4>
-                <div class="margin-top-20">
-                    <div class="form-group" data-bind="css: { 'has-success has-feedback': !addNewsValidation.titleInvalid() }">
-                        <input data-bind="textInput: news().Title" class="form-control" type="text" placeholder="News title" />
-                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" data-bind="visible: !addNewsValidation.titleInvalid()"></span>
+    <!-- Add modal -->
+    <div id="add-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Add news</h4>
+                    <div class="margin-top-20">
+                        <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.titleInvalid() }">
+                            <input ng-model="newNews.Title" class="form-control" type="text" placeholder="News title" />
+                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.titleInvalid()"></span>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.linkInvalid() }">
+                            <input ng-model="newNews.LinkToArticle" class="form-control" type="text" placeholder="Link to source" />
+                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.linkInvalid()"></span>
+                        </div>
+                        <div class="form-group">
+                                <select class="form-control" 
+                                        ng-model="newNews.Language" 
+                                        ng-options="language.Name for language in languages">
+                                </select>
+                            </div>
                     </div>
-                    <div class="form-group" data-bind="css: { 'has-success has-feedback': !addNewsValidation.linkInvalid() }">
-                        <input data-bind="textInput: news().LinkToArticle" class="form-control" type="text" placeholder="Link to source" />
-                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" data-bind="visible: !addNewsValidation.linkInvalid()"></span>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control"
-                                data-bind="options: languages,
-                                optionsText: 'Name',
-                                value: news().Language"></select>
-                    </div>
+                    <button type="button" class="btn btn-primary" ng-click="addNews()" ng-class="{ disabled: addNewsValidation.formInvalid() }">+ Add news</button>
                 </div>
-                <button type="button" class="btn btn-primary" data-bind="click: addNews, css: { disabled: addNewsValidation.formInvalid() }">+ Add news</button>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Edit modal -->
-<div id="edit-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">Edit news</h4>
-                <div class="margin-top-20">
-                    <div class="form-group" data-bind="css: { 'has-error has-feedback': editNewsValidation.titleInvalid() }">
-                        <input data-bind="textInput: editingNews().Title" class="form-control" type="text" placeholder="News title" />
-                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" data-bind="visible: editNewsValidation.titleInvalid()"></span>
-                    </div>
-                    <div class="form-group" data-bind="css: { 'has-error has-feedback': editNewsValidation.linkInvalid() }">
-                        <input data-bind="textInput: editingNews().LinkToArticle" class="form-control" type="text" placeholder="Link to source" />
-                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" data-bind="visible: editNewsValidation.linkInvalid()"></span>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control"
-                                data-bind="options: languages,
-                                optionsText: 'Name',
-                                value: editingNews().Language"></select>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label>
-                                <input data-bind="checked: editingNews().Online" type="checkbox" />
-                                Online
-                            </label>
+    <!-- Edit modal -->
+    <div id="edit-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Edit news</h4>
+                    <div class="margin-top-20">
+                        <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.titleInvalid() }">
+                            <input ng-model="editingNews.Title" class="form-control" type="text" placeholder="News title" />
+                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.titleInvalid()"></span>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.linkInvalid() }">
+                            <input ng-model="editingNews.LinkToArticle" class="form-control" type="text" placeholder="Link to source" />
+                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.linkInvalid()"></span>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control"
+                                    ng-model="editingNews.Language"
+                                    ng-options="language.Name for language in languages">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input ng-model="editingNews.Online" type="checkbox" />
+                                    Online
+                                </label>
+                            </div>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-primary" ng-click="editNews()" ng-class="{ disabled: editNewsValidation.formInvalid() }">Save</button>
                 </div>
-                <button type="button" class="btn btn-primary" data-bind="click: editNews, css: { disabled: editNewsValidation.formInvalid() }">Save</button>
             </div>
         </div>
     </div>
