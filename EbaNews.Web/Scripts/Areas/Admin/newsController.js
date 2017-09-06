@@ -12,47 +12,25 @@
         return Math.ceil(self.total() / self.pageSize);
     });
 
-    self.newsModel = function (id, title, linkToArticle, publicationDate, online, language) {
-        this.Id = id;
-        this.Title = ko.observable(title);
-        this.LinkToArticle = ko.observable(linkToArticle);
-        this.PublicationDate = moment(publicationDate).format('DD.MM.YYYY');
-        this.Online = ko.observable(online);
-        this.Language = language;
+    self.newsModel = function () {
+        this.Id = 0;
+        this.Title = ko.observable();
+        this.LinkToArticle = ko.observable();
+        this.PublicationDate = moment().format('DD.MM.YYYY');
+        this.Online = ko.observable();
+        this.Language = null;
     };
 
     self.news = ko.observable(new self.newsModel());
-
-    self.language = function (id, name) {
-        this.Id = id;
-        this.Name = name;
-    };
+    self.editingNews = ko.observable(new self.newsModel());
 
     self.mapNews = function (data) {
         self.newsList([]);
 
         for (var i = 0; i < data.length; i++) {
-            var news = new self.newsModel(
-                data[i].Id,
-                data[i].Title,
-                data[i].LinkToArticle,
-                data[i].PublicationDate,
-                data[i].Online,
-                new self.language(data[i].Language.Id, data[i].Language.Name)
-            );
+            data[i].PublicationDate = moment(data[i].PublicationDate).format('DD.MM.YYYY');
+            var news = ko.mapping.fromJS(data[i]);
             self.newsList.push(news);
-        }
-    };
-
-    self.mapLanguages = function (data) {
-        self.languages([]);
-
-        for (var i = 0; i < data.length; i++) {
-            var language = new self.language(
-                data[i].Id,
-                data[i].Name);
-
-            self.languages.push(language);
         }
     };
 
@@ -81,8 +59,13 @@
 
     self.getLanguages = function () {
         $.get("/mngmnt/languages/get", function (response) {
-            self.mapLanguages(response);
+            self.languages(response);
         });
+    };
+
+    self.setPage = function (data, event, page) {
+        self.page(page);
+        self.getNews();
     };
 
     self.switchOnlineStatus = function (news) {
@@ -104,33 +87,58 @@
             self.news(new self.newsModel());
             self.getNews();
         });
+    };
 
-
+    // validation
+    self.isInvalidField = function (field) {
+        return (
+            field === null ||
+            field === undefined ||
+            field.length < 3
+        );
     };
 
     self.addNewsValidation = {
         titleInvalid: function () {
-            return (
-                self.news().Title() == undefined ||
-                self.news().Title().length < 3
-                );
+            return self.isInvalidField(self.news().Title());
         },
 
         linkInvalid: function () {
-            return (
-                self.news().LinkToArticle() == undefined ||
-                self.news().LinkToArticle().length < 3
-            );
+            return self.isInvalidField(self.news().LinkToArticle());
         },
 
         formInvalid: function () {
-            return (this.titleInvalid() || this.linkInvalid());
+            return this.titleInvalid() || this.linkInvalid();
         }
     };
 
-    self.setPage = function (data, event, page) {
-        self.page(page);
-        self.getNews();
+    self.editNewsValidation = {
+        titleInvalid: function () {
+            return self.isInvalidField(self.editingNews().Title());
+        },
+
+        linkInvalid: function () {
+            return self.isInvalidField(self.editingNews().LinkToArticle());
+        },
+
+        formInvalid: function () {
+            return this.titleInvalid() || this.linkInvalid();
+        }
+    };
+
+    self.openEditModal = function (news) {
+        var copy = ko.mapping.fromJS(ko.toJS(news));
+        self.editingNews(copy);
+        $('#edit-modal').modal('show');
+    };
+
+    self.editNews = function () {
+        var data = ko.toJS(self.editingNews);
+
+        $.post("/mngmnt/news/edit", data, function () {
+            $('#edit-modal').modal('hide');
+            self.getNews();
+        });
     };
 
     self.getNews();

@@ -18,6 +18,7 @@
                     <th class="text-center">Publication date</th>
                     <th class="text-center">Language</th>
                     <th class="text-center">Online</th>
+                    <th class="text-center">Edit</th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: newsList">
@@ -32,6 +33,11 @@
                     <td class="text-center" data-bind="text: Language.Name"></td>
                     <td class="text-center">
                         <input data-bind="click: $parent.switchOnlineStatus, checked: Online()" type="checkbox" />
+                    </td>
+                    <td class="text-center">
+                        <a href="javascript:void(0);" data-bind="click: $parent.openEditModal">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>
@@ -67,10 +73,47 @@
                         <select class="form-control"
                                 data-bind="options: languages,
                                 optionsText: 'Name',
-                                value: news().Language,"></select>
+                                value: news().Language"></select>
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary" data-bind="click: addNews, css: { disabled: addNewsValidation.formInvalid() }">+ Add news</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit modal -->
+<div id="edit-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Edit news</h4>
+                <div class="margin-top-20">
+                    <div class="form-group" data-bind="css: { 'has-error has-feedback': editNewsValidation.titleInvalid() }">
+                        <input data-bind="textInput: editingNews().Title" class="form-control" type="text" placeholder="News title" />
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" data-bind="visible: editNewsValidation.titleInvalid()"></span>
+                    </div>
+                    <div class="form-group" data-bind="css: { 'has-error has-feedback': editNewsValidation.linkInvalid() }">
+                        <input data-bind="textInput: editingNews().LinkToArticle" class="form-control" type="text" placeholder="Link to source" />
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" data-bind="visible: editNewsValidation.linkInvalid()"></span>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control"
+                                data-bind="options: languages,
+                                optionsText: 'Name',
+                                value: editingNews().Language"></select>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input data-bind="checked: editingNews().Online" type="checkbox" />
+                                Online
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-bind="click: editNews, css: { disabled: editNewsValidation.formInvalid() }">Save</button>
             </div>
         </div>
     </div>

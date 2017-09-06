@@ -50,5 +50,12 @@ namespace EbaNews.Web.Areas.Admin.Controllers
 
             return Json(id);
         }
+
+        [HttpPost]
+        public void EditNews(NewsViewModel model)
+        {
+            var news = model.ToNews();
+            newsService.EditNews(news);
+        }
     }
 }

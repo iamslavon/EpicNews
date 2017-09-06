@@ -96,6 +96,12 @@ namespace EbaNews.Web.Areas.Admin
 
             context.MapRoute(
                 name: "",
+                url: "mngmnt/news/edit",
+                defaults: new { area = "Admin", controller = "News", action = "EditNews" }
+            );
+
+            context.MapRoute(
+                name: "",
                 url: "mngmnt/news/online/switch",
                 defaults: new { area = "Admin", controller = "News", action = "SwitchOnlineStatus" }
             );
