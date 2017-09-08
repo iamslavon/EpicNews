@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNews" xml:space="preserve">
+    <value>Add news</value>
+  </data>
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
@@ -141,11 +144,35 @@
   <data name="CurrentPassword" xml:space="preserve">
     <value>Current password</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditNews" xml:space="preserve">
+    <value>Edit news</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LinkToSource" xml:space="preserve">
+    <value>Link to source</value>
+  </data>
+  <data name="LinkToSourcePlaceholder" xml:space="preserve">
+    <value>Link to source</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
   </data>
   <data name="LoginButton" xml:space="preserve">
     <value>Login</value>
@@ -168,11 +195,23 @@
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="NewsTitle" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsTitlePlaceholder" xml:space="preserve">
+    <value>News title</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
   <data name="Owner" xml:space="preserve">
     <value>Owner</value>
   </data>
   <data name="PasswordFieldPlaceholder" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="PublicationDate" xml:space="preserve">
+    <value>Publication date</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
@@ -180,11 +219,14 @@
   <data name="Remember" xml:space="preserve">
     <value>Remember</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="SignUpTitle" xml:space="preserve">
     <value>Sign up</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Admin</value>
+    <value>Title</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User</value>

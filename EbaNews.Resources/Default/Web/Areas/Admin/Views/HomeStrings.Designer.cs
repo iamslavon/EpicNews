@@ -61,6 +61,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add news.
+        /// </summary>
+        public static string AddNews {
+            get {
+                return ResourceManager.GetString("AddNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string Admin {
@@ -133,6 +142,33 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit news.
+        /// </summary>
+        public static string EditNews {
+            get {
+                return ResourceManager.GetString("EditNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {
@@ -147,6 +183,51 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link to source.
+        /// </summary>
+        public static string LinkToSource {
+            get {
+                return ResourceManager.GetString("LinkToSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link to source.
+        /// </summary>
+        public static string LinkToSourcePlaceholder {
+            get {
+                return ResourceManager.GetString("LinkToSourcePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
             }
         }
         
@@ -214,6 +295,33 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to News.
+        /// </summary>
+        public static string NewsTitle {
+            get {
+                return ResourceManager.GetString("NewsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News title.
+        /// </summary>
+        public static string NewsTitlePlaceholder {
+            get {
+                return ResourceManager.GetString("NewsTitlePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online.
+        /// </summary>
+        public static string Online {
+            get {
+                return ResourceManager.GetString("Online", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Owner.
         /// </summary>
         public static string Owner {
@@ -228,6 +336,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static string PasswordFieldPlaceholder {
             get {
                 return ResourceManager.GetString("PasswordFieldPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publication date.
+        /// </summary>
+        public static string PublicationDate {
+            get {
+                return ResourceManager.GetString("PublicationDate", resourceCulture);
             }
         }
         
@@ -250,6 +367,15 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign up.
         /// </summary>
         public static string SignUpTitle {
@@ -259,7 +385,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admin.
+        ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {
             get {

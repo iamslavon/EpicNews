@@ -1,6 +1,7 @@
 ﻿using EbaNews.Core;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Web.Areas.Admin.Models.News;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -46,6 +47,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         public JsonResult AddNews(NewsViewModel model)
         {
             var news = model.ToNews();
+            news.PublicationDate = DateTime.Now;
             var id = newsService.AddNews(news);
 
             return Json(id);
@@ -56,6 +58,12 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         {
             var news = model.ToNews();
             newsService.EditNews(news);
+        }
+
+        [HttpPost]
+        public void DeleteNews(int id)
+        {
+            newsService.RemoveNews(id);
         }
     }
 }
