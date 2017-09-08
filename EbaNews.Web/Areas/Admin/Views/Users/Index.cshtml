@@ -3,13 +3,13 @@
     ViewBag.Title = @strings.UsersTitle;
 }
 
-<div class="container">
+<div class="container" ng-app="app" ng-controller="usersController">
     <div class=" margin-top-30 col-xs-12 col-sm-8 col-sm-offset-2">
-        <div class="text-center" data-bind="visible: loading()">
+        <div class="text-center" ng-if="loading">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
             <span class="sr-only">Loading...</span>
         </div>
-        <table class="table table-bordered" data-bind="visible: !loading()">
+        <table class="table table-bordered" ng-if="!loading">
             <thead>
                 <tr class="warning">
                     <th class="text-center">@strings.Name</th>
@@ -19,18 +19,18 @@
                     <th class="text-center col-xs-1">@strings.Owner</th>
                 </tr>
             </thead>
-            <tbody data-bind="foreach: users">
-                <tr data-bind="css: { 'bg-info': Name == '@Context.User.Identity.Name' }">
-                    <td data-bind="text: Name"></td>
-                    <td class="hidden-xs" data-bind="text: Email"></td>
+            <tbody>
+                <tr ng-repeat="user in users" ng-class="{ 'bg-info': user.Name == '@Context.User.Identity.Name' }">
+                    <td ng-bind="user.Name"></td>
+                    <td class="hidden-xs" ng-bind="user.Email"></td>
                     <td class="text-center">
-                        <i data-bind="visible: $parent.isInRole($data, 'user')" class="fa fa-check" aria-hidden="true"></i>
+                        <i ng-if="isInRole(user, 'user')" class="fa fa-check" aria-hidden="true"></i>
                     </td>
                     <td class="text-center">
-                        <input data-bind="checked: $parent.isInRole($data, 'admin'), click: $parent.switchAdminRole" type="checkbox" />
+                        <input ng-checked="isInRole(user, 'admin')" ng-click="switchAdminRole(user)" type="checkbox" />
                     </td>
                     <td class="text-center">
-                        <input data-bind="checked: $parent.isInRole($data, 'owner'), click: $parent.switchOwnerRole" type="checkbox" />
+                        <input ng-checked="isInRole(user, 'owner')" ng-click="switchOwnerRole(user)" type="checkbox" />
                     </td>
                 </tr>
             </tbody>

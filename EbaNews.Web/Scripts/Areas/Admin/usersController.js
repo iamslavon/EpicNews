@@ -1,62 +1,49 @@
-﻿var ViewModel = function () {
-    var self = this;
-    self.users = ko.observableArray();
-    self.loading = ko.observable(false);
+﻿var app = angular.module("app", []);
 
-    self.user = function (id, name, email, roles) {
-        this.Id = id;
-        this.Name = name;
-        this.Email = email;
-        this.Roles = ko.observableArray(roles);
+app.controller("usersController", function ($scope, $http) {
+    $scope.users = [];
+    $scope.loading = false;
+
+    $scope.startLoading = function () {
+        $scope.loading = true;
     };
 
-    self.map = function (data) {
-        for (var i = 0; i < data.length; i++) {
-            var user = new self.user(data[i].Id, data[i].Name, data[i].Email, data[i].Roles);
-            self.users.push(user);
-        }
+    $scope.stopLoading = function () {
+        $scope.loading = false;
     };
 
-    self.startLoading = function () {
-        self.loading(true);
-    };
-
-    self.stopLoading = function () {
-        self.loading(false);
-    };
-
-    self.isInRole = function (user, role) {
+    $scope.isInRole = function (user, role) {
         return user.Roles.indexOf(role) !== -1;
     };
 
-    self.getUsers = function () {
-        self.startLoading();
-        $.get("/mngmnt/users/get", function (response) {
-            self.map(response);
-            self.stopLoading();
-        });
+    $scope.getUsers = function () {
+        $scope.startLoading();
+        $http.get("/mngmnt/users/get")
+            .then(function (response) {
+                $scope.users = response.data;
+                $scope.stopLoading();
+            });
     };
 
-    self.switchAdminRole = function (user) {
-        self.switchRole(user, "admin");
+    $scope.switchAdminRole = function (user) {
+        $scope.switchRole(user, "admin");
     };
 
-    self.switchOwnerRole = function (user) {
-        self.switchRole(user, "owner");
+    $scope.switchOwnerRole = function (user) {
+        $scope.switchRole(user, "owner");
     };
 
-    self.switchRole = function (user, role) {
+    $scope.switchRole = function (user, role) {
         var data = {
             UserId: user.Id,
             Role: role
         };
 
-        $.post("/mngmnt/users/role/switch", data, function (response) {
-            user.Roles(response);
-        });
+        $http.post("/mngmnt/users/role/switch", data)
+            .then(function (response) {
+                user.Roles = response.data;
+            });
     };
 
-    self.getUsers();
-};
-
-ko.applyBindings(new ViewModel());
+    $scope.getUsers();
+});
