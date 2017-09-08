@@ -59,5 +59,11 @@ namespace EbaNews.Web.Areas.Admin.Controllers
             var news = model.ToNews();
             newsService.EditNews(news);
         }
+
+        [HttpPost]
+        public void DeleteNews(int id)
+        {
+            newsService.RemoveNews(id);
+        }
     }
 }

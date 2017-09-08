@@ -94,6 +94,19 @@ app.controller("newsController", function ($scope, $http) {
             });
     };
 
+    $scope.deleteNews = function (id) {
+        if (confirm("Are you sure?")) {
+            var data = {
+                id: id
+            };
+
+            $http.post("/mngmnt/news/delete", data)
+                .then(function () {
+                    $scope.getNews();
+                });
+        }
+    };
+
     $scope.getLanguages = function () {
         $http.get("/mngmnt/languages/get")
             .then(function (response) {

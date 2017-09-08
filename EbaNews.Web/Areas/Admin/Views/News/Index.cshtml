@@ -19,6 +19,7 @@
                     <th class="text-center">Language</th>
                     <th class="text-center">Online</th>
                     <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,11 @@
                     <td class="text-center">
                         <a href="javascript:void(0);" ng-click="openEditModal(news)">
                             <i class="fa fa-cog" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="javascript:void(0);" ng-click="deleteNews(news.Id)">
+                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                         </a>
                     </td>
                 </tr>

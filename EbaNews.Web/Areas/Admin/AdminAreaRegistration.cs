@@ -102,6 +102,12 @@ namespace EbaNews.Web.Areas.Admin
 
             context.MapRoute(
                 name: "",
+                url: "mngmnt/news/delete",
+                defaults: new { area = "Admin", controller = "News", action = "DeleteNews" }
+            );
+
+            context.MapRoute(
+                name: "",
                 url: "mngmnt/news/online/switch",
                 defaults: new { area = "Admin", controller = "News", action = "SwitchOnlineStatus" }
             );
