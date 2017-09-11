@@ -21,7 +21,10 @@
                     <th class="text-center">@strings.Language</th>
                     <th class="text-center">@strings.Online</th>
                     <th class="text-center">@strings.Edit</th>
-                    <th class="text-center">@strings.Delete</th>
+                    @if (Context.User.IsInRole("owner"))
+                    {
+                        <th class="text-center">@strings.Delete</th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -42,11 +45,14 @@
                             <i class="fa fa-cog" aria-hidden="true"></i>
                         </a>
                     </td>
-                    <td class="text-center">
-                        <a href="javascript:void(0);" ng-click="deleteNews(news.Id)">
-                            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
-                        </a>
-                    </td>
+                    @if (Context.User.IsInRole("owner"))
+                    {
+                        <td class="text-center">
+                            <a href="javascript:void(0);" ng-click="deleteNews(news.Id)">
+                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    }
                 </tr>
             </tbody>
         </table>
