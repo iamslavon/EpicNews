@@ -1,4 +1,5 @@
 ﻿using EbaNews.Ioc;
+using EbaNews.Web.Mapping;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -14,6 +15,7 @@ namespace EbaNews.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             IocContainer.Initialize();
+            AutoMapperConfig.Register();
         }
     }
 }

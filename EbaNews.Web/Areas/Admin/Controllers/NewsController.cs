@@ -1,8 +1,10 @@
-﻿using EbaNews.Core;
+﻿using AutoMapper;
+using EbaNews.Core;
+using EbaNews.Core.Entities;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Web.Areas.Admin.Models.News;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
@@ -30,7 +32,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
 
             var response = new PagedResponse<NewsViewModel>
             {
-                Data = serviceResponse.Data.Select(news => new NewsViewModel(news)),
+                Data = Mapper.Map<IEnumerable<NewsViewModel>>(serviceResponse.Data),
                 Total = serviceResponse.Total,
             };
 
@@ -46,7 +48,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult AddNews(NewsViewModel model)
         {
-            var news = model.ToNews();
+            var news = Mapper.Map<News>(model);
             news.PublicationDate = DateTime.Now;
             var id = newsService.AddNews(news);
 
@@ -56,7 +58,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         [HttpPost]
         public void EditNews(NewsViewModel model)
         {
-            var news = model.ToNews();
+            var news = Mapper.Map<News>(model);
             newsService.EditNews(news);
         }
 
