@@ -30,6 +30,7 @@ namespace EbaNews.Ioc
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
             container.Register(typeof(IRepository<>), typeof(Repository<>));
             container.Register<INewsService, NewsService>();
+            container.Register<ISuggestedNewsService, SuggestedNewsService>();
             container.Register<ILanguageService, LanguageService>();
         }
     }

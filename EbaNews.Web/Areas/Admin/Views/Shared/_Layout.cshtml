@@ -21,6 +21,7 @@
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink(strings.Home, "Index", "Home")</li>
                         <li>@Html.ActionLink(strings.News, "Index", "News")</li>
+                        <li>@Html.ActionLink(strings.SuggstedNews, "Index", "SuggestedNews")</li>
                         @if (Context.User.IsInRole("owner"))
                         {
                             <li>@Html.ActionLink(strings.Users, "Index", "Users")</li>

@@ -1,4 +1,5 @@
-﻿using EbaNews.Services.Membership;
+﻿using EbaNews.Core;
+using EbaNews.Services.Membership;
 using EbaNews.Web.Areas.Admin.Models.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -9,7 +10,7 @@ using System.Web.Mvc;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "owner")]
+    [Authorize(Roles = Roles.Owner)]
     public class UsersController : BaseController
     {
         private readonly ApplicationUserManager userManager;

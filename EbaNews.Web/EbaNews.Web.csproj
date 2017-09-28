@@ -168,11 +168,13 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SuggestedNewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\Home\ChangePasswordViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\LoginViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\SignUpViewModel.cs" />
     <Compile Include="Areas\Admin\Models\News\NewsViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\SuggestedNews\SuggestedNewsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\SwitchRoleViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\UserViewModel.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
@@ -243,6 +245,7 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\Areas\Admin\suggestedNewsController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -256,6 +259,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Admin\Views\SuggestedNews\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Areas\Admin\newsController.js" />
     <Content Include="Scripts\Areas\Admin\usersController.js" />
@@ -296,7 +300,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Language\" />
     <Folder Include="Areas\Home\Controllers\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />

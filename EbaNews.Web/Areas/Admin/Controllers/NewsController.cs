@@ -63,6 +63,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Roles.Owner)]
         public void DeleteNews(int id)
         {
             newsService.RemoveNews(id);

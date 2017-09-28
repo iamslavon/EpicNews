@@ -1,4 +1,5 @@
-﻿using EbaNews.Core.Identity;
+﻿using EbaNews.Core;
+using EbaNews.Core.Identity;
 using EbaNews.Services.Membership;
 using EbaNews.Web.Areas.Admin.Models.Home;
 using Microsoft.AspNet.Identity;
@@ -53,7 +54,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
                 return View(model);
             }
 
-            if (!userManager.IsInRole(user.Id, "admin"))
+            if (!userManager.IsInRole(user.Id, Roles.Admin))
             {
                 AddModelError(strings.UserAccessDeny);
                 return View(model);
@@ -103,7 +104,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
 
             if (result.Succeeded)
             {
-                await userManager.AddToRoleAsync(user.Id, "user");
+                await userManager.AddToRoleAsync(user.Id, Roles.User);
             }
             else
             {

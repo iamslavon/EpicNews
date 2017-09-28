@@ -16,21 +16,24 @@ namespace EbaNews.Data
 
         public DbSet<News> News { get; set; }
 
+        public DbSet<SuggestedNews> SuggestedNews { get; set; }
+
         public DbSet<Language> Languages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<ApplicationUser>()
-                    .ToTable("Users", "dbo");
+                .ToTable("Users", "dbo");
             modelBuilder.Entity<IdentityRole>()
-                    .ToTable("Roles", "dbo");
+                .ToTable("Roles", "dbo");
             modelBuilder.Entity<IdentityUserLogin>()
-                    .ToTable("Logins", "dbo");
+                .ToTable("Logins", "dbo");
             modelBuilder.Entity<IdentityUserClaim>()
-                    .ToTable("Claims", "dbo");
+                .ToTable("Claims", "dbo");
             modelBuilder.Entity<IdentityUserRole>()
-                    .ToTable("UserRoles", "dbo");
+                .ToTable("UserRoles", "dbo");
         }
     }
 }

@@ -57,12 +57,17 @@
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\News.cs" />
+    <Compile Include="Entities\NewsBase.cs" />
+    <Compile Include="Entities\SuggestedNews.cs" />
+    <Compile Include="Enums\SuggestedNewsStatus.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\Services\ILanguageService.cs" />
     <Compile Include="Interfaces\Services\INewsService.cs" />
+    <Compile Include="Interfaces\Services\ISuggestedNewsService.cs" />
     <Compile Include="PagedResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
