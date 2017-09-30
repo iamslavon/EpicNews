@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class HomeStrings {
+    public class NewsStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal HomeStrings() {
+        internal NewsStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings", typeof(HomeStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Views.NewsStrings", typeof(NewsStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,128 +61,101 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change password.
+        ///   Looks up a localized string similar to Add news.
         /// </summary>
-        public static string ChangePasswordButton {
+        public static string AddNews {
             get {
-                return ResourceManager.GetString("ChangePasswordButton", resourceCulture);
+                return ResourceManager.GetString("AddNews", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change password.
+        ///   Looks up a localized string similar to Edit.
         /// </summary>
-        public static string ChangePasswordPageTitle {
+        public static string Edit {
             get {
-                return ResourceManager.GetString("ChangePasswordPageTitle", resourceCulture);
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password.
+        ///   Looks up a localized string similar to Edit news.
         /// </summary>
-        public static string ConfirmPassword {
+        public static string EditNews {
             get {
-                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+                return ResourceManager.GetString("EditNews", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create user.
+        ///   Looks up a localized string similar to Language.
         /// </summary>
-        public static string CreateUser {
+        public static string Language {
             get {
-                return ResourceManager.GetString("CreateUser", resourceCulture);
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current password.
+        ///   Looks up a localized string similar to Link to source.
         /// </summary>
-        public static string CurrentPassword {
+        public static string LinkToSource {
             get {
-                return ResourceManager.GetString("CurrentPassword", resourceCulture);
+                return ResourceManager.GetString("LinkToSource", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admin.
+        ///   Looks up a localized string similar to Link to source.
         /// </summary>
-        public static string HomeTitle {
+        public static string LinkToSourcePlaceholder {
             get {
-                return ResourceManager.GetString("HomeTitle", resourceCulture);
+                return ResourceManager.GetString("LinkToSourcePlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to News.
         /// </summary>
-        public static string LoginButton {
+        public static string NewsTitle {
             get {
-                return ResourceManager.GetString("LoginButton", resourceCulture);
+                return ResourceManager.GetString("NewsTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to News title.
         /// </summary>
-        public static string LoginFieldPlaceholder {
+        public static string NewsTitlePlaceholder {
             get {
-                return ResourceManager.GetString("LoginFieldPlaceholder", resourceCulture);
+                return ResourceManager.GetString("NewsTitlePlaceholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Online.
         /// </summary>
-        public static string LoginTitle {
+        public static string Online {
             get {
-                return ResourceManager.GetString("LoginTitle", resourceCulture);
+                return ResourceManager.GetString("Online", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New password.
+        ///   Looks up a localized string similar to Publication date.
         /// </summary>
-        public static string NewPassword {
+        public static string PublicationDate {
             get {
-                return ResourceManager.GetString("NewPassword", resourceCulture);
+                return ResourceManager.GetString("PublicationDate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Title.
         /// </summary>
-        public static string PasswordFieldPlaceholder {
+        public static string Title {
             get {
-                return ResourceManager.GetString("PasswordFieldPlaceholder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Register.
-        /// </summary>
-        public static string Register {
-            get {
-                return ResourceManager.GetString("Register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remember.
-        /// </summary>
-        public static string Remember {
-            get {
-                return ResourceManager.GetString("Remember", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign up.
-        /// </summary>
-        public static string SignUpTitle {
-            get {
-                return ResourceManager.GetString("SignUpTitle", resourceCulture);
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

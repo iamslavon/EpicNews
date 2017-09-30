@@ -1,11 +1,11 @@
-﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+﻿@using layoutStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.LayoutStrings
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@strings.ApplicationName - @ViewBag.Title</title>
+    <title>@layoutStr.ApplicationName - @ViewBag.Title</title>
     @Styles.Render("~/Content/admin-css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
@@ -19,12 +19,12 @@
             <div class="container">
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink(strings.Home, "Index", "Home")</li>
-                        <li>@Html.ActionLink(strings.News, "Index", "News")</li>
-                        <li>@Html.ActionLink(strings.SuggstedNews, "Index", "SuggestedNews")</li>
+                        <li>@Html.ActionLink(layoutStr.Home, "Index", "Home")</li>
+                        <li>@Html.ActionLink(layoutStr.News, "Index", "News")</li>
+                        <li>@Html.ActionLink(layoutStr.SuggstedNews, "Index", "SuggestedNews")</li>
                         @if (Context.User.IsInRole("owner"))
                         {
-                            <li>@Html.ActionLink(strings.Users, "Index", "Users")</li>
+                            <li>@Html.ActionLink(layoutStr.Users, "Index", "Users")</li>
                         }
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -33,9 +33,9 @@
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;@Context.User.Identity.Name&nbsp;<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink(strings.ChangePassword, "ChangePassword", "Home")</li>
+                                <li>@Html.ActionLink(layoutStr.ChangePassword, "ChangePassword", "Home")</li>
                                 <li role="separator" class="divider"></li>
-                                <li>@Html.ActionLink(strings.Logout, "Logout", "Home")</li>
+                                <li>@Html.ActionLink(layoutStr.Logout, "Logout", "Home")</li>
                             </ul>
                         </li>
                     </ul>

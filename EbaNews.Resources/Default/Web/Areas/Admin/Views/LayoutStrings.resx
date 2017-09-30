@@ -117,46 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChangePasswordButton" xml:space="preserve">
+  <data name="ApplicationName" xml:space="preserve">
+    <value>EbaNews</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
     <value>Change password</value>
   </data>
-  <data name="ChangePasswordPageTitle" xml:space="preserve">
-    <value>Change password</value>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
   </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>Confirm password</value>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
   </data>
-  <data name="CreateUser" xml:space="preserve">
-    <value>Create user</value>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
   </data>
-  <data name="CurrentPassword" xml:space="preserve">
-    <value>Current password</value>
+  <data name="SuggstedNews" xml:space="preserve">
+    <value>Suggested news</value>
   </data>
-  <data name="HomeTitle" xml:space="preserve">
-    <value>Admin</value>
-  </data>
-  <data name="LoginButton" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="LoginFieldPlaceholder" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="LoginTitle" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="NewPassword" xml:space="preserve">
-    <value>New password</value>
-  </data>
-  <data name="PasswordFieldPlaceholder" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="Remember" xml:space="preserve">
-    <value>Remember</value>
-  </data>
-  <data name="SignUpTitle" xml:space="preserve">
-    <value>Sign up</value>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
   </data>
 </root>

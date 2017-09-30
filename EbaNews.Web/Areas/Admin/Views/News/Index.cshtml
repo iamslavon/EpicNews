@@ -1,29 +1,31 @@
-﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+﻿@using newsStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.NewsStrings
+@using commonStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.CommonStrings
+
 @{
-    ViewBag.Title = @strings.NewsTitle;
+    ViewBag.Title = @newsStr.NewsTitle;
 }
 
 <div class="container" ng-app="app" ng-controller="newsController">
     <div class=" margin-top-30 col-xs-12 col-sm-10 col-sm-offset-1">
         <button class="btn btn-primary margin-bot-20" ng-click="openAddNewsModal()">
-            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@strings.AddNews
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@newsStr.AddNews
         </button>
         <div class="text-center" ng-if="loading">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-            <span class="sr-only">@strings.Loading</span>
+            <span class="sr-only">@commonStr.Loading</span>
         </div>
         <table class="table table-bordered" ng-if="!loading">
             <thead>
                 <tr class="warning">
-                    <th class="text-center">@strings.Title</th>
-                    <th class="text-center">@strings.LinkToSource</th>
-                    <th class="text-center">@strings.PublicationDate</th>
-                    <th class="text-center">@strings.Language</th>
-                    <th class="text-center">@strings.Online</th>
-                    <th class="text-center">@strings.Edit</th>
+                    <th class="text-center">@newsStr.Title</th>
+                    <th class="text-center">@newsStr.LinkToSource</th>
+                    <th class="text-center">@newsStr.PublicationDate</th>
+                    <th class="text-center">@newsStr.Language</th>
+                    <th class="text-center">@newsStr.Online</th>
+                    <th class="text-center">@newsStr.Edit</th>
                     @if (Context.User.IsInRole("owner"))
                     {
-                        <th class="text-center">@strings.Delete</th>
+                        <th class="text-center">@commonStr.Delete</th>
                     }
                 </tr>
             </thead>
@@ -72,14 +74,14 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">@strings.AddNews</h4>
+                    <h4 class="modal-title text-center">@newsStr.AddNews</h4>
                     <div class="margin-top-20">
                         <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.titleInvalid() }">
-                            <input ng-model="newNews.Title" class="form-control" type="text" placeholder="@strings.NewsTitlePlaceholder" />
+                            <input ng-model="newNews.Title" class="form-control" type="text" placeholder="@newsStr.NewsTitlePlaceholder" />
                             <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.titleInvalid()"></span>
                         </div>
                         <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.linkInvalid() }">
-                            <input ng-model="newNews.LinkToArticle" class="form-control" type="text" placeholder="@strings.LinkToSourcePlaceholder" />
+                            <input ng-model="newNews.LinkToArticle" class="form-control" type="text" placeholder="@newsStr.LinkToSourcePlaceholder" />
                             <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.linkInvalid()"></span>
                         </div>
                         <div class="form-group">
@@ -89,7 +91,7 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" ng-click="addNews()" ng-class="{ disabled: addNewsValidation.formInvalid() }">
-                        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@strings.AddNews
+                        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@newsStr.AddNews
                     </button>
                 </div>
             </div>
@@ -102,14 +104,14 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">@strings.EditNews</h4>
+                    <h4 class="modal-title text-center">@newsStr.EditNews</h4>
                     <div class="margin-top-20">
                         <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.titleInvalid() }">
-                            <input ng-model="editingNews.Title" class="form-control" type="text" placeholder="@strings.NewsTitlePlaceholder" />
+                            <input ng-model="editingNews.Title" class="form-control" type="text" placeholder="@newsStr.NewsTitlePlaceholder" />
                             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.titleInvalid()"></span>
                         </div>
                         <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.linkInvalid() }">
-                            <input ng-model="editingNews.LinkToArticle" class="form-control" type="text" placeholder="@strings.LinkToSourcePlaceholder" />
+                            <input ng-model="editingNews.LinkToArticle" class="form-control" type="text" placeholder="@newsStr.LinkToSourcePlaceholder" />
                             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.linkInvalid()"></span>
                         </div>
                         <div class="form-group">
@@ -121,12 +123,12 @@
                             <div class="checkbox">
                                 <label>
                                     <input ng-model="editingNews.Online" type="checkbox" />
-                                    @strings.Online
+                                    @newsStr.Online
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" ng-click="editNews()" ng-class="{ disabled: editNewsValidation.formInvalid() }">@strings.Save</button>
+                    <button type="button" class="btn btn-primary" ng-click="editNews()" ng-class="{ disabled: editNewsValidation.formInvalid() }">@commonStr.Save</button>
                 </div>
             </div>
         </div>

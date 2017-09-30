@@ -1,22 +1,23 @@
-﻿@using strings = EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings
+﻿@using usersStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.UsersStrings
+@using commonStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.CommonStrings
 @{
-    ViewBag.Title = @strings.UsersTitle;
+    ViewBag.Title = @usersStr.UsersTitle;
 }
 
 <div class="container" ng-app="app" ng-controller="usersController">
     <div class=" margin-top-30 col-xs-12 col-sm-8 col-sm-offset-2">
         <div class="text-center" ng-if="loading">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only">@commonStr.Loading</span>
         </div>
         <table class="table table-bordered" ng-if="!loading">
             <thead>
                 <tr class="warning">
-                    <th class="text-center">@strings.Name</th>
-                    <th class="text-center hidden-xs">@strings.Email</th>
-                    <th class="text-center col-xs-1">@strings.User</th>
-                    <th class="text-center col-xs-1">@strings.Admin</th>
-                    <th class="text-center col-xs-1">@strings.Owner</th>
+                    <th class="text-center">@usersStr.Name</th>
+                    <th class="text-center hidden-xs">@usersStr.Email</th>
+                    <th class="text-center col-xs-1">@usersStr.User</th>
+                    <th class="text-center col-xs-1">@usersStr.Admin</th>
+                    <th class="text-center col-xs-1">@usersStr.Owner</th>
                 </tr>
             </thead>
             <tbody>
