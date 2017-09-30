@@ -6,6 +6,11 @@ namespace EbaNews.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+#if DEBUG
+            BundleTable.EnableOptimizations = false;
+#else
+            BundleTable.EnableOptimizations = true;
+#endif
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -37,13 +42,13 @@ namespace EbaNews.Web
         // Register scripts for pages here
         private static void RegisterRouteBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/admin/news").IncludeDirectory(
+            bundles.Add(new Bundle("~/admin/news").IncludeDirectory(
                 "~/Scripts/Areas/Admin/News", "*.js", true));
 
-            bundles.Add(new ScriptBundle("~/admin/news/suggested").IncludeDirectory(
+            bundles.Add(new Bundle("~/admin/news/suggested").IncludeDirectory(
                 "~/Scripts/Areas/Admin/SuggestedNews", "*.js", true));
 
-            bundles.Add(new ScriptBundle("~/admin/users").IncludeDirectory(
+            bundles.Add(new Bundle("~/admin/users").IncludeDirectory(
                 "~/Scripts/Areas/Admin/Users", "*.js", true));
         }
     }
