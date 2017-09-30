@@ -1,5 +1,6 @@
 ﻿@using usersStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.UsersStrings
 @using commonStr = EbaNews.Resources.Default.Web.Areas.Admin.Views.CommonStrings
+
 @{
     ViewBag.Title = @usersStr.UsersTitle;
 }
@@ -39,4 +40,4 @@
     </div>
 </div>
 
-<script src="~/Scripts/Areas/Admin/usersController.js"></script>
+@Scripts.Render("~/admin/users")

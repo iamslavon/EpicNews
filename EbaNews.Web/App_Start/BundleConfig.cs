@@ -30,6 +30,21 @@ namespace EbaNews.Web
                       "~/Content/font-awesome.min.css",
                       "~/Content/Admin.css",
                       "~/Content/shared.css"));
+
+            RegisterRouteBundles(bundles);
+        }
+
+        // Register scripts for pages here
+        private static void RegisterRouteBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/admin/news").IncludeDirectory(
+                "~/Scripts/Areas/Admin/News", "*.js", true));
+
+            bundles.Add(new ScriptBundle("~/admin/news/suggested").IncludeDirectory(
+                "~/Scripts/Areas/Admin/SuggestedNews", "*.js", true));
+
+            bundles.Add(new ScriptBundle("~/admin/users").IncludeDirectory(
+                "~/Scripts/Areas/Admin/Users", "*.js", true));
         }
     }
 }
