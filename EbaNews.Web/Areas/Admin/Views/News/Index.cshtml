@@ -5,7 +5,7 @@
     ViewBag.Title = @newsStr.NewsTitle;
 }
 
-<div class="container" ng-app="app" ng-controller="newsController">
+<div class="container" ng-controller="newsController">
     <div class=" margin-top-30 col-xs-12 col-sm-10 col-sm-offset-1">
         <button class="btn btn-primary margin-bot-20" ng-click="openAddNewsModal()">
             <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@newsStr.AddNews
@@ -58,7 +58,6 @@
                 </tr>
             </tbody>
         </table>
-
         <nav aria-label="Page navigation" class="text-center" ng-if="!loading && totalPages() > 1">
             <ul class="pagination">
                 <li ng-class="{ active: page == $index + 1}" ng-repeat="n in pages() track by $index">

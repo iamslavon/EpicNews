@@ -6,13 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@layoutStr.ApplicationName - @ViewBag.Title</title>
-    @Styles.Render("~/Content/admin-css")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/angular")
-    @Scripts.Render("~/bundles/moment")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/css/admin")
+    @Scripts.Render("~/libs/admin")
+    @Scripts.Render("~/app/admin")
 </head>
-<body>
+<body ng-app="app">
     @if (Context.User.Identity.IsAuthenticated)
     {
         <div class="navbar navbar-inverse navbar-fixed-top">
