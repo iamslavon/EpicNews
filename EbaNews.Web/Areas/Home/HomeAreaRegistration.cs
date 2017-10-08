@@ -2,18 +2,30 @@
 
 namespace EbaNews.Web.Areas.Home
 {
-    public class HomeAreaRegistration : AreaRegistration 
+    public class HomeAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Home";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
+            context.MapRoute(
+                "",
+                "404",
+                new { area = "Home", controller = "Error", action = "Page404" }
+            );
+
+            context.MapRoute(
+                "",
+                "error",
+                new { area = "Home", controller = "Error", action = "DefaultError" }
+            );
+
             context.MapRoute(
                 "Home_default",
                 "Home/{controller}/{action}/{id}",
