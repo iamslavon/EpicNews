@@ -180,6 +180,7 @@
     <Compile Include="Areas\Admin\Models\SuggestedNews\SuggestedNewsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\SwitchRoleViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\UserViewModel.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,8 +224,6 @@
     <Content Include="Areas\Admin\Views\Home\SignUp.cshtml" />
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <Content Include="Scripts\Areas\Admin\app.js" />
-    <Content Include="Scripts\Areas\Admin\News\directive.js" />
-    <Content Include="Scripts\Areas\Admin\News\page.html" />
     <Content Include="Scripts\Libs\angular-animate.js" />
     <Content Include="Scripts\Libs\angular-animate.min.js" />
     <Content Include="Scripts\Libs\angular-aria.js" />
@@ -311,6 +310,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Controllers\" />
+    <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>
   <ItemGroup>

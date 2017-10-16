@@ -1,4 +1,4 @@
-﻿var app = angular.module("app", []);
+﻿var app = angular.module("app");
 
 app.controller("usersController", function ($scope, $http) {
     $scope.users = [];

@@ -1,4 +1,4 @@
-﻿var app = angular.module("app", []);
+﻿var app = angular.module("app");
 
 app.controller("newsController", function ($scope, $http) {
     $scope.newsList = [];
