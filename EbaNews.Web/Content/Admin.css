@@ -45,3 +45,11 @@ textarea {
 .margin-bot-30 {
     margin-bottom: 30px;
 }
+
+input.ng-dirty.ng-invalid.ng-touched {
+    border-left: 5px solid #dc6767;
+}
+
+input.ng-dirty.ng-valid.ng-touched {
+    border-left: 5px solid #327d3f;
+}

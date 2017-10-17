@@ -74,22 +74,32 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title text-center">@newsStr.AddNews</h4>
-                    <div class="margin-top-20">
-                        <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.titleInvalid() }">
-                            <input ng-model="newNews.Title" class="form-control" type="text" placeholder="@newsStr.NewsTitlePlaceholder" />
-                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.titleInvalid()"></span>
+                    <form name="addModalForm" class="margin-top-20">
+                        <div class="form-group">
+                            <input ng-model="newNews.Title" 
+                                   name="addNewsTitle"
+                                   class="form-control" 
+                                   type="text" 
+                                   placeholder="@newsStr.NewsTitlePlaceholder"
+                                   ng-minlength="5"
+                                   required/>
                         </div>
-                        <div class="form-group" ng-class="{ 'has-success has-feedback': !addNewsValidation.linkInvalid() }">
-                            <input ng-model="newNews.LinkToArticle" class="form-control" type="text" placeholder="@newsStr.LinkToSourcePlaceholder" />
-                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="!addNewsValidation.linkInvalid()"></span>
+                        <div class="form-group">
+                            <input ng-model="newNews.LinkToArticle" 
+                                   name="addNewsLink"
+                                   class="form-control" 
+                                   type="text" 
+                                   placeholder="@newsStr.LinkToSourcePlaceholder"
+                                   ng-minlength="5"
+                                   required/>
                         </div>
                         <div class="form-group">
                             <select class="form-control"
                                     ng-model="newNews.Language"
                                     ng-options="language.Name for language in languages"></select>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-primary" ng-click="addNews()" ng-class="{ disabled: addNewsValidation.formInvalid() }">
+                    </form>
+                    <button type="button" class="btn btn-primary" ng-click="addNews()" ng-class="{ disabled: addModalForm.$invalid }">
                         <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;@newsStr.AddNews
                     </button>
                 </div>
@@ -104,14 +114,24 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title text-center">@newsStr.EditNews</h4>
-                    <div class="margin-top-20">
-                        <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.titleInvalid() }">
-                            <input ng-model="editingNews.Title" class="form-control" type="text" placeholder="@newsStr.NewsTitlePlaceholder" />
-                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.titleInvalid()"></span>
+                    <form name="editModalForm" class="margin-top-20">
+                        <div class="form-group">
+                            <input ng-model="editingNews.Title" 
+                                   name="editModalTitle"
+                                   class="form-control" 
+                                   type="text" 
+                                   placeholder="@newsStr.NewsTitlePlaceholder"
+                                   ng-minlength="5"
+                                   required/>
                         </div>
-                        <div class="form-group" ng-class="{ 'has-error has-feedback': editNewsValidation.linkInvalid() }">
-                            <input ng-model="editingNews.LinkToArticle" class="form-control" type="text" placeholder="@newsStr.LinkToSourcePlaceholder" />
-                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-if="editNewsValidation.linkInvalid()"></span>
+                        <div class="form-group">
+                            <input ng-model="editingNews.LinkToArticle" 
+                                   name="editModalLink"
+                                   class="form-control" 
+                                   type="text" 
+                                   placeholder="@newsStr.LinkToSourcePlaceholder"
+                                   ng-minlength="5"
+                                   required/>
                         </div>
                         <div class="form-group">
                             <select class="form-control"
@@ -126,8 +146,8 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-primary" ng-click="editNews()" ng-class="{ disabled: editNewsValidation.formInvalid() }">@commonStr.Save</button>
+                    </form>
+                    <button type="button" class="btn btn-primary" ng-click="editNews()" ng-class="{ disabled: editModalForm.$invalid }">@commonStr.Save</button>
                 </div>
             </div>
         </div>

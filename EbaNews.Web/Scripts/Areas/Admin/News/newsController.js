@@ -114,43 +114,6 @@ app.controller("newsController", function ($scope, $http) {
             });
     };
 
-    // validation
-    $scope.isInvalidField = function (field) {
-        return (
-            field === null ||
-            field === undefined ||
-            field.length < 3
-        );
-    };
-
-    $scope.addNewsValidation = {
-        titleInvalid: function () {
-            return $scope.isInvalidField($scope.newNews.Title);
-        },
-
-        linkInvalid: function () {
-            return $scope.isInvalidField($scope.newNews.LinkToArticle);
-        },
-
-        formInvalid: function () {
-            return this.titleInvalid() || this.linkInvalid();
-        }
-    };
-
-    $scope.editNewsValidation = {
-        titleInvalid: function () {
-            return $scope.isInvalidField($scope.editingNews.Title);
-        },
-
-        linkInvalid: function () {
-            return $scope.isInvalidField($scope.editingNews.LinkToArticle);
-        },
-
-        formInvalid: function () {
-            return this.titleInvalid() || this.linkInvalid();
-        }
-    };
-
     $scope.getNews();
     $scope.getLanguages();
 });
