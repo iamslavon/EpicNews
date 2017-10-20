@@ -64,7 +64,10 @@ namespace EbaNews.Services
 
         public void DeclineSuggestedNews(int id)
         {
-            suggestedNewsRepository.Get(id).Status = SuggestedNewsStatus.Declined;
+            suggestedNewsRepository
+                .Get(id)
+                .Status = SuggestedNewsStatus.Declined;
+
             suggestedNewsRepository.SaveChanges();
         }
     }
