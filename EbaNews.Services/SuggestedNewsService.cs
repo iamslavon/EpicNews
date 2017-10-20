@@ -24,8 +24,7 @@ namespace EbaNews.Services
         {
             var total = suggestedNewsRepository
                 .GetAll()
-                .Where(n => n.Status == SuggestedNewsStatus.New)
-                .Count();
+                .Count(n => n.Status == SuggestedNewsStatus.New);
 
             var news = suggestedNewsRepository
                 .GetAll()

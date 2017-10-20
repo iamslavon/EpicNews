@@ -4,13 +4,7 @@ namespace EbaNews.Web.Areas.Home
 {
     public class HomeAreaRegistration : AreaRegistration
     {
-        public override string AreaName
-        {
-            get
-            {
-                return "Home";
-            }
-        }
+        public override string AreaName => "Home";
 
         public override void RegisterArea(AreaRegistrationContext context)
         {

@@ -19,7 +19,7 @@ app.controller("newsController", function ($scope, $http) {
     };
 
     $scope.convertDate = function (date) {
-        return moment(date).format('DD.MM.YYYY [-] HH:mm');
+        return moment(date).format("DD.MM.YYYY [-] HH:mm");
     };
 
     $scope.startLoading = function () {
@@ -64,13 +64,13 @@ app.controller("newsController", function ($scope, $http) {
 
     $scope.openAddNewsModal = function () {
         $scope.newNews.Language = $scope.languages[1];
-        $('#add-modal').modal('show');
+        $("#add-modal").modal("show");
     };
 
     $scope.addNews = function () {
         $http.post("/mngmnt/news/add", $scope.newNews)
             .then(function (response) {
-                $('#add-modal').modal('hide');
+                $("#add-modal").modal("hide");
                 $scope.newNews = {};
                 $scope.getNews();
             });
@@ -80,7 +80,7 @@ app.controller("newsController", function ($scope, $http) {
         angular.copy(news, $scope.editingNews);
         $scope.editingNews.Language = $scope.languages
             .find(language => language.Id === news.Language.Id);
-        $('#edit-modal').modal('show');
+        $("#edit-modal").modal("show");
     };
 
     $scope.editNews = function () {
@@ -89,7 +89,7 @@ app.controller("newsController", function ($scope, $http) {
 
         $http.post("/mngmnt/news/edit", $scope.editingNews)
             .then(function () {
-                $('#edit-modal').modal('hide');
+                $("#edit-modal").modal("hide");
                 $scope.getNews();
             });
     };
