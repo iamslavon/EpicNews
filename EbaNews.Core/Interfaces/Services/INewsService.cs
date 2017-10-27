@@ -4,7 +4,9 @@ namespace EbaNews.Core.Interfaces.Services
 {
     public interface INewsService
     {
-        PagedResponse<News> GetNews(int page, int pageSize);
+        PagedResponse<News> GetAllNews(int page, int pageSize);
+
+        PagedResponse<News> GetNews(int start, int count);
 
         int AddNews(News news);
 

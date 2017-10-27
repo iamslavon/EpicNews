@@ -9,9 +9,15 @@ namespace EbaNews.Web.Areas.Api
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Api_default",
-                "Api/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                "",
+                "api/news/get",
+                new { area = "Api", controller = "News", action = "GetNews" }
+            );
+
+            context.MapRoute(
+                "",
+                "api/news/suggest",
+                new { area = "Api", controller = "News", action = "SuggestNews" }
             );
         }
     }

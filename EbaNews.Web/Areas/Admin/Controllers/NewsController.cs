@@ -28,7 +28,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         [HttpGet]
         public JsonResult GetNews(int page, int pageSize)
         {
-            var serviceResponse = newsService.GetNews(page, pageSize);
+            var serviceResponse = newsService.GetAllNews(page, pageSize);
 
             var response = new PagedResponse<NewsViewModel>
             {

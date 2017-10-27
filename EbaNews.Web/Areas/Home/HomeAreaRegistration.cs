@@ -21,9 +21,9 @@ namespace EbaNews.Web.Areas.Home
             );
 
             context.MapRoute(
-                "Home_default",
-                "Home/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                "",
+                "",
+                new { area = "Home", controller = "Home", action = "Index" }
             );
         }
     }

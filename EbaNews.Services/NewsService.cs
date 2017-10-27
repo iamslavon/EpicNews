@@ -15,21 +15,7 @@ namespace EbaNews.Services
             this.repository = repository;
         }
 
-        public int AddNews(News news)
-        {
-            repository.Add(news);
-            repository.SaveChanges();
-
-            return news.Id;
-        }
-
-        public void EditNews(News news)
-        {
-            repository.Update(news);
-            repository.SaveChanges();
-        }
-
-        public PagedResponse<News> GetNews(int page, int pageSize)
+        public PagedResponse<News> GetAllNews(int page, int pageSize)
         {
             var total = repository.GetAll().Count();
             var news = repository
@@ -44,6 +30,41 @@ namespace EbaNews.Services
                 Data = news,
                 Total = total
             };
+        }
+
+        public PagedResponse<News> GetNews(int start, int count)
+        {
+            var total = repository
+                .GetAll()
+                .Count(x => x.Online);
+
+            var news = repository
+                .GetAll()
+                .Where(x => x.Online)
+                .OrderByDescending(x => x.PublicationDate)
+                .Skip(start)
+                .Take(count)
+                .ToList();
+
+            return new PagedResponse<News>
+            {
+                Total = total,
+                Data = news
+            };
+        }
+
+        public int AddNews(News news)
+        {
+            repository.Add(news);
+            repository.SaveChanges();
+
+            return news.Id;
+        }
+
+        public void EditNews(News news)
+        {
+            repository.Update(news);
+            repository.SaveChanges();
         }
 
         public void RemoveNews(int newsId)

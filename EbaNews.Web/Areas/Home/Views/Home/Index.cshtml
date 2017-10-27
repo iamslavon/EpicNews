@@ -1,0 +1,64 @@
+﻿<div class="container" ng-controller="indexController">
+    @* loader *@
+    <div class="text-center margin-top-30" ng-if="loading.page">
+        <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+        <span class="sr-only">Loading</span>
+    </div>
+    
+    @* news container *@
+    <div class="news-container" ng-if="!loading.page">
+        <div ng-repeat="news in newsList" class="news-wrapper ">
+            <div class="news-block">
+                <h2 ng-bind="news.Title"></h2>
+                <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank">Link to source</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <button ng-if="showMoreButton()"
+                    ng-click="lazyLoad()"
+                    class="btn btn-default">
+                <i class="fa fa-refresh fa-fw" ng-class="{'fa-spin': loading.lazy}"></i> Load more
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Suggest modal -->
+<div id="suggest-modal" class="modal fade" role="dialog" ng-controller="suggestNewsController">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Suggest News</h4>
+                <form name="suggestModalForm" class="margin-top-20">
+                    <div class="form-group">
+                        <input ng-model="news.Title"
+                               name="addNewsTitle"
+                               class="form-control"
+                               type="text"
+                               placeholder="News Title"
+                               ng-minlength="5"
+                               required />
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="news.LinkToArticle"
+                               name="addNewsLink"
+                               class="form-control"
+                               type="text"
+                               placeholder="Link to source"
+                               ng-minlength="5"
+                               required />
+                    </div>
+                </form>
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-click="suggest()"
+                        ng-class="{ disabled: suggestModalForm.$invalid }">
+                    Suggest
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/home/index")

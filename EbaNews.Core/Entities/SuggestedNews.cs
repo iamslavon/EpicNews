@@ -5,6 +5,12 @@ namespace EbaNews.Core.Entities
 {
     public class SuggestedNews : NewsBase
     {
+        public SuggestedNews()
+        {
+            Status = SuggestedNewsStatus.New;
+            SuggestionDate = DateTime.Now;
+        }
+
         /// <summary>
         /// Date when news was suggested
         /// </summary>
