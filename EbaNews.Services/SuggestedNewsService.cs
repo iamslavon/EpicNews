@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using EbaNews.Core;
 using EbaNews.Core.Entities;
 using EbaNews.Core.Enums;
 using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
+using EbaNews.Core.Responses;
 using System;
 using System.Linq;
 

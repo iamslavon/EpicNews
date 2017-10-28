@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EbaNews.Core
+namespace EbaNews.Core.Responses
 {
     public class PagedResponse<T>
     {

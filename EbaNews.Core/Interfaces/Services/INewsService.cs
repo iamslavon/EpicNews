@@ -1,4 +1,5 @@
 ﻿using EbaNews.Core.Entities;
+using EbaNews.Core.Responses;
 
 namespace EbaNews.Core.Interfaces.Services
 {

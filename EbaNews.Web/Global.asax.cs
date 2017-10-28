@@ -19,6 +19,7 @@ namespace EbaNews.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             IocContainer.Initialize();
             AutoMapperConfig.Register();
+            Settings.Init();
         }
 
         protected void Application_Error()

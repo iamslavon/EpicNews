@@ -1,7 +1,7 @@
 ﻿using EbaNews.Core.Entities;
 using EbaNews.Core.Interfaces.Services;
+using System;
 using System.Web.Mvc;
-using EbaNews.Core.Enums;
 
 namespace EbaNews.Web.Areas.Api.Controllers
 {
@@ -17,17 +17,41 @@ namespace EbaNews.Web.Areas.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetNews(int start, int count)
+        public ActionResult GetNews(int start, int count)
         {
-            var response = newsService.GetNews(start, count);
+            if (count > Settings.AllowedNewsCount)
+            {
+                return new HttpStatusCodeResult(422, $"You can't get more than {Settings.AllowedNewsCount} news at once");
+            }
 
-            return Json(response, JsonRequestBehavior.AllowGet);
+            try
+            {
+                var response = newsService.GetNews(start, count);
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
+            }
         }
 
         [HttpPost]
-        public void SuggestNews(SuggestedNews news)
+        public ActionResult SuggestNews(SuggestedNews news)
         {
-            suggestedNewsService.AddSuggestedNews(news);
+            if (news.Title == null || news.LinkToArticle == null)
+            {
+                return new HttpStatusCodeResult(422, "Parameter missed");
+            }
+
+            try
+            {
+                suggestedNewsService.AddSuggestedNews(news);
+                return new HttpStatusCodeResult(200);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
+            }
         }
     }
 }

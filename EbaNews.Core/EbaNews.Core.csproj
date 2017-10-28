@@ -65,7 +65,7 @@
     <Compile Include="Interfaces\Services\ILanguageService.cs" />
     <Compile Include="Interfaces\Services\INewsService.cs" />
     <Compile Include="Interfaces\Services\ISuggestedNewsService.cs" />
-    <Compile Include="PagedResponse.cs" />
+    <Compile Include="Responses\PagedResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles.cs" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using EbaNews.Core;
 using EbaNews.Core.Interfaces.Services;
+using EbaNews.Core.Responses;
 using EbaNews.Web.Areas.Admin.Models.SuggestedNews;
 using System.Collections.Generic;
 using System.Web.Mvc;
