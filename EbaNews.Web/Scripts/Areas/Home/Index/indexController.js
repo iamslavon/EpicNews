@@ -1,7 +1,7 @@
 ﻿var app = angular.module("home");
 
 app.controller("indexController",
-    function($scope, $http) {
+    function ($scope, $http, ngNotify) {
         $scope.loading = {
             page: false,
             lazy: false
@@ -36,11 +36,15 @@ app.controller("indexController",
             };
 
             $http.get("/api/news/get", request)
-                .then(function (response) {
-                    $scope.newsList = $scope.newsList.concat(response.data.Data);
-                    $scope.total = response.data.Total;
-                    $scope.stopLoading();
-                });
+                .then(
+                    function(response) {
+                        $scope.newsList = $scope.newsList.concat(response.data.Data);
+                        $scope.total = response.data.Total;
+                        $scope.stopLoading();
+                    },
+                    function(error) {
+                        ngNotify.set(error.statusText, 'error');
+                    });
         };
 
         $scope.loadPage = function() {

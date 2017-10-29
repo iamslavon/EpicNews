@@ -201,6 +201,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\ng-notify.min.css" />
     <Content Include="Content\shared.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -296,6 +297,7 @@
     <Content Include="Scripts\Libs\modernizr-2.8.3.js" />
     <Content Include="Scripts\Libs\moment.js" />
     <Content Include="Scripts\Libs\moment.min.js" />
+    <Content Include="Scripts\Libs\ng-notify.min.js" />
     <Content Include="Scripts\Libs\respond.js" />
     <Content Include="Scripts\Libs\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\Libs\respond.matchmedia.addListener.min.js" />
