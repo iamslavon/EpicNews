@@ -2,6 +2,7 @@
 using EbaNews.Core.Interfaces.Services;
 using System;
 using System.Web.Mvc;
+using Strings = EbaNews.Resources.Default.Web.Areas.Api.Controllers.NewsControllerStrings;
 
 namespace EbaNews.Web.Areas.Api.Controllers
 {
@@ -21,7 +22,7 @@ namespace EbaNews.Web.Areas.Api.Controllers
         {
             if (count > Settings.AllowedNewsCount)
             {
-                return new HttpStatusCodeResult(422, $"You can't get more than {Settings.AllowedNewsCount} news at once");
+                return new HttpStatusCodeResult(422, string.Format(Strings.CanNotGetManyNews, Settings.AllowedNewsCount));
             }
 
             try
@@ -40,7 +41,7 @@ namespace EbaNews.Web.Areas.Api.Controllers
         {
             if (news.Title == null || news.LinkToArticle == null)
             {
-                return new HttpStatusCodeResult(422, "Parameter missed");
+                return new HttpStatusCodeResult(422, Strings.ParameterMissed);
             }
 
             try
