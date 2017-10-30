@@ -3,6 +3,7 @@ using EbaNews.Services.Membership;
 using EbaNews.Web.Areas.Admin.Models.Users;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -27,35 +28,49 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetUsers()
+        public ActionResult GetUsers()
         {
-            var users = userManager
-                .Users
-                .ToList()
-                .Select(user => new UserViewModel
-                {
-                    Id = user.Id,
-                    Name = user.UserName,
-                    Email = user.Email,
-                    Roles = userManager.GetRoles(user.Id)
-                });
+            try
+            {
+                var users = userManager
+                    .Users
+                    .ToList()
+                    .Select(user => new UserViewModel
+                    {
+                        Id = user.Id,
+                        Name = user.UserName,
+                        Email = user.Email,
+                        Roles = userManager.GetRoles(user.Id)
+                    });
 
-            return Json(users, JsonRequestBehavior.AllowGet);
+                return Json(users, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public async Task<JsonResult> SwitchRole(SwitchRoleViewModel model)
+        public async Task<ActionResult> SwitchRole(SwitchRoleViewModel model)
         {
-            if (await userManager.IsInRoleAsync(model.UserId, model.Role))
+            try
             {
-                await userManager.RemoveFromRoleAsync(model.UserId, model.Role);
-            }
-            else
-            {
-                await userManager.AddToRoleAsync(model.UserId, model.Role);
-            }
+                if (await userManager.IsInRoleAsync(model.UserId, model.Role))
+                {
+                    await userManager.RemoveFromRoleAsync(model.UserId, model.Role);
+                }
+                else
+                {
+                    await userManager.AddToRoleAsync(model.UserId, model.Role);
+                }
 
-            return Json(userManager.GetRoles(model.UserId));
+                return Json(userManager.GetRoles(model.UserId));
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
     }
 }

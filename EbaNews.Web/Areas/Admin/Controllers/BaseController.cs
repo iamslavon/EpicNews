@@ -17,5 +17,15 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         {
             ModelState.AddModelError("", error);
         }
+
+        protected HttpStatusCodeResult Ok()
+        {
+            return new HttpStatusCodeResult(200);
+        }
+
+        protected HttpStatusCodeResult InternalError(string message)
+        {
+            return new HttpStatusCodeResult(500, message);
+        }
     }
 }

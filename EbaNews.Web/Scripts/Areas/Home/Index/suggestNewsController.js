@@ -12,7 +12,7 @@ app.controller("suggestNewsController",
                         ngNotify.set("Your news successfully suggested", "success");
                     },
                     function(error) {
-                        ngNotify.set("Error. Something went wrong", "error");
+                        ngNotify.set("Something went wrong", "error");
                     });
         };
     });

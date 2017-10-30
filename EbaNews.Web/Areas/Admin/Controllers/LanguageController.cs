@@ -1,4 +1,5 @@
 ﻿using EbaNews.Core.Interfaces.Services;
+using System;
 using System.Web.Mvc;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
@@ -14,11 +15,17 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetLanguages()
+        public ActionResult GetLanguages()
         {
-            var languages = languageService.GetLanguages();
-
-            return Json(languages, JsonRequestBehavior.AllowGet);
+            try
+            {
+                var languages = languageService.GetLanguages();
+                return Json(languages, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
     }
 }

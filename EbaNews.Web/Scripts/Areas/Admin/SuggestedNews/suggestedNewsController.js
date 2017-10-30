@@ -1,6 +1,6 @@
 ﻿var app = angular.module("admin");
 
-app.controller("suggestedNewsController", function ($scope, $http) {
+app.controller("suggestedNewsController", function ($scope, $http, ngNotify) {
     $scope.newsList = [];
     $scope.languages = [];
     $scope.total = 0;
@@ -18,7 +18,7 @@ app.controller("suggestedNewsController", function ($scope, $http) {
     };
 
     $scope.convertDate = function (date) {
-        return moment(date).format('DD.MM.YYYY [-] HH:mm');
+        return moment(date).format("DD.MM.YYYY [-] HH:mm");
     };
 
     $scope.startLoading = function () {
@@ -45,11 +45,15 @@ app.controller("suggestedNewsController", function ($scope, $http) {
         };
 
         $http.get("/mngmnt/news/suggested/get", request)
-            .then(function (response) {
-                $scope.newsList = response.data.Data;
-                $scope.total = response.data.Total;
-                $scope.stopLoading();
-            });
+            .then(
+                function(response) {
+                    $scope.newsList = response.data.Data;
+                    $scope.total = response.data.Total;
+                    $scope.stopLoading();
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.declineNews = function (id) {
@@ -59,16 +63,20 @@ app.controller("suggestedNewsController", function ($scope, $http) {
             };
 
             $http.post("/mngmnt/news/suggested/decline", data)
-                .then(function () {
-                    $scope.getNews();
-                });
+                .then(
+                    function() {
+                        $scope.getNews();
+                    },
+                    function(error) {
+                        ngNotify.set(error.statusText, "error");
+                    });
         }
     };
 
     $scope.openApproveModal = function (news) {
         $scope.getLanguages();
         $scope.approvingNews = news;
-        $('#approve-modal').modal('show');
+        window.$("#approve-modal").modal("show");
     };
 
     $scope.approveNews = function () {
@@ -78,19 +86,27 @@ app.controller("suggestedNewsController", function ($scope, $http) {
         };
 
         $http.post("/mngmnt/news/suggested/approve", data)
-            .then(function () {
-                $('#approve-modal').modal('hide');
-                $scope.getNews();
-                $scope.approvingNews = {};
-            });
+            .then(
+                function() {
+                    window.$("#approve-modal").modal("hide");
+                    $scope.getNews();
+                    $scope.approvingNews = {};
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.getLanguages = function () {
         if ($scope.languages.length === 0) {
             $http.get("/mngmnt/languages/get")
-                .then(function (response) {
-                    $scope.languages = response.data;
-                });
+                .then(
+                    function(response) {
+                        $scope.languages = response.data;
+                    },
+                    function(error) {
+                        ngNotify.set(error.statusText, "error");
+                    });
         }
     };
 

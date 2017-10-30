@@ -27,47 +27,86 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetNews(int page, int pageSize)
+        public ActionResult GetNews(int page, int pageSize)
         {
-            var serviceResponse = newsService.GetAllNews(page, pageSize);
-
-            var response = new PagedResponse<NewsViewModel>
+            try
             {
-                Data = Mapper.Map<IEnumerable<NewsViewModel>>(serviceResponse.Data),
-                Total = serviceResponse.Total,
-            };
+                var serviceResponse = newsService.GetAllNews(page, pageSize);
 
-            return Json(response, JsonRequestBehavior.AllowGet);
+                var response = new PagedResponse<NewsViewModel>
+                {
+                    Data = Mapper.Map<IEnumerable<NewsViewModel>>(serviceResponse.Data),
+                    Total = serviceResponse.Total,
+                };
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public void SwitchOnlineStatus(int newsId, bool online)
+        public ActionResult SwitchOnlineStatus(int newsId, bool online)
         {
-            newsService.SwitchOnlineStatus(newsId, online);
+            try
+            {
+                newsService.SwitchOnlineStatus(newsId, online);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public JsonResult AddNews(NewsViewModel model)
+        public ActionResult AddNews(NewsViewModel model)
         {
             var news = Mapper.Map<News>(model);
             news.PublicationDate = DateTime.Now;
-            var id = newsService.AddNews(news);
 
-            return Json(id);
+            try
+            {
+                newsService.AddNews(news);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public void EditNews(NewsViewModel model)
+        public ActionResult EditNews(NewsViewModel model)
         {
             var news = Mapper.Map<News>(model);
-            newsService.EditNews(news);
+
+            try
+            {
+                newsService.EditNews(news);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
         [Authorize(Roles = Roles.Owner)]
-        public void DeleteNews(int id)
+        public ActionResult DeleteNews(int id)
         {
-            newsService.RemoveNews(id);
+            try
+            {
+                newsService.RemoveNews(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
     }
 }

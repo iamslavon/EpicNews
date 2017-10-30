@@ -49,7 +49,8 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/angular.min.js",
                 "~/Scripts/Libs/modernizr-*",
                 "~/Scripts/Libs/bootstrap.min.js",
-                "~/Scripts/Libs/respond.js"));
+                "~/Scripts/Libs/respond.js",
+                "~/Scripts/Libs/ng-notify.min.js"));
 
             bundles.Add(new ScriptBundle("~/app/admin").Include(
                 "~/Scripts/Areas/Admin/app.js"));
@@ -58,7 +59,8 @@ namespace EbaNews.Web
                 "~/Content/bootstrap.min.css",
                 "~/Content/font-awesome.min.css",
                 "~/Content/Admin.css",
-                "~/Content/shared.css"));
+                "~/Content/shared.css",
+                "~/Content/ng-notify.min.css"));
 
             return bundles;
         }

@@ -2,13 +2,14 @@
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
 using EbaNews.Web.Areas.Admin.Models.SuggestedNews;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
 {
     [Authorize]
-    public class SuggestedNewsController : Controller
+    public class SuggestedNewsController : BaseController
     {
         private readonly ISuggestedNewsService suggestedNewsService;
 
@@ -24,29 +25,52 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetNews(int page, int pageSize)
+        public ActionResult GetNews(int page, int pageSize)
         {
-            var serviceResponse = suggestedNewsService.GetSuggestedNews(page, pageSize);
-
-            var response = new PagedResponse<SuggestedNewsViewModel>
+            try
             {
-                Data = Mapper.Map<IEnumerable<SuggestedNewsViewModel>>(serviceResponse.Data),
-                Total = serviceResponse.Total,
-            };
+                var serviceResponse = suggestedNewsService.GetSuggestedNews(page, pageSize);
 
-            return Json(response, JsonRequestBehavior.AllowGet);
+                var response = new PagedResponse<SuggestedNewsViewModel>
+                {
+                    Data = Mapper.Map<IEnumerable<SuggestedNewsViewModel>>(serviceResponse.Data),
+                    Total = serviceResponse.Total,
+                };
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public void DeclineNews(int id)
+        public ActionResult DeclineNews(int id)
         {
-            suggestedNewsService.DeclineSuggestedNews(id);
+            try
+            {
+                suggestedNewsService.DeclineSuggestedNews(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
 
         [HttpPost]
-        public void ApproveNews(int newsId, int languageId)
+        public ActionResult ApproveNews(int newsId, int languageId)
         {
-            suggestedNewsService.ApproveSuggestedNews(newsId, languageId);
+            try
+            {
+                suggestedNewsService.ApproveSuggestedNews(newsId, languageId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
         }
     }
 }

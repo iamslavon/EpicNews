@@ -1,6 +1,6 @@
 ﻿var app = angular.module("admin");
 
-app.controller("usersController", function ($scope, $http) {
+app.controller("usersController", function ($scope, $http, ngNotify) {
     $scope.users = [];
     $scope.loading = false;
 
@@ -19,10 +19,14 @@ app.controller("usersController", function ($scope, $http) {
     $scope.getUsers = function () {
         $scope.startLoading();
         $http.get("/mngmnt/users/get")
-            .then(function (response) {
-                $scope.users = response.data;
-                $scope.stopLoading();
-            });
+            .then(
+                function(response) {
+                    $scope.users = response.data;
+                    $scope.stopLoading();
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.switchAdminRole = function (user) {
@@ -40,9 +44,13 @@ app.controller("usersController", function ($scope, $http) {
         };
 
         $http.post("/mngmnt/users/role/switch", data)
-            .then(function (response) {
-                user.Roles = response.data;
-            });
+            .then(
+                function(response) {
+                    user.Roles = response.data;
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.getUsers();

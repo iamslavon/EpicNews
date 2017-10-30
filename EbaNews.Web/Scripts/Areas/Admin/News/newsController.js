@@ -1,6 +1,6 @@
 ﻿var app = angular.module("admin");
 
-app.controller("newsController", function ($scope, $http) {
+app.controller("newsController", function ($scope, $http, ngNotify) {
     $scope.newsList = [];
     $scope.languages = [];
     $scope.total = 0;
@@ -35,16 +35,22 @@ app.controller("newsController", function ($scope, $http) {
         $scope.getNews();
     };
 
-    $scope.switchOnlineStatus = function (news) {
+    $scope.switchOnlineStatus = function(news) {
         var request = {
             newsId: news.Id,
             online: news.Online
         };
 
-        $http.post("/mngmnt/news/online/switch", request);
+        $http.post("/mngmnt/news/online/switch", request).then(
+            function(response) {
+
+            },
+            function(error) {
+                ngNotify.set(error.statusText, "error");
+            });
     };
 
-    $scope.getNews = function () {
+    $scope.getNews = function() {
         $scope.startLoading();
 
         var request = {
@@ -55,11 +61,15 @@ app.controller("newsController", function ($scope, $http) {
         };
 
         $http.get("/mngmnt/news/get", request)
-            .then(function (response) {
-                $scope.newsList = response.data.Data;
-                $scope.total = response.data.Total;
-                $scope.stopLoading();
-            });
+            .then(
+                function(response) {
+                    $scope.newsList = response.data.Data;
+                    $scope.total = response.data.Total;
+                    $scope.stopLoading();
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.openAddNewsModal = function () {
@@ -67,20 +77,25 @@ app.controller("newsController", function ($scope, $http) {
         $("#add-modal").modal("show");
     };
 
-    $scope.addNews = function () {
+    $scope.addNews = function() {
         $http.post("/mngmnt/news/add", $scope.newNews)
-            .then(function (response) {
-                $("#add-modal").modal("hide");
-                $scope.newNews = {};
-                $scope.getNews();
-            });
+            .then(
+                function(response) {
+                    window.$("#add-modal").modal("hide");
+                    $scope.newNews = {};
+                    $scope.getNews();
+                    ngNotify.set("News has added", "success");
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.openEditModal = function (news) {
         angular.copy(news, $scope.editingNews);
         $scope.editingNews.Language = $scope.languages
             .find(language => language.Id === news.Language.Id);
-        $("#edit-modal").modal("show");
+        window.$("#edit-modal").modal("show");
     };
 
     $scope.editNews = function () {
@@ -88,10 +103,15 @@ app.controller("newsController", function ($scope, $http) {
         $scope.editingNews.PublicationDate = formatedDate;
 
         $http.post("/mngmnt/news/edit", $scope.editingNews)
-            .then(function () {
-                $("#edit-modal").modal("hide");
-                $scope.getNews();
-            });
+            .then(
+                function() {
+                    window.$("#edit-modal").modal("hide");
+                    $scope.getNews();
+                    ngNotify.set("Saved", "success");
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.deleteNews = function (id) {
@@ -101,17 +121,25 @@ app.controller("newsController", function ($scope, $http) {
             };
 
             $http.post("/mngmnt/news/delete", data)
-                .then(function () {
-                    $scope.getNews();
-                });
+                .then(
+                    function() {
+                        $scope.getNews();
+                    },
+                    function(error) {
+                        ngNotify.set(error.statusText, "error");
+                    });
         }
     };
 
     $scope.getLanguages = function () {
         $http.get("/mngmnt/languages/get")
-            .then(function (response) {
-                $scope.languages = response.data;
-            });
+            .then(
+                function(response) {
+                    $scope.languages = response.data;
+                },
+                function(error) {
+                    ngNotify.set(error.statusText, "error");
+                });
     };
 
     $scope.getNews();
