@@ -3,6 +3,7 @@ using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
 using System.Linq;
+using System.Threading;
 
 namespace EbaNews.Services
 {
@@ -34,12 +35,16 @@ namespace EbaNews.Services
 
         public PagedResponse<News> GetNews(int start, int count)
         {
+            var culture = Thread.CurrentThread.CurrentUICulture.Name;
+
             var total = repository
                 .GetAll()
+                .Where(x => x.Language.Culture == culture)
                 .Count(x => x.Online);
 
             var news = repository
                 .GetAll()
+                .Where(x => x.Language.Culture == culture)
                 .Where(x => x.Online)
                 .OrderByDescending(x => x.PublicationDate)
                 .Skip(start)

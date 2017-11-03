@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
+namespace EbaNews.Resources.Web.Areas.Admin.Views {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SuggestedNewsStrings {
+    public class CommonStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SuggestedNewsStrings() {
+        internal CommonStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Views.SuggestedNewsStrings", typeof(SuggestedNewsStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Admin.Views.CommonStrings", typeof(CommonStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,65 +61,38 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Approve.
+        ///   Looks up a localized string similar to Choose news language.
         /// </summary>
-        public static string Approve {
+        public static string ChooseLanguage {
             get {
-                return ResourceManager.GetString("Approve", resourceCulture);
+                return ResourceManager.GetString("ChooseLanguage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Decline.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
-        public static string Decline {
+        public static string Delete {
             get {
-                return ResourceManager.GetString("Decline", resourceCulture);
+                return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Link to source.
+        ///   Looks up a localized string similar to Loading....
         /// </summary>
-        public static string LinkToSource {
+        public static string Loading {
             get {
-                return ResourceManager.GetString("LinkToSource", resourceCulture);
+                return ResourceManager.GetString("Loading", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No suggested news yet.
+        ///   Looks up a localized string similar to Save.
         /// </summary>
-        public static string NoSuggestedNews {
+        public static string Save {
             get {
-                return ResourceManager.GetString("NoSuggestedNews", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suggested news.
-        /// </summary>
-        public static string SuggestedNewsTitle {
-            get {
-                return ResourceManager.GetString("SuggestedNewsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suggestion date.
-        /// </summary>
-        public static string SuggestionDate {
-            get {
-                return ResourceManager.GetString("SuggestionDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Title.
-        /// </summary>
-        public static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
     }

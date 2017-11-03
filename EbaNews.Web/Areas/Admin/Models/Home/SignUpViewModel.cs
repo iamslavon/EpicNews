@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using strings = EbaNews.Resources.Default.Web.Areas.Admin.Models.SignUpStrings;
+using strings = EbaNews.Resources.Web.Areas.Admin.Models.SignUpStrings;
 
 namespace EbaNews.Web.Areas.Admin.Models.Home
 {

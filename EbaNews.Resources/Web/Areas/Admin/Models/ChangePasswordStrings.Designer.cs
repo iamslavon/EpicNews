@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
+namespace EbaNews.Resources.Web.Areas.Admin.Models {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LoginViewModelStrings {
+    public class ChangePasswordStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LoginViewModelStrings() {
+        internal ChangePasswordStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Models.LoginViewModelStrings", typeof(LoginViewModelStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Admin.Models.ChangePasswordStrings", typeof(ChangePasswordStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,38 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login field required.
+        ///   Looks up a localized string similar to Confirm password must match the new password.
         /// </summary>
-        public static string LoginFieldRequired {
+        public static string ConfirmPasswordFail {
             get {
-                return ResourceManager.GetString("LoginFieldRequired", resourceCulture);
+                return ResourceManager.GetString("ConfirmPasswordFail", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password field required.
+        ///   Looks up a localized string similar to Confirm password field required.
         /// </summary>
-        public static string PasswordFieldRequired {
+        public static string ConfirmPasswordFieldRequired {
             get {
-                return ResourceManager.GetString("PasswordFieldRequired", resourceCulture);
+                return ResourceManager.GetString("ConfirmPasswordFieldRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current password field required.
+        /// </summary>
+        public static string CurrentPasswordFieldRequired {
+            get {
+                return ResourceManager.GetString("CurrentPasswordFieldRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New password field required.
+        /// </summary>
+        public static string NewPasswordFieldRequired {
+            get {
+                return ResourceManager.GetString("NewPasswordFieldRequired", resourceCulture);
             }
         }
     }

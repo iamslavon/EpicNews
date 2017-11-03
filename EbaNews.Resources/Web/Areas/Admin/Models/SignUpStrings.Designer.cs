@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
+namespace EbaNews.Resources.Web.Areas.Admin.Models {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LayoutStrings {
+    public class SignUpStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LayoutStrings() {
+        internal SignUpStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Views.LayoutStrings", typeof(LayoutStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Admin.Models.SignUpStrings", typeof(SignUpStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,65 +61,56 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EbaNews.
+        ///   Looks up a localized string similar to Confirm password must match the new password.
         /// </summary>
-        public static string ApplicationName {
+        public static string ConfirmPasswordNotTheSame {
             get {
-                return ResourceManager.GetString("ApplicationName", resourceCulture);
+                return ResourceManager.GetString("ConfirmPasswordNotTheSame", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change password.
+        ///   Looks up a localized string similar to Confirm password field required.
         /// </summary>
-        public static string ChangePassword {
+        public static string ConfirmPasswordRequired {
             get {
-                return ResourceManager.GetString("ChangePassword", resourceCulture);
+                return ResourceManager.GetString("ConfirmPasswordRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Email field required.
         /// </summary>
-        public static string Home {
+        public static string EmailRequired {
             get {
-                return ResourceManager.GetString("Home", resourceCulture);
+                return ResourceManager.GetString("EmailRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logout.
+        ///   Looks up a localized string similar to Name field required.
         /// </summary>
-        public static string Logout {
+        public static string NameRequired {
             get {
-                return ResourceManager.GetString("Logout", resourceCulture);
+                return ResourceManager.GetString("NameRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to News.
+        ///   Looks up a localized string similar to Password field required.
         /// </summary>
-        public static string News {
+        public static string PasswordRequired {
             get {
-                return ResourceManager.GetString("News", resourceCulture);
+                return ResourceManager.GetString("PasswordRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suggested news.
+        ///   Looks up a localized string similar to Please enter valid email.
         /// </summary>
-        public static string SuggstedNews {
+        public static string WrongEmail {
             get {
-                return ResourceManager.GetString("SuggstedNews", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Users.
-        /// </summary>
-        public static string Users {
-            get {
-                return ResourceManager.GetString("Users", resourceCulture);
+                return ResourceManager.GetString("WrongEmail", resourceCulture);
             }
         }
     }

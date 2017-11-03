@@ -13,7 +13,12 @@
         <div class="container">
             <div class="navbar-header">
                 @Html.ActionLink("EbaNews", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <button class="btn btn-default navbar-btn pull-right" data-toggle="modal" data-target="#suggest-modal">Suggest</button>
+                <button class="btn btn-default navbar-btn " data-toggle="modal" data-target="#suggest-modal">Suggest</button>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "en", returnUrl = Request.Url })">Eng</a></li> 
+                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "ru", returnUrl = Request.Url })">Рус</a></li> 
+                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "uk", returnUrl = Request.Url })">Укр</a></li> 
+                </ul>
             </div>
         </div>
     </div>

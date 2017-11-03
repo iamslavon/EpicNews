@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
+namespace EbaNews.Resources.Web.Areas.Admin.Views {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Views.HomeStrings", typeof(HomeStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Admin.Views.HomeStrings", typeof(HomeStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

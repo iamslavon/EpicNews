@@ -1,8 +1,7 @@
 ﻿using EbaNews.Ioc;
+using EbaNews.Web.Helpers;
 using EbaNews.Web.Mapping;
 using NLog;
-using System.Globalization;
-using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -27,7 +26,7 @@ namespace EbaNews.Web
 
         protected void Application_BeginRequest()
         {
-            var culture = Request.Cookies[$"{Settings.CookieName}_culture"]?.Value;
+            var culture = Request.Cookies[Settings.CultureCookieName]?.Value;
 
             if (culture == null)
             {
@@ -39,15 +38,13 @@ namespace EbaNews.Web
                 }
                 else
                 {
-                    culture = Settings.DefaultCulture;
+                    culture = Settings.DefaultLanguage;
                 }
 
-                Response.SetCookie(new HttpCookie($"{Settings.CookieName}_culture", culture));
+                Response.SetCookie(new HttpCookie(Settings.CultureCookieName, culture));
             }
 
-            var cultureInfo = new CultureInfo(culture);
-            Thread.CurrentThread.CurrentCulture = cultureInfo;
-            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            CultureHelper.SetCulture(culture);
         }
 
         protected void Application_Error()

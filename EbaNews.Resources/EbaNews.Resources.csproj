@@ -41,67 +41,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default\Web\Areas\Admin\Controllers\HomeStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Controllers\HomeStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Models\ChangePasswordStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Models\ChangePasswordStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePasswordStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Models\LoginViewModelStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Models\LoginViewModelStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginViewModelStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Models\SignUpStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Models\SignUpStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SignUpStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\CommonStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\CommonStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CommonStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\HomeStrings.uk.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\HomeStrings.uk.Designer.cs">
       <DependentUpon>HomeStrings.uk.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\HomeStrings.ru.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\HomeStrings.ru.Designer.cs">
       <DependentUpon>HomeStrings.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\HomeStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\HomeStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\LayoutStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\LayoutStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LayoutStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\NewsStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\NewsStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewsStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\SuggestedNewsStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\SuggestedNewsStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SuggestedNewsStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Admin\Views\UsersStrings.Designer.cs">
+    <Compile Include="Web\Areas\Admin\Views\UsersStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Default\Web\Areas\Api\Controllers\NewsControllerStrings.Designer.cs">
+    <Compile Include="Web\Areas\Api\Controllers\NewsControllerStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewsControllerStrings.resx</DependentUpon>
@@ -109,55 +109,55 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Controllers\HomeStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Controllers\HomeStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Models\ChangePasswordStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Models\ChangePasswordStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChangePasswordStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Models\LoginViewModelStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Models\LoginViewModelStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginViewModelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Models\SignUpStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Models\SignUpStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SignUpStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\CommonStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\CommonStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CommonStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\HomeStrings.uk.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\HomeStrings.uk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.uk.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\HomeStrings.ru.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\HomeStrings.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\HomeStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\HomeStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\LayoutStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\LayoutStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LayoutStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\NewsStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\NewsStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NewsStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\SuggestedNewsStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\SuggestedNewsStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SuggestedNewsStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Admin\Views\UsersStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Admin\Views\UsersStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UsersStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Default\Web\Areas\Api\Controllers\NewsControllerStrings.resx">
+    <EmbeddedResource Include="Web\Areas\Api\Controllers\NewsControllerStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NewsControllerStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>

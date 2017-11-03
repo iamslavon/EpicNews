@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
+namespace EbaNews.Resources.Web.Areas.Admin.Views {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ChangePasswordStrings {
+    public class SuggestedNewsStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ChangePasswordStrings() {
+        internal SuggestedNewsStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Models.ChangePasswordStrings", typeof(ChangePasswordStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Admin.Views.SuggestedNewsStrings", typeof(SuggestedNewsStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,65 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password must match the new password.
+        ///   Looks up a localized string similar to Approve.
         /// </summary>
-        public static string ConfirmPasswordFail {
+        public static string Approve {
             get {
-                return ResourceManager.GetString("ConfirmPasswordFail", resourceCulture);
+                return ResourceManager.GetString("Approve", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password field required.
+        ///   Looks up a localized string similar to Decline.
         /// </summary>
-        public static string ConfirmPasswordFieldRequired {
+        public static string Decline {
             get {
-                return ResourceManager.GetString("ConfirmPasswordFieldRequired", resourceCulture);
+                return ResourceManager.GetString("Decline", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current password field required.
+        ///   Looks up a localized string similar to Link to source.
         /// </summary>
-        public static string CurrentPasswordFieldRequired {
+        public static string LinkToSource {
             get {
-                return ResourceManager.GetString("CurrentPasswordFieldRequired", resourceCulture);
+                return ResourceManager.GetString("LinkToSource", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New password field required.
+        ///   Looks up a localized string similar to No suggested news yet.
         /// </summary>
-        public static string NewPasswordFieldRequired {
+        public static string NoSuggestedNews {
             get {
-                return ResourceManager.GetString("NewPasswordFieldRequired", resourceCulture);
+                return ResourceManager.GetString("NoSuggestedNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggested news.
+        /// </summary>
+        public static string SuggestedNewsTitle {
+            get {
+                return ResourceManager.GetString("SuggestedNewsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggestion date.
+        /// </summary>
+        public static string SuggestionDate {
+            get {
+                return ResourceManager.GetString("SuggestionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
+namespace EbaNews.Resources.Web.Areas.Api.Controllers {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SignUpStrings {
+    public class NewsControllerStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SignUpStrings() {
+        internal NewsControllerStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Default.Web.Areas.Admin.Models.SignUpStrings", typeof(SignUpStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EbaNews.Resources.Web.Areas.Api.Controllers.NewsControllerStrings", typeof(NewsControllerStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,56 +61,20 @@ namespace EbaNews.Resources.Default.Web.Areas.Admin.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password must match the new password.
+        ///   Looks up a localized string similar to You can&apos;t get more than {0} news at once.
         /// </summary>
-        public static string ConfirmPasswordNotTheSame {
+        public static string CanNotGetManyNews {
             get {
-                return ResourceManager.GetString("ConfirmPasswordNotTheSame", resourceCulture);
+                return ResourceManager.GetString("CanNotGetManyNews", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm password field required.
+        ///   Looks up a localized string similar to Parameter missed.
         /// </summary>
-        public static string ConfirmPasswordRequired {
+        public static string ParameterMissed {
             get {
-                return ResourceManager.GetString("ConfirmPasswordRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email field required.
-        /// </summary>
-        public static string EmailRequired {
-            get {
-                return ResourceManager.GetString("EmailRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name field required.
-        /// </summary>
-        public static string NameRequired {
-            get {
-                return ResourceManager.GetString("NameRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password field required.
-        /// </summary>
-        public static string PasswordRequired {
-            get {
-                return ResourceManager.GetString("PasswordRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please enter valid email.
-        /// </summary>
-        public static string WrongEmail {
-            get {
-                return ResourceManager.GetString("WrongEmail", resourceCulture);
+                return ResourceManager.GetString("ParameterMissed", resourceCulture);
             }
         }
     }

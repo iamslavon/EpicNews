@@ -44,9 +44,9 @@ namespace EbaNews.Data.Migrations
 
             var langugeList = new List<Language>
             {
-                new Language("ENG"),
-                new Language("RUS"),
-                new Language("UKR")
+                new Language("ENG", "en"),
+                new Language("RUS", "ru"),
+                new Language("UKR", "uk")
             };
 
             context.Languages.AddRange(langugeList);

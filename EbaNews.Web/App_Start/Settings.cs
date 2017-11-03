@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 
 namespace EbaNews.Web
 {
@@ -6,15 +7,20 @@ namespace EbaNews.Web
     {
         public static void Init()
         {
-            AllowedNewsCount = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["AllowedNewsCount"]);
-            DefaultCulture = System.Configuration.ConfigurationManager.AppSettings["DefaultCulture"];
-            CookieName = System.Configuration.ConfigurationManager.AppSettings["CookieName"];
+            AllowedNewsCount = Convert.ToInt32(ConfigurationManager.AppSettings["AllowedNewsCount"]);
+            AvailableLanguages = ConfigurationManager.AppSettings["AvailableLanguages"].Split(',');
+            DefaultLanguage = ConfigurationManager.AppSettings["DefaultLanguage"];
+            CookieName = ConfigurationManager.AppSettings["CookieName"];
         }
 
-        public static int AllowedNewsCount { get; set; }
+        public static int AllowedNewsCount { get; private set; }
 
-        public static string DefaultCulture { get; set; }
+        public static string[] AvailableLanguages { get; private set; }
 
-        public static string CookieName { get; set; }
+        public static string DefaultLanguage { get; private set; }
+
+        public static string CookieName { get; private set; }
+
+        public static string CultureCookieName => $"{CookieName}_culture";
     }
 }

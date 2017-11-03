@@ -8,7 +8,7 @@ using Microsoft.Owin.Security;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using strings = EbaNews.Resources.Default.Web.Areas.Admin.Controllers.HomeStrings;
+using strings = EbaNews.Resources.Web.Areas.Admin.Controllers.HomeStrings;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
 {

@@ -43,7 +43,7 @@ app.controller("indexController",
                         $scope.stopLoading();
                     },
                     function(error) {
-                        ngNotify.set(error.statusText, 'error');
+                        ngNotify.set("Something went wrong", 'error');
                     });
         };
 

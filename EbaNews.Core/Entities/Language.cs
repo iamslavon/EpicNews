@@ -4,11 +4,14 @@
     {
         public Language() { }
 
-        public Language(string name)
+        public Language(string name, string culture)
         {
             Name = name;
+            Culture = culture;
         }
 
         public string Name { get; set; }
+
+        public string Culture { get; set; }
     }
 }

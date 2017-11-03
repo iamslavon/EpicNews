@@ -25,6 +25,12 @@ namespace EbaNews.Web.Areas.Home
                 "",
                 new { area = "Home", controller = "Home", action = "Index" }
             );
+
+            context.MapRoute(
+                "",
+                "language/change",
+                new { area = "Home", controller = "Home", action = "ChangeLanguage" }
+            );
         }
     }
 }

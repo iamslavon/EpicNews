@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using strings = EbaNews.Resources.Default.Web.Areas.Admin.Models.ChangePasswordStrings;
+using strings = EbaNews.Resources.Web.Areas.Admin.Models.ChangePasswordStrings;
 
 namespace EbaNews.Web.Areas.Admin.Models.Home
 {

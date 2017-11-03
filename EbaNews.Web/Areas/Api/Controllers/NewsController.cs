@@ -2,7 +2,7 @@
 using EbaNews.Core.Interfaces.Services;
 using System;
 using System.Web.Mvc;
-using Strings = EbaNews.Resources.Default.Web.Areas.Api.Controllers.NewsControllerStrings;
+using Strings = EbaNews.Resources.Web.Areas.Api.Controllers.NewsControllerStrings;
 
 namespace EbaNews.Web.Areas.Api.Controllers
 {
