@@ -7,7 +7,7 @@ namespace EbaNews.Core.Interfaces.Services
     {
         PagedResponse<News> GetAllNews(int page, int pageSize);
 
-        PagedResponse<News> GetNews(int start, int count);
+        PagedResponse<News> GetNews(int start, int count, string culture);
 
         int AddNews(News news);
 

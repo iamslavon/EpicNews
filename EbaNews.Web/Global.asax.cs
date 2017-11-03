@@ -38,7 +38,7 @@ namespace EbaNews.Web
                 }
                 else
                 {
-                    culture = Settings.DefaultLanguage;
+                    culture = Settings.DefaultCulture;
                 }
 
                 Response.SetCookie(new HttpCookie(Settings.CultureCookieName, culture));

@@ -3,3 +3,4 @@ packages/
 */obj/
 EbaNews.Services/bin/
 *.sqlite
+EbaNews.Web/ConnectionStrings.config

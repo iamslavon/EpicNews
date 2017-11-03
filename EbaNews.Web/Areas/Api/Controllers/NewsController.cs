@@ -1,7 +1,9 @@
 ﻿using EbaNews.Core.Entities;
 using EbaNews.Core.Interfaces.Services;
 using System;
+using System.Linq;
 using System.Web.Mvc;
+using EbaNews.Web.Helpers;
 using Strings = EbaNews.Resources.Web.Areas.Api.Controllers.NewsControllerStrings;
 
 namespace EbaNews.Web.Areas.Api.Controllers
@@ -25,9 +27,16 @@ namespace EbaNews.Web.Areas.Api.Controllers
                 return new HttpStatusCodeResult(422, string.Format(Strings.CanNotGetManyNews, Settings.AllowedNewsCount));
             }
 
+            var culture = CultureHelper.GetUiCulture();
+
+            if (!Settings.AvailableCultures.Contains(culture))
+            {
+                culture = Settings.DefaultCulture;
+            }
+
             try
             {
-                var response = newsService.GetNews(start, count);
+                var response = newsService.GetNews(start, count, culture);
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

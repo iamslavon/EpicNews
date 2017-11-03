@@ -3,7 +3,6 @@ using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
 using System.Linq;
-using System.Threading;
 
 namespace EbaNews.Services
 {
@@ -33,10 +32,8 @@ namespace EbaNews.Services
             };
         }
 
-        public PagedResponse<News> GetNews(int start, int count)
+        public PagedResponse<News> GetNews(int start, int count, string culture)
         {
-            var culture = Thread.CurrentThread.CurrentUICulture.Name;
-
             var total = repository
                 .GetAll()
                 .Where(x => x.Language.Culture == culture)
