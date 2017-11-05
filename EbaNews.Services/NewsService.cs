@@ -18,6 +18,7 @@ namespace EbaNews.Services
         public PagedResponse<News> GetAllNews(int page, int pageSize)
         {
             var total = repository.GetAll().Count();
+
             var news = repository
                 .GetAll()
                 .OrderByDescending(x => x.Id)
@@ -32,7 +33,7 @@ namespace EbaNews.Services
             };
         }
 
-        public PagedResponse<News> GetNews(int start, int count, string culture)
+        public PagedResponse<News> GetNewsList(int start, int count, string culture)
         {
             var total = repository
                 .GetAll()
@@ -53,6 +54,12 @@ namespace EbaNews.Services
                 Total = total,
                 Data = news
             };
+        }
+
+        public News GetNews(int id)
+        {
+            IncrementViewsCount(id);
+            return repository.Get(id);
         }
 
         public int AddNews(News news)
@@ -78,6 +85,12 @@ namespace EbaNews.Services
         public void SwitchOnlineStatus(int newsId, bool online)
         {
             repository.Get(newsId).Online = online;
+            repository.SaveChanges();
+        }
+
+        public void IncrementViewsCount(int id)
+        {
+            repository.Get(id).Views++;
             repository.SaveChanges();
         }
     }

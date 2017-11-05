@@ -35,7 +35,7 @@ app.controller("indexController",
                 }
             };
 
-            $http.get("/api/news/get", request)
+            $http.get("/api/newslist/get", request)
                 .then(
                     function(response) {
                         $scope.newsList = $scope.newsList.concat(response.data.Data);
@@ -43,7 +43,7 @@ app.controller("indexController",
                         $scope.stopLoading();
                     },
                     function(error) {
-                        ngNotify.set("Something went wrong", 'error');
+                        ngNotify.set("Something went wrong", "error");
                     });
         };
 

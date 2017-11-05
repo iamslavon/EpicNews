@@ -28,6 +28,12 @@ namespace EbaNews.Web.Areas.Home
 
             context.MapRoute(
                 "",
+                "news/{id}",
+                new { area = "Home", controller = "Home", action = "News" }
+            );
+
+            context.MapRoute(
+                "",
                 "language/change",
                 new { area = "Home", controller = "Home", action = "ChangeLanguage" }
             );

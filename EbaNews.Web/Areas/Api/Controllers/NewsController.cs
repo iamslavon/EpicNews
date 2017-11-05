@@ -1,9 +1,9 @@
 ﻿using EbaNews.Core.Entities;
 using EbaNews.Core.Interfaces.Services;
+using EbaNews.Web.Helpers;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using EbaNews.Web.Helpers;
 using Strings = EbaNews.Resources.Web.Areas.Api.Controllers.NewsControllerStrings;
 
 namespace EbaNews.Web.Areas.Api.Controllers
@@ -20,7 +20,21 @@ namespace EbaNews.Web.Areas.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetNews(int start, int count)
+        public ActionResult GetNews(int id)
+        {
+            try
+            {
+                var news = newsService.GetNews(id);
+                return Json(news, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult GetNewsList(int start, int count)
         {
             if (count > Settings.AllowedNewsCount)
             {
@@ -36,7 +50,7 @@ namespace EbaNews.Web.Areas.Api.Controllers
 
             try
             {
-                var response = newsService.GetNews(start, count, culture);
+                var response = newsService.GetNewsList(start, count, culture);
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

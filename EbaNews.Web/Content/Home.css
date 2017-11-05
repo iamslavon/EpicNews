@@ -23,7 +23,9 @@
 
 .news-block {
     border: 2px solid #dadada;
-    padding: 0 20px 10px 30px;
-    color: #6f6f6f;
-    min-height: 200px;
+    padding: 20px 35px;
+    color: #fff;
+    min-height: 500px;
+    background-color: #173644;
+    border-radius: 15px;
 }

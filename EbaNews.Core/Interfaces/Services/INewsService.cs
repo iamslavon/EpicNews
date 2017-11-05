@@ -7,7 +7,9 @@ namespace EbaNews.Core.Interfaces.Services
     {
         PagedResponse<News> GetAllNews(int page, int pageSize);
 
-        PagedResponse<News> GetNews(int start, int count, string culture);
+        PagedResponse<News> GetNewsList(int start, int count, string culture);
+
+        News GetNews(int id);
 
         int AddNews(News news);
 
@@ -16,5 +18,7 @@ namespace EbaNews.Core.Interfaces.Services
         void RemoveNews(int newsId);
 
         void SwitchOnlineStatus(int newsId, bool online);
+
+        void IncrementViewsCount(int id);
     }
 }

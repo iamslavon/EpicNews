@@ -3,8 +3,8 @@ using EbaNews.Core.Entities;
 using EbaNews.Core.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Linq;
 
 namespace EbaNews.Data.Migrations
 {
@@ -42,14 +42,16 @@ namespace EbaNews.Data.Migrations
                 userManager.AddToRole(admin.Id, ownerRole.Name);
             }
 
-            var langugeList = new List<Language>
+            if (context.Languages.Any()) return;
+
+            var languages = new[]
             {
                 new Language("ENG", "en"),
                 new Language("RUS", "ru"),
                 new Language("UKR", "uk")
             };
 
-            context.Languages.AddRange(langugeList);
+            context.Languages.AddOrUpdate(languages);
         }
     }
 }

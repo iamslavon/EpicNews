@@ -13,5 +13,10 @@ namespace EbaNews.Core.Entities
         /// News online status
         /// </summary>
         public bool Online { get; set; }
+
+        /// <summary>
+        /// Number of views
+        /// </summary>
+        public long Views { get; set; }
     }
 }

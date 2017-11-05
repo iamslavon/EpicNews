@@ -1,0 +1,18 @@
+﻿@model EbaNews.Core.Entities.News
+
+@{
+    ViewBag.Title = "News";
+}
+
+<div clas="container">
+    @* news container *@
+    <div class="news-container">
+        <div class="news-wrapper ">
+            <div class="news-block">
+                <h2>@Model.Title</h2>
+                <a href="@Model.LinkToArticle" target="_blank">Link to source</a>
+            </div>
+        </div>
+    </div>
+</div>
+
