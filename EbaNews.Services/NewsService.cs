@@ -1,4 +1,5 @@
-﻿using EbaNews.Core.Entities;
+﻿using System.Data.Entity.Core;
+using EbaNews.Core.Entities;
 using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
@@ -58,8 +59,14 @@ namespace EbaNews.Services
 
         public News GetNews(int id)
         {
+            var news = repository.Get(id);
+
+            if (news == null)
+                throw new ObjectNotFoundException();
+
             IncrementViewsCount(id);
-            return repository.Get(id);
+
+            return news;
         }
 
         public int AddNews(News news)

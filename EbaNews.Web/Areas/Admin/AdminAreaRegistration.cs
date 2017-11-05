@@ -11,7 +11,7 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt",
-                defaults: new { area = "Admin", controller = "Home", action = "Index" }
+                defaults: new { area = AreaName, controller = "Home", action = "Index" }
             );
 
             RegisterAccountRoutes(context);
@@ -26,25 +26,25 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt/login",
-                defaults: new { area = "Admin", controller = "Home", action = "Login" }
+                defaults: new { area = AreaName, controller = "Home", action = "Login" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/logout",
-                defaults: new { area = "Admin", controller = "Home", action = "Logout" }
+                defaults: new { area = AreaName, controller = "Home", action = "Logout" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/signup",
-                defaults: new { area = "Admin", controller = "Home", action = "SignUp" }
+                defaults: new { area = AreaName, controller = "Home", action = "SignUp" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/password/change",
-                defaults: new { area = "Admin", controller = "Home", action = "ChangePassword" }
+                defaults: new { area = AreaName, controller = "Home", action = "ChangePassword" }
             );
         }
 
@@ -53,19 +53,19 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt/users",
-                defaults: new { area = "Admin", controller = "Users", action = "Index" }
+                defaults: new { area = AreaName, controller = "Users", action = "Index" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/users/get",
-                defaults: new { area = "Admin", controller = "Users", action = "GetUsers" }
+                defaults: new { area = AreaName, controller = "Users", action = "GetUsers" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/users/role/switch",
-                defaults: new { area = "Admin", controller = "Users", action = "SwitchRole" }
+                defaults: new { area = AreaName, controller = "Users", action = "SwitchRole" }
             );
         }
 
@@ -74,37 +74,37 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news",
-                defaults: new { area = "Admin", controller = "News", action = "Index" }
+                defaults: new { area = AreaName, controller = "News", action = "Index" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/get",
-                defaults: new { area = "Admin", controller = "News", action = "GetNews" }
+                defaults: new { area = AreaName, controller = "News", action = "GetNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/add",
-                defaults: new { area = "Admin", controller = "News", action = "AddNews" }
+                defaults: new { area = AreaName, controller = "News", action = "AddNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/edit",
-                defaults: new { area = "Admin", controller = "News", action = "EditNews" }
+                defaults: new { area = AreaName, controller = "News", action = "EditNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/delete",
-                defaults: new { area = "Admin", controller = "News", action = "DeleteNews" }
+                defaults: new { area = AreaName, controller = "News", action = "DeleteNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/online/switch",
-                defaults: new { area = "Admin", controller = "News", action = "SwitchOnlineStatus" }
+                defaults: new { area = AreaName, controller = "News", action = "SwitchOnlineStatus" }
             );
         }
 
@@ -113,7 +113,7 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt/languages/get",
-                defaults: new { area = "Admin", controller = "Language", action = "GetLanguages" }
+                defaults: new { area = AreaName, controller = "Language", action = "GetLanguages" }
             );
         }
 
@@ -122,25 +122,25 @@ namespace EbaNews.Web.Areas.Admin
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/suggested",
-                defaults: new { area = "Admin", controller = "SuggestedNews", action = "Index" }
+                defaults: new { area = AreaName, controller = "SuggestedNews", action = "Index" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/suggested/get",
-                defaults: new { area = "Admin", controller = "SuggestedNews", action = "GetNews" }
+                defaults: new { area = AreaName, controller = "SuggestedNews", action = "GetNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/suggested/decline",
-                defaults: new { area = "Admin", controller = "SuggestedNews", action = "DeclineNews" }
+                defaults: new { area = AreaName, controller = "SuggestedNews", action = "DeclineNews" }
             );
 
             context.MapRoute(
                 name: "",
                 url: "mngmnt/news/suggested/approve",
-                defaults: new { area = "Admin", controller = "SuggestedNews", action = "ApproveNews" }
+                defaults: new { area = AreaName, controller = "SuggestedNews", action = "ApproveNews" }
             );
         }
     }

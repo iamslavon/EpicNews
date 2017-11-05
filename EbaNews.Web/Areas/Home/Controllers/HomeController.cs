@@ -1,5 +1,6 @@
 ﻿using EbaNews.Core.Interfaces.Services;
 using EbaNews.Web.Helpers;
+using System;
 using System.Web;
 using System.Web.Mvc;
 
@@ -23,9 +24,15 @@ namespace EbaNews.Web.Areas.Home.Controllers
         [HttpGet]
         public ActionResult News(int id)
         {
-            var news = newsService.GetNews(id);
-
-            return View(news);
+            try
+            {
+                var news = newsService.GetNews(id);
+                return View(news);
+            }
+            catch (Exception)
+            {
+                return RedirectToActionPermanent("Index");
+            }
         }
 
         [HttpGet]

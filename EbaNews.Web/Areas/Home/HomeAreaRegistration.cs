@@ -11,31 +11,31 @@ namespace EbaNews.Web.Areas.Home
             context.MapRoute(
                 "",
                 "404",
-                new { area = "Home", controller = "Error", action = "Page404" }
+                new { area = AreaName, controller = "Error", action = "Page404" }
             );
 
             context.MapRoute(
                 "",
                 "error",
-                new { area = "Home", controller = "Error", action = "DefaultError" }
+                new { area = AreaName, controller = "Error", action = "DefaultError" }
             );
 
             context.MapRoute(
                 "",
                 "",
-                new { area = "Home", controller = "Home", action = "Index" }
+                new { area = AreaName, controller = "Home", action = "Index" }
             );
 
             context.MapRoute(
                 "",
                 "news/{id}",
-                new { area = "Home", controller = "Home", action = "News" }
+                new { area = AreaName, controller = "Home", action = "News" }
             );
 
             context.MapRoute(
                 "",
                 "language/change",
-                new { area = "Home", controller = "Home", action = "ChangeLanguage" }
+                new { area = AreaName, controller = "Home", action = "ChangeLanguage" }
             );
         }
     }
