@@ -1,4 +1,4 @@
-﻿angular.module("home", ["ngNotify"]).run(function (ngNotify) {
+﻿angular.module("home", ["ngNotify", "newsItem"]).run(function (ngNotify) {
         ngNotify.config({
             theme: "pure",
             position: "bottom",

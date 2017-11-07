@@ -233,6 +233,8 @@
     <Content Include="Scripts\Areas\Home\app.js" />
     <Content Include="Scripts\Areas\Home\Index\indexController.js" />
     <Content Include="Scripts\Areas\Home\Index\suggestNewsController.js" />
+    <Content Include="Scripts\Areas\Home\Shared\newsItem.html" />
+    <Content Include="Scripts\Areas\Home\Shared\newsItem.js" />
     <Content Include="Scripts\Libs\angular-animate.js" />
     <Content Include="Scripts\Libs\angular-animate.min.js" />
     <Content Include="Scripts\Libs\angular-aria.js" />

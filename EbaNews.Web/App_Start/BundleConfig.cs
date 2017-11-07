@@ -69,8 +69,9 @@ namespace EbaNews.Web
 
         private static BundleCollection RegisterHomeRouteBundles(this BundleCollection bundles)
         {
-            bundles.Add(new Bundle("~/home/index").IncludeDirectory(
-                "~/Scripts/Areas/Home/Index", "*.js", true));
+            bundles.Add(new Bundle("~/home/index")
+                .IncludeDirectory("~/Scripts/Areas/Home/Index", "*.js", true)
+                .IncludeDirectory("~/Scripts/Areas/Home/Shared", "*.js", true));
 
             return bundles;
         }
