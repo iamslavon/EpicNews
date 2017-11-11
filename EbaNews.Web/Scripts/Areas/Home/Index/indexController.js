@@ -1,7 +1,7 @@
 ﻿var app = angular.module("home");
 
 app.controller("indexController",
-    function ($scope, $http, ngNotify) {
+    function ($scope, $http, ngNotify, clipboard) {
         $scope.loading = {
             page: false,
             lazy: false
@@ -25,6 +25,16 @@ app.controller("indexController",
 
         $scope.showMoreButton = function() {
             return $scope.newsList.length < $scope.total;
+        };
+
+        $scope.showCopyButton = function() {
+            return clipboard.supported;
+        };
+
+        $scope.copyToClipboard = function (id) {
+            var link = window.location.href + "news/" + id;
+            clipboard.copyText(link);
+            ngNotify.set("Link was copied to clipboard", "success");
         };
 
         $scope.getNews = function () {

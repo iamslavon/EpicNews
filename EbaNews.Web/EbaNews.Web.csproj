@@ -237,6 +237,7 @@
     <Content Include="Scripts\Libs\angular-animate.min.js" />
     <Content Include="Scripts\Libs\angular-aria.js" />
     <Content Include="Scripts\Libs\angular-aria.min.js" />
+    <Content Include="Scripts\Libs\angular-clipboard.js" />
     <Content Include="Scripts\Libs\angular-cookies.js" />
     <Content Include="Scripts\Libs\angular-cookies.min.js" />
     <Content Include="Scripts\Libs\angular-csp.css" />
