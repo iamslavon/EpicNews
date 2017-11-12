@@ -3,8 +3,8 @@
         <h2 ng-bind="news.Title"></h2>
         <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank">Link to source</a>
         <div>
-            <a ng-click="copyToClipboard(news.Id)" ng-if="showCopyButton()">
-                <i class="fa fa-link" aria-hidden="true"></i>
+            <a href="javascript:void(0)" ng-click="copyToClipboard(news.Id)" ng-if="showCopyButton()">
+                <i class="fa fa-link" aria-hidden="true"></i>&nbsp;Copy link to news
             </a>
         </div>
     </div>
