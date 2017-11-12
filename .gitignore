@@ -4,3 +4,6 @@ packages/
 EbaNews.Services/bin/
 *.sqlite
 EbaNews.Web/ConnectionStrings.config
+.vs/EbaNews/v15/sqlite3/storage.ide
+*.mdf
+*.ldf

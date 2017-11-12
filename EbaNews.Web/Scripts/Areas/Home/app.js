@@ -1,5 +1,5 @@
-﻿angular
-    .module("home", ["ngNotify", "angular-clipboard"])
+angular
+    .module("home", ["ngNotify", "angular-clipboard", "newsItem"])
     .run(function(ngNotify) {
             ngNotify.config({
                 theme: "pure",
