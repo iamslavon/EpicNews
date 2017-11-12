@@ -1,1 +1,6 @@
-﻿<div>Test uuuuu</div>
+﻿<div class="news-wrapper" ng-controller="newsItemController">
+    <div class="news-block">
+        <h2 ng-bind="news.Title"></h2>
+        <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank">Link to source</a>
+    </div>
+</div>

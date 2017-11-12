@@ -326,7 +326,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Api\Models\" />
-    <Folder Include="Areas\Api\Views\News\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>
   <ItemGroup>

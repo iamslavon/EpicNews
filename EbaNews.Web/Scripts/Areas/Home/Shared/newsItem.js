@@ -5,6 +5,9 @@
     .directive("newsItem", function () {
         return {
             restrict: "E",
-            templateUrl: "/Scripts/Areas/Home/Shared/newsItem.html"
+            templateUrl: "/Scripts/Areas/Home/Shared/newsItem.html",
+            scope: {
+                news: "=data"
+            }
         };
     });

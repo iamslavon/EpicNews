@@ -13,7 +13,6 @@ namespace EbaNews.Web
 #endif
             bundles
                 .RegisterHomeBundles()
-                .RegisterHomeRouteBundles()
                 .RegisterAdminBundles()
                 .RegisterAdminRouteBundles();
         }
@@ -28,8 +27,8 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/respond.js",
                 "~/Scripts/Libs/ng-notify.min.js"));
 
-            bundles.Add(new ScriptBundle("~/app/home").Include(
-                "~/Scripts/Areas/Home/app.js"));
+            bundles.Add(new Bundle("~/app/home").IncludeDirectory(
+                "~/Scripts/Areas/Home", "*.js", true));
 
             bundles.Add(new StyleBundle("~/css/home").Include(
                 "~/Content/bootstrap.min.css",
@@ -66,15 +65,6 @@ namespace EbaNews.Web
         }
 
         // Register scripts for pages here
-
-        private static BundleCollection RegisterHomeRouteBundles(this BundleCollection bundles)
-        {
-            bundles.Add(new Bundle("~/home/index")
-                .IncludeDirectory("~/Scripts/Areas/Home/Index", "*.js", true)
-                .IncludeDirectory("~/Scripts/Areas/Home/Shared", "*.js", true));
-
-            return bundles;
-        }
 
         private static BundleCollection RegisterAdminRouteBundles(this BundleCollection bundles)
         {
