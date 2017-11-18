@@ -107,6 +107,11 @@
       <DependentUpon>NewsControllerStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Areas\Home\FrontStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontStrings.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Web\Areas\Admin\Controllers\HomeStrings.resx">
@@ -160,6 +165,10 @@
     <EmbeddedResource Include="Web\Areas\Api\Controllers\NewsControllerStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NewsControllerStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Home\FrontStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿var app = angular.module("home");
 
 app.controller("indexController",
-    function ($scope, $http, ngNotify) {
+    function ($scope, $http, ngNotify, translate) {
         $scope.loading = {
             page: false,
             lazy: false
@@ -43,7 +43,7 @@ app.controller("indexController",
                         $scope.stopLoading();
                     },
                     function(error) {
-                        ngNotify.set("Something went wrong", "error");
+                        ngNotify.set(translate.SomethingWentWrong, "error");
                     });
         };
 

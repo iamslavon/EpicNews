@@ -184,6 +184,7 @@
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\NewsController.cs" />
     <Compile Include="Areas\Home\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Home\Controllers\FrontLocalizeController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -309,6 +310,7 @@
     <Content Include="Scripts\Libs\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Libs\respond.min.js" />
     <Content Include="Scripts\Libs\_references.js" />
+    <Content Include="Scripts\Services\TranslateService.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

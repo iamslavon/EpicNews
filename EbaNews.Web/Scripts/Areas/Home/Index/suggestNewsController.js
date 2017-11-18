@@ -1,7 +1,7 @@
 ﻿var app = angular.module("home");
 
 app.controller("suggestNewsController",
-    function ($scope, $http, ngNotify) {
+    function ($scope, $http, ngNotify, translate) {
         $scope.news = {};
 
         $scope.suggest = function() {
@@ -9,10 +9,10 @@ app.controller("suggestNewsController",
                 .then(
                     function() {
                         window.$("#suggest-modal").modal("hide");
-                        ngNotify.set("Your news successfully suggested", "success");
+                        ngNotify.set(translate.YourNewsSuccessfullySuggested, "success");
                     },
                     function(error) {
-                        ngNotify.set("Something went wrong", "error");
+                        ngNotify.set(translate.SomethingWentWrong, "error");
                     });
         };
     });

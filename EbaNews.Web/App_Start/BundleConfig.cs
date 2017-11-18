@@ -28,8 +28,9 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/ng-notify.min.js",
                 "~/Scripts/Libs/angular-clipboard.js"));
 
-            bundles.Add(new Bundle("~/app/home").IncludeDirectory(
-                "~/Scripts/Areas/Home", "*.js", true));
+            bundles.Add(new Bundle("~/app/home")
+                .IncludeDirectory("~/Scripts/Areas/Home", "*.js", true)
+                .IncludeDirectory("~/Scripts/Services", "*.js", true));
 
             bundles.Add(new StyleBundle("~/css/home").Include(
                 "~/Content/bootstrap.min.css",

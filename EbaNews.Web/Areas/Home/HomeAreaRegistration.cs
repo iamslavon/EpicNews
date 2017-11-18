@@ -37,6 +37,12 @@ namespace EbaNews.Web.Areas.Home
                 "language/change",
                 new { area = AreaName, controller = "Home", action = "ChangeLanguage" }
             );
+
+            context.MapRoute(
+                "",
+                "localizedstrings/get",
+                new { area = AreaName, controller = "FrontLocalize", action = "GetLocalizedStrings" }
+            );
         }
     }
 }
