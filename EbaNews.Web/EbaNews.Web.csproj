@@ -260,6 +260,7 @@
     <Content Include="Scripts\Libs\angular-sanitize.js" />
     <Content Include="Scripts\Libs\angular-sanitize.min.js" />
     <Content Include="Scripts\Libs\angular-scenario.js" />
+    <Content Include="Scripts\Libs\angular-socialshare.min.js" />
     <Content Include="Scripts\Libs\angular-touch.js" />
     <Content Include="Scripts\Libs\angular-touch.min.js" />
     <Content Include="Scripts\Libs\angular.js" />

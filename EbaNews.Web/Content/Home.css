@@ -29,3 +29,30 @@
     background-color: #173644;
     border-radius: 15px;
 }
+
+.social-button {
+    border: 2px solid #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #fff;
+    opacity: 0.8;
+    margin-right: 7px;
+}
+
+    .social-button:hover {
+        opacity: 1;
+        cursor: pointer;
+        color: #fdface;
+        border-color: #fdface;
+        text-decoration: none;
+    }
+
+.news-block-link {
+    color: #fff;
+    opacity: 0.8;
+}
+    .news-block-link:hover {
+        color: #fdface;
+        opacity: 1;
+    }
