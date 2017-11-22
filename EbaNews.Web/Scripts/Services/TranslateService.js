@@ -4,7 +4,7 @@
             var self = this;
 
             self.init = function() {
-                $http.get("localizedstrings/get")
+                $http.get(window.location.origin + "/localizedstrings/get")
                     .then(function(response) {
                         Object.assign(self, response.data);
                     });

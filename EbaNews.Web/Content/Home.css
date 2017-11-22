@@ -26,8 +26,27 @@
     padding: 20px 35px;
     color: #fff;
     min-height: 500px;
-    background-color: #173644;
     border-radius: 15px;
+}
+
+.news-block-style-1 {
+    background-color: #173644;
+}
+
+.news-block-style-2 {
+    background-color: #3e1e1e;
+}
+
+.news-block-style-3 {
+    background-color: #3a330c;
+}
+
+.news-block-style-4 {
+    background-color: #13330a;
+}
+
+.news-block-style-5 {
+    background-color: #310a2b;
 }
 
 .social-button {

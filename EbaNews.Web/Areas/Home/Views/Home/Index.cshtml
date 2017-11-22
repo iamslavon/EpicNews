@@ -8,7 +8,9 @@
     @* news container *@
     <div class="news-container" ng-if="!loading.page">
         
-        <news-item data="news" ng-repeat="news in newsList"></news-item>
+        <news-item data="news"
+                   style-name="getClassName($index)"
+                   ng-repeat="news in newsList"></news-item>
 
         <div class="text-center">
             <button ng-if="showMoreButton()"

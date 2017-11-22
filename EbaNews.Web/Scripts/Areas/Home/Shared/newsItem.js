@@ -1,6 +1,5 @@
 ﻿angular.module("newsItem", ["ngNotify", "angular-clipboard", "720kb.socialshare"])
     .controller("newsItemController", function ($scope, clipboard, ngNotify, translate, Socialshare) {
-
         $scope.strings = translate;
 
         $scope.showCopyButton = function() {
@@ -47,7 +46,13 @@
             restrict: "E",
             templateUrl: "/Scripts/Areas/Home/Shared/newsItem.html",
             scope: {
-                news: "=data"
+                news: "=data",
+                styleName: "=?"
+            },
+            link: function (scope, element, attrs) {
+                if (window.angular.isUndefined(scope.styleName)) {
+                    scope.styleName = "news-block-style-" + Math.floor(Math.random() * 5 + 1);
+                }
             }
         };
     });

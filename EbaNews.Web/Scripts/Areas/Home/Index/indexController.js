@@ -2,6 +2,39 @@
 
 app.controller("indexController",
     function ($scope, $http, ngNotify, translate) {
+        var classNames = [
+            "news-block-style-1",
+            "news-block-style-2",
+            "news-block-style-3",
+            "news-block-style-4",
+            "news-block-style-5"
+        ];
+
+        classNames = shuffle(classNames);
+
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        $scope.getClassName = function (index) {
+            return classNames[index % 5];
+        };
+
         $scope.loading = {
             page: false,
             lazy: false

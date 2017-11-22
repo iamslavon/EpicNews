@@ -1,11 +1,10 @@
 ﻿<div class="news-wrapper" ng-controller="newsItemController">
-    <div class="news-block">
+    <div class="news-block {{styleName}}">
         <h2 ng-bind="news.Title"></h2>
         <a class="news-block-link" ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank">Link to source</a>
-        <div class="margin-top-30">
-            <a class="social-button"
-               ng-click="copyToClipboard(news.Id)" 
-               ng-if="showCopyButton()">
+        <div class="margin-top-30" ng-if="showCopyButton()">
+            <a class="social-button" 
+               ng-click="copyToClipboard(news.Id)">
                 <i class="fa fa-link" aria-hidden="true"></i>&nbsp;Copy link
             </a>
             <a class="social-button" 
