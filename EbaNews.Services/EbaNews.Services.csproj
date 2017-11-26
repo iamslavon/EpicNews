@@ -83,6 +83,7 @@
     <Compile Include="Membership\ApplicationUserManager.cs" />
     <Compile Include="NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsService.cs" />
     <Compile Include="SuggestedNewsService.cs" />
   </ItemGroup>
   <ItemGroup>

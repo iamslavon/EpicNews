@@ -1,0 +1,18 @@
+﻿<div class="col-sm-6" ng-controller="newsCountController">
+    <div class="info-block">
+        <h3 class="info-block-header">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;News by Languages
+        </h3>
+        <div class="text-center margin-top-30" ng-if="loading && !error">
+            <i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
+        </div>
+        <div class="text-center margin-top-30" ng-if="error">
+            <h4 class="text-danger"><i class="fa fa-meh-o" aria-hidden="true"></i> Something went wrong...</h4>
+        </div>
+        <div class="info-block-line" ng-repeat="item in statistics" ng-if="!loading && !error">
+            <span>{{item.Language}}: </span>
+            <span class="info-block-value">{{item.Count}}</span>
+            <span class="pull-right info-block-value">{{item.Percentage}}%</span>
+        </div>
+    </div>
+</div>

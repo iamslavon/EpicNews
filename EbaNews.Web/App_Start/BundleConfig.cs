@@ -54,8 +54,9 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/respond.js",
                 "~/Scripts/Libs/ng-notify.min.js"));
 
-            bundles.Add(new ScriptBundle("~/app/admin").Include(
-                "~/Scripts/Areas/Admin/app.js"));
+            bundles.Add(new ScriptBundle("~/app/admin")
+                .Include("~/Scripts/Areas/Admin/app.js")
+                .IncludeDirectory("~/Scripts/Areas/Admin/Shared", "*.js", true));
 
             bundles.Add(new StyleBundle("~/css/admin").Include(
                 "~/Content/bootstrap.min.css",

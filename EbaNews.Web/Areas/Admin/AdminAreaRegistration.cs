@@ -19,6 +19,7 @@ namespace EbaNews.Web.Areas.Admin
             RegisterNewsRoutes(context);
             RegisterLanguageRoutes(context);
             RegisterSuggestedNewsRoutes(context);
+            RegisterStatisticsRoutes(context);
         }
 
         public void RegisterAccountRoutes(AreaRegistrationContext context)
@@ -141,6 +142,15 @@ namespace EbaNews.Web.Areas.Admin
                 name: "",
                 url: "mngmnt/news/suggested/approve",
                 defaults: new { area = AreaName, controller = "SuggestedNews", action = "ApproveNews" }
+            );
+        }
+
+        public void RegisterStatisticsRoutes(AreaRegistrationContext context)
+        {
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/statistics/newsbylanguages",
+                defaults: new { area = AreaName, controller = "Statistics", action = "GetNewsCountByLanguages" }
             );
         }
     }

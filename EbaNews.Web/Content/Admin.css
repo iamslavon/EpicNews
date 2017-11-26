@@ -29,3 +29,25 @@ input.ng-dirty.ng-invalid.ng-touched {
 input.ng-dirty.ng-valid.ng-touched {
     border-left: 5px solid #327d3f;
 }
+
+.info-block {
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    padding: 0 20px 15px;
+    margin-top: 10px;
+    min-height: 200px;
+}
+
+.info-block-line {
+    border-bottom: 1px dashed #d4d4d4;
+    margin-bottom: 10px;
+}
+
+.info-block-header {
+    color: #54719c;
+}
+
+.info-block-value {
+    color: #54719c;
+    font-size: 18px;
+}

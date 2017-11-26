@@ -172,6 +172,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SuggestedNewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\Home\ChangePasswordViewModel.cs" />
@@ -231,6 +232,8 @@
     <Content Include="Areas\Admin\Views\Home\SignUp.cshtml" />
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <Content Include="Scripts\Areas\Admin\app.js" />
+    <Content Include="Scripts\Areas\Admin\Shared\newsCount.html" />
+    <Content Include="Scripts\Areas\Admin\Shared\newsCount.js" />
     <Content Include="Scripts\Areas\Home\app.js" />
     <Content Include="Scripts\Areas\Home\Index\indexController.js" />
     <Content Include="Scripts\Areas\Home\Index\suggestNewsController.js" />
@@ -329,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Statistics\" />
     <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>

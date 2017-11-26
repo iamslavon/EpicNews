@@ -32,6 +32,7 @@ namespace EbaNews.Ioc
             container.Register<INewsService, NewsService>();
             container.Register<ISuggestedNewsService, SuggestedNewsService>();
             container.Register<ILanguageService, LanguageService>();
+            container.Register<IStatisticsService, StatisticsService>();
         }
     }
 }
