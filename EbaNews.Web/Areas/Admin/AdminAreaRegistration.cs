@@ -152,6 +152,12 @@ namespace EbaNews.Web.Areas.Admin
                 url: "mngmnt/statistics/newsbylanguages",
                 defaults: new { area = AreaName, controller = "Statistics", action = "GetNewsCountByLanguages" }
             );
+
+            context.MapRoute(
+                name: "",
+                url: "mngmnt/statistics/suggestednewscount",
+                defaults: new { area = AreaName, controller = "Statistics", action = "GetSuggestedNewsCount" }
+            );
         }
     }
 }

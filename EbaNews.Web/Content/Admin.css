@@ -51,3 +51,8 @@ input.ng-dirty.ng-valid.ng-touched {
     color: #54719c;
     font-size: 18px;
 }
+
+.info-block-big-value {
+    font-size: 65px;
+    color: #54719c;
+}

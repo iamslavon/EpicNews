@@ -6,5 +6,7 @@ namespace EbaNews.Core.Interfaces.Services
     public interface IStatisticsService
     {
         IEnumerable<NewsByLanguageModel> GetNewsCountByLanguages();
+
+        int GetSuggestedNewsCount();
     }
 }

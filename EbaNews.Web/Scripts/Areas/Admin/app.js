@@ -1,4 +1,4 @@
-﻿angular.module("admin", ["ngNotify", "newsCount"])
+﻿angular.module("admin", ["ngNotify", "newsCount", "suggestedNewsCount"])
     .run(function (ngNotify) {
         ngNotify.config({
             theme: "pure",

@@ -232,6 +232,8 @@
     <Content Include="Areas\Admin\Views\Home\SignUp.cshtml" />
     <Content Include="Areas\Admin\Views\News\Index.cshtml" />
     <Content Include="Scripts\Areas\Admin\app.js" />
+    <Content Include="Scripts\Areas\Admin\Shared\suggestedNewsCount.html" />
+    <Content Include="Scripts\Areas\Admin\Shared\suggestedNewsCount.js" />
     <Content Include="Scripts\Areas\Admin\Shared\newsCount.html" />
     <Content Include="Scripts\Areas\Admin\Shared\newsCount.js" />
     <Content Include="Scripts\Areas\Home\app.js" />

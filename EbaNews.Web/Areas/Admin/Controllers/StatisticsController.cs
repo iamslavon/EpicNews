@@ -27,5 +27,19 @@ namespace EbaNews.Web.Areas.Admin.Controllers
                 return InternalError(ex.Message);
             }
         }
+
+        [HttpGet]
+        public ActionResult GetSuggestedNewsCount()
+        {
+            try
+            {
+                var count = statisticsService.GetSuggestedNewsCount();
+                return Json(count, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex.Message);
+            }
+        }
     }
 }
