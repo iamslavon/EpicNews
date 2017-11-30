@@ -158,5 +158,14 @@ namespace EbaNews.Resources.Web.Areas.Admin.Views {
                 return ResourceManager.GetString("Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total news.
+        /// </summary>
+        public static string TotalNews {
+            get {
+                return ResourceManager.GetString("TotalNews", resourceCulture);
+            }
+        }
     }
 }

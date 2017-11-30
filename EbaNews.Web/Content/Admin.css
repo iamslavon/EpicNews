@@ -56,3 +56,7 @@ input.ng-dirty.ng-valid.ng-touched {
     font-size: 65px;
     color: #54719c;
 }
+
+.table-header {
+    background-color: #ececec;
+}
