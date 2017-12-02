@@ -1,4 +1,4 @@
-﻿namespace EbaNews.Web.Areas.Admin.Models.News
+﻿namespace EbaNews.Core.Filters
 {
     public class GetNewsFilter
     {
@@ -7,5 +7,7 @@
         public int PageSize { get; set; }
 
         public int? LanguageId { get; set; }
+
+        public string SearchPhrase { get; set; }
     }
 }

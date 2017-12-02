@@ -178,7 +178,6 @@
     <Compile Include="Areas\Admin\Models\Home\ChangePasswordViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\LoginViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Home\SignUpViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\News\GetNewsFilter.cs" />
     <Compile Include="Areas\Admin\Models\News\NewsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\SuggestedNews\SuggestedNewsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Users\SwitchRoleViewModel.cs" />

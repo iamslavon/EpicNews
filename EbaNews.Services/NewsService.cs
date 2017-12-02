@@ -4,6 +4,7 @@ using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
 using System.Linq;
+using EbaNews.Core.Filters;
 
 namespace EbaNews.Services
 {
@@ -16,18 +17,19 @@ namespace EbaNews.Services
             this.repository = repository;
         }
 
-        public PagedResponse<News> GetAllNews(int page, int pageSize, int? languageId)
+        public PagedResponse<News> GetAllNews(GetNewsFilter filter)
         {
             var query = repository
                 .GetAll()
-                .Where(x => x.Language.Id == languageId || languageId == null);
+                .Where(x => x.Language.Id == filter.LanguageId || filter.LanguageId == null)
+                .Where(x => x.Title.Contains(filter.SearchPhrase) || filter.SearchPhrase == null);
 
             var total = query.Count();
 
             var news = query
                 .OrderByDescending(x => x.Id)
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
+                .Skip((filter.Page - 1) * filter.PageSize)
+                .Take(filter.PageSize)
                 .ToList();
 
             return new PagedResponse<News>

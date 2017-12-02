@@ -9,8 +9,15 @@ app.controller("newsController", function ($scope, $http, ngNotify) {
     $scope.editingNews = {};
     $scope.filter = {
         page: 1,
-        pageSize: 10
+        pageSize: 10,
+        searchPhrase: ""
     };
+
+    $scope.$watch("filter.searchPhrase", function (nVal, oVal) {
+        if (nVal !== oVal) {
+            $scope.getNews();
+        }
+    });
 
     $scope.totalPages = function () {
         return Math.ceil($scope.total / $scope.filter.pageSize);
@@ -56,11 +63,7 @@ app.controller("newsController", function ($scope, $http, ngNotify) {
         $scope.startLoading();
 
         var request = {
-            params: {
-                page: $scope.filter.page,
-                pageSize: $scope.filter.pageSize,
-                languageId: $scope.filter.language
-            }
+            params: $scope.filter
         };
 
         $http.get("/mngmnt/news/get", request)

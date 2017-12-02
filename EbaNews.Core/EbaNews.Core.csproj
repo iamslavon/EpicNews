@@ -60,6 +60,7 @@
     <Compile Include="Entities\NewsBase.cs" />
     <Compile Include="Entities\SuggestedNews.cs" />
     <Compile Include="Enums\SuggestedNewsStatus.cs" />
+    <Compile Include="Filters\GetNewsFilter.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\Services\ILanguageService.cs" />

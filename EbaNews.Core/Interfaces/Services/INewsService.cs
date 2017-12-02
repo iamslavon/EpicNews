@@ -1,11 +1,12 @@
 ﻿using EbaNews.Core.Entities;
+using EbaNews.Core.Filters;
 using EbaNews.Core.Responses;
 
 namespace EbaNews.Core.Interfaces.Services
 {
     public interface INewsService
     {
-        PagedResponse<News> GetAllNews(int page, int pageSize, int? languageId);
+        PagedResponse<News> GetAllNews(GetNewsFilter filter);
 
         PagedResponse<News> GetNewsList(int start, int count, string culture);
 

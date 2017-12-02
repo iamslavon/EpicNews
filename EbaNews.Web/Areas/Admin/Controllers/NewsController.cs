@@ -7,6 +7,7 @@ using EbaNews.Web.Areas.Admin.Models.News;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using EbaNews.Core.Filters;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
 {
@@ -31,7 +32,7 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         {
             try
             {
-                var serviceResponse = newsService.GetAllNews(filter.Page, filter.PageSize, filter.LanguageId);
+                var serviceResponse = newsService.GetAllNews(filter);
 
                 var response = new PagedResponse<NewsViewModel>
                 {
