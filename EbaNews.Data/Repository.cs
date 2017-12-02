@@ -33,7 +33,7 @@ namespace EbaNews.Data
             return dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
             return dbSet;
         }

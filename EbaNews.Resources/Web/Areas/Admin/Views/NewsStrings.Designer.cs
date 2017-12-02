@@ -70,6 +70,15 @@ namespace EbaNews.Resources.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All languages.
+        /// </summary>
+        public static string AllLanguages {
+            get {
+                return ResourceManager.GetString("AllLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {

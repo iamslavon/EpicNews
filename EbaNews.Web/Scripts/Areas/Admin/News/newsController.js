@@ -4,14 +4,16 @@ app.controller("newsController", function ($scope, $http, ngNotify) {
     $scope.newsList = [];
     $scope.languages = [];
     $scope.total = 0;
-    $scope.page = 1;
-    $scope.pageSize = 10;
     $scope.loading = false;
     $scope.newNews = {};
     $scope.editingNews = {};
+    $scope.filter = {
+        page: 1,
+        pageSize: 10
+    };
 
     $scope.totalPages = function () {
-        return Math.ceil($scope.total / $scope.pageSize);
+        return Math.ceil($scope.total / $scope.filter.pageSize);
     };
 
     $scope.pages = function () {
@@ -30,8 +32,8 @@ app.controller("newsController", function ($scope, $http, ngNotify) {
         $scope.loading = false;
     };
 
-    $scope.setPage = function (data) {
-        $scope.page = data;
+    $scope.setPage = function (page) {
+        $scope.filter.page = page;
         $scope.getNews();
     };
 
@@ -55,8 +57,9 @@ app.controller("newsController", function ($scope, $http, ngNotify) {
 
         var request = {
             params: {
-                page: $scope.page,
-                pageSize: $scope.pageSize
+                page: $scope.filter.page,
+                pageSize: $scope.filter.pageSize,
+                languageId: $scope.filter.language
             }
         };
 

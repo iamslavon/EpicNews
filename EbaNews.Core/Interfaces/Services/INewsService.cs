@@ -5,7 +5,7 @@ namespace EbaNews.Core.Interfaces.Services
 {
     public interface INewsService
     {
-        PagedResponse<News> GetAllNews(int page, int pageSize);
+        PagedResponse<News> GetAllNews(int page, int pageSize, int? languageId);
 
         PagedResponse<News> GetNewsList(int start, int count, string culture);
 

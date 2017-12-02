@@ -1,6 +1,7 @@
 ﻿using EbaNews.Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EbaNews.Core.Interfaces
 {
@@ -12,7 +13,7 @@ namespace EbaNews.Core.Interfaces
 
         T Get(object id);
 
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
 
         IEnumerable<T> GetAllBy(Func<T, bool> predicateFunc);
 

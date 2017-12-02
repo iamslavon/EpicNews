@@ -27,11 +27,11 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetNews(int page, int pageSize)
+        public ActionResult GetNews(GetNewsFilter filter)
         {
             try
             {
-                var serviceResponse = newsService.GetAllNews(page, pageSize);
+                var serviceResponse = newsService.GetAllNews(filter.Page, filter.PageSize, filter.LanguageId);
 
                 var response = new PagedResponse<NewsViewModel>
                 {

@@ -16,12 +16,15 @@ namespace EbaNews.Services
             this.repository = repository;
         }
 
-        public PagedResponse<News> GetAllNews(int page, int pageSize)
+        public PagedResponse<News> GetAllNews(int page, int pageSize, int? languageId)
         {
-            var total = repository.GetAll().Count();
-
-            var news = repository
+            var query = repository
                 .GetAll()
+                .Where(x => x.Language.Id == languageId || languageId == null);
+
+            var total = query.Count();
+
+            var news = query
                 .OrderByDescending(x => x.Id)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
