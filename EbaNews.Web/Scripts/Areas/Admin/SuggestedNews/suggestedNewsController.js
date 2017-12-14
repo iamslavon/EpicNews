@@ -75,14 +75,15 @@ app.controller("suggestedNewsController", function ($scope, $http, ngNotify) {
 
     $scope.openApproveModal = function (news) {
         $scope.getLanguages();
-        $scope.approvingNews = news;
+        angular.copy(news, $scope.approvingNews);
         window.$("#approve-modal").modal("show");
     };
 
     $scope.approveNews = function () {
         var data = {
             newsId: $scope.approvingNews.Id,
-            languageId: $scope.approvingNews.Language.Id
+            languageId: $scope.approvingNews.Language.Id,
+            title: $scope.approvingNews.Title
         };
 
         $http.post("/mngmnt/news/suggested/approve", data)

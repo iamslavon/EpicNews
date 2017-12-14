@@ -115,6 +115,15 @@ namespace EbaNews.Resources.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Suggest News.
+        /// </summary>
+        public static string SuggestNewsPopupTitle {
+            get {
+                return ResourceManager.GetString("SuggestNewsPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {

@@ -60,11 +60,11 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult ApproveNews(int newsId, int languageId)
+        public ActionResult ApproveNews(int newsId, int languageId, string title)
         {
             try
             {
-                suggestedNewsService.ApproveSuggestedNews(newsId, languageId);
+                suggestedNewsService.ApproveSuggestedNews(newsId, languageId, title);
                 return Ok();
             }
             catch (Exception ex)

@@ -9,8 +9,10 @@ namespace EbaNews.Core.Interfaces.Services
 
         int AddSuggestedNews(SuggestedNews news);
 
-        void ApproveSuggestedNews(int newsId, int languageId);
+        void ApproveSuggestedNews(int newsId, int languageId, string title);
 
         void DeclineSuggestedNews(int id);
+
+        string TryGetTitleFromUrl(string url);
     }
 }

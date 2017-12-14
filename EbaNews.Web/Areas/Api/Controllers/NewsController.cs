@@ -62,13 +62,14 @@ namespace EbaNews.Web.Areas.Api.Controllers
         [HttpPost]
         public ActionResult SuggestNews(SuggestedNews news)
         {
-            if (news.Title == null || news.LinkToArticle == null)
+            if (news.LinkToArticle == null)
             {
                 return new HttpStatusCodeResult(422, Strings.ParameterMissed);
             }
 
             try
             {
+                news.Title = suggestedNewsService.TryGetTitleFromUrl(news.LinkToArticle);
                 suggestedNewsService.AddSuggestedNews(news);
                 return new HttpStatusCodeResult(200);
             }
