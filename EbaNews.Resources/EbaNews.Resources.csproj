@@ -41,20 +41,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Web\Areas\Admin\Controllers\HomeStrings.uk.Designer.cs">
+      <DependentUpon>HomeStrings.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Controllers\HomeStrings.ru.Designer.cs">
+      <DependentUpon>HomeStrings.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Web\Areas\Admin\Controllers\HomeStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Models\ChangePasswordStrings.uk.Designer.cs">
+      <DependentUpon>ChangePasswordStrings.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Models\ChangePasswordStrings.ru.Designer.cs">
+      <DependentUpon>ChangePasswordStrings.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Web\Areas\Admin\Models\ChangePasswordStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePasswordStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Web\Areas\Admin\Models\LoginViewModelStrings.uk.Designer.cs">
+      <DependentUpon>LoginViewModelStrings.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Models\LoginViewModelStrings.ru.Designer.cs">
+      <DependentUpon>LoginViewModelStrings.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Web\Areas\Admin\Models\LoginViewModelStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginViewModelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Models\SignUpStrings.uk.Designer.cs">
+      <DependentUpon>SignUpStrings.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Areas\Admin\Models\SignUpStrings.ru.Designer.cs">
+      <DependentUpon>SignUpStrings.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Web\Areas\Admin\Models\SignUpStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,17 +154,49 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Web\Areas\Admin\Controllers\HomeStrings.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomeStrings.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Controllers\HomeStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomeStrings.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Web\Areas\Admin\Controllers\HomeStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\ChangePasswordStrings.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordStrings.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\ChangePasswordStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordStrings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Web\Areas\Admin\Models\ChangePasswordStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChangePasswordStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\LoginViewModelStrings.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginViewModelStrings.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\LoginViewModelStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginViewModelStrings.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Web\Areas\Admin\Models\LoginViewModelStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginViewModelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\SignUpStrings.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SignUpStrings.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Admin\Models\SignUpStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SignUpStrings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Web\Areas\Admin\Models\SignUpStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
