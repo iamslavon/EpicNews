@@ -10,6 +10,10 @@
             return window.location.origin + "/news/" + id;
         };
 
+        $scope.convertDate = function (date) {
+            return moment(date).format("DD.MM.YYYY");
+        };
+
         $scope.copyToClipboard = function(id) {
             var link = $scope.getNewsLink(id);
             clipboard.copyText(link);
@@ -51,7 +55,7 @@
             },
             link: function (scope, element, attrs) {
                 if (window.angular.isUndefined(scope.styleName)) {
-                    scope.styleName = "news-block-style-" + Math.floor(Math.random() * 5 + 1);
+                    scope.styleName = "style-" + Math.floor(Math.random() * 5 + 1);
                 }
             }
         };

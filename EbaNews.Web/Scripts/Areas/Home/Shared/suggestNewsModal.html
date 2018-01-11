@@ -1,0 +1,22 @@
+﻿<div class="suggest-popup">
+    <h2>SUGGEST NEWS</h2>
+    <form name="suggestModalForm">
+        <div class="input-box">
+            <input type="text"
+                   placeholder="Insert the source link"
+                   ng-model="news.LinkToArticle"
+                   name="addNewsLink"
+                   ng-minlength="5"
+                   required>
+            <span class="icon-link"></span>
+        </div>
+        <button class="btn"
+                ng-click="suggest()"
+                ng-class="{ disabled: suggestModalForm.$invalid }">
+            SUGGEST
+        </button>
+    </form>
+    <a href="javascript:void(0);" class="close suggest-opener" ng-click="closeModal()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
+</div>

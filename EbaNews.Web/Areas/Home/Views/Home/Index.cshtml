@@ -1,24 +1,24 @@
-﻿<div class="container" ng-controller="indexController">
+﻿@using strings = EbaNews.Resources.Web.Areas.Home.IndexStrings
+
+<div ng-controller="indexController">
     @* loader *@
-    <div class="text-center margin-top-30" ng-if="loading.page">
-        <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-        <span class="sr-only">Loading</span>
+    <div class="loader" ng-if="loading.page">
+        <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+        <span class="sr-only">@strings.Loading</span>
     </div>
     
     @* news container *@
-    <div class="news-container" ng-if="!loading.page">
-        
-        <news-item data="news"
-                   style-name="getClassName($index)"
-                   ng-repeat="news in newsList"></news-item>
-
-        <div class="text-center">
-            <button ng-if="showMoreButton()"
-                    ng-click="lazyLoad()"
-                    class="btn btn-default">
-                <i class="fa fa-refresh fa-fw" ng-class="{'fa-spin': loading.lazy}"></i> Load more
+    <div ng-if="!loading.page">
+        <div class="posts">
+            <news-item data="news"
+                       style-name="getClassName($index)"
+                       ng-repeat="news in newsList"></news-item>
+        </div>
+        <div class="more-box" ng-if="showMoreButton()">
+            <button class="btn" ng-click="lazyLoad()">
+                <span ng-if="!loading.lazy">@strings.LoadMore</span>
+                <span ng-if="loading.lazy">@strings.Loading</span>
             </button>
         </div>
     </div>
 </div>
-

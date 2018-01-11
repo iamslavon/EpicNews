@@ -1,61 +1,45 @@
-﻿<!DOCTYPE html>
+﻿@using strings = EbaNews.Resources.Web.Areas.Home.LayoutStrings;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EbaNews</title>
+    <title>Epic News</title>
     @Styles.Render("~/css/home")
     @Scripts.Render("~/libs/home")
     @Scripts.Render("~/app/home")
 </head>
-<body ng-app="home">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("EbaNews", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <button class="btn btn-default navbar-btn " data-toggle="modal" data-target="#suggest-modal">Suggest</button>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "en", returnUrl = Request.Url })">Eng</a></li> 
-                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "ru", returnUrl = Request.Url })">Рус</a></li> 
-                    <li><a href="@Url.Action("ChangeLanguage", "Home", new { language = "uk", returnUrl = Request.Url })">Укр</a></li> 
+<body ng-app="home" ng-controller="mainController">
+    <div id="wrapper">
+        <header id="header">
+            <div class="container">
+                <strong class="logo"><a href="@Url.Action("Index", "Home")"><img src="/Content/images/logo.png" alt="Epic News..."><span>@strings.SiteMoto</span></a></strong>
+                <div class="btns">
+                    <button class="btn about-opener" ng-click="openAboutUsModal()">@strings.AboutUs</button>
+                    <button class="btn suggest-opener" ng-click="openSuggestNewsModal()">@strings.SuggestNews</button>
+                </div>
+                <lang-selector></lang-selector>
+            </div>
+        </header>
+
+        <main id="main">
+            @RenderBody()
+        </main>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="box">
+                    <h2><small>@strings.DidYouLikeTheNews</small>@strings.YouCanAddYour</h2>
+                    <a href="javascript:void(0);" ng-click="openSuggestNewsModal()" class="btn suggest-opener">@strings.SuggestNews</a>
+                </div>
+                <ul class="list">
+                    @*<li><a href="#"><span class="icon-mail"></span>epicnews.com</a></li>*@
+                    <li><a href="javascript:void(0);" ng-click="openAboutUsModal()" class="about-opener">@strings.AboutUsFooter</a></li>
                 </ul>
             </div>
-        </div>
+        </footer>
     </div>
-
-<div class="container body-content">
-    @RenderBody()
-</div>
-    
-<!-- Suggest modal -->
-<div id="suggest-modal" class="modal fade" role="dialog" ng-controller="suggestNewsController">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">Suggest News</h4>
-                <form name="suggestModalForm" class="margin-top-20">
-                    <div class="form-group">
-                        <input ng-model="news.LinkToArticle"
-                               name="addNewsLink"
-                               class="form-control"
-                               type="text"
-                               placeholder="Link to source"
-                               ng-minlength="5"
-                               required />
-                    </div>
-                </form>
-                <button type="button"
-                        class="btn btn-primary"
-                        ng-click="suggest()"
-                        ng-class="{ disabled: suggestModalForm.$invalid }">
-                    Suggest
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>

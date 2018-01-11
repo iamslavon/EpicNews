@@ -1,5 +1,6 @@
 angular
-    .module("home", ["ngNotify", "angular-clipboard", "newsItem", "translateService"])
+    .module("home",
+        ["ngNotify", "angular-clipboard", "newsItem", "langSelector", "translateService", "angularModalService"])
     .run(function(ngNotify) {
             ngNotify.config({
                 theme: "pure",
@@ -9,5 +10,25 @@ angular
                 button: true,
                 html: false
             });
+        }
+    )
+    .controller("mainController",
+        function($scope, $http, ngNotify, translate, ModalService) {
+
+            $scope.openAboutUsModal = function() {
+                ModalService.showModal({
+                    templateUrl: "/Scripts/Areas/Home/Shared/aboutUsModal.html",
+                    controller: "aboutUsController",
+                    bodyClass: "about-active"
+                });
+            };
+
+            $scope.openSuggestNewsModal = function () {
+                ModalService.showModal({
+                    templateUrl: "/Scripts/Areas/Home/Shared/suggestNewsModal.html",
+                    controller: "suggestNewsController",
+                    bodyClass: "suggest-active"
+                });
+            };
         }
     );

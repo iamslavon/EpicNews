@@ -3,11 +3,11 @@
 app.controller("indexController",
     function ($scope, $http, ngNotify, translate) {
         var classNames = [
-            "news-block-style-1",
-            "news-block-style-2",
-            "news-block-style-3",
-            "news-block-style-4",
-            "news-block-style-5"
+            "style-1",
+            "style-2",
+            "style-3",
+            "style-4",
+            "style-5"
         ];
 
         classNames = shuffle(classNames);
@@ -41,7 +41,7 @@ app.controller("indexController",
         };
         $scope.newsList = [];
         $scope.total = 0;
-        $scope.pageSize = 2;
+        $scope.pageSize = 5;
 
         $scope.startLoading = function (lazy) {
             if (lazy) {

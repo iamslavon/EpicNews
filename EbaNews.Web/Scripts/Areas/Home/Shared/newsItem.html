@@ -1,20 +1,15 @@
-﻿<div class="news-wrapper" ng-controller="newsItemController">
-    <div class="news-block {{styleName}}">
+﻿<div class="post {{styleName}}" ng-controller="newsItemController">
+    <div class="frame">
+        <div class="meta"><span class="date" ng-bind="convertDate(news.PublicationDate)"></span><span><span class="icon-visibility"></span>{{news.Views}}</span></div>
         <h2 ng-bind="news.Title"></h2>
-        <a class="news-block-link" ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank">Link to source</a>
-        <div class="margin-top-30" ng-if="showCopyButton()">
-            <a class="social-button" 
-               ng-click="copyToClipboard(news.Id)">
-                <i class="fa fa-link" aria-hidden="true"></i>&nbsp;Copy link
-            </a>
-            <a class="social-button" 
-               ng-click="shareToTwitter(news)">
-                <i class="fa fa-twitter" aria-hidden="true"></i> Twitter
-            </a>
-            <a class="social-button" 
-               ng-click="shareToTelegram(news)">
-                <i class="fa fa-telegram" aria-hidden="true"></i> Telegram
-            </a>
+        <div class="bottom-row">
+            <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" class="btn">ЧИТАТЬ В ИСТОЧНИКЕ</a>
+            <ul class="social">
+                <li><a ng-click="shareToTelegram(news)"><span class="icon-telegram"></span></a></li>
+                <!--<li><a href="#"><span class="icon-facebook"></span></a></li>-->
+                <li><a ng-click="shareToTwitter(news)"><span class="icon-twitter"></span></a></li>
+                <li ng-if="showCopyButton()"><a ng-click="copyToClipboard(news.Id)"><span class="icon-link"></span></a></li>
+            </ul>
         </div>
     </div>
 </div>

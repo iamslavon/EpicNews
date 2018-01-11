@@ -23,18 +23,19 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/jquery-3.1.1.min.js",
                 "~/Scripts/Libs/moment.min.js",
                 "~/Scripts/Libs/angular.min.js",
+                "~/Scripts/Libs/angular-cookies.min.js",
                 "~/Scripts/Libs/bootstrap.min.js",
                 "~/Scripts/Libs/respond.js",
                 "~/Scripts/Libs/ng-notify.min.js",
                 "~/Scripts/Libs/angular-clipboard.js",
-                "~/Scripts/Libs/angular-socialshare.min.js"));
+                "~/Scripts/Libs/angular-socialshare.min.js",
+                "~/Scripts/Libs/angular-modal-service.js"));
 
             bundles.Add(new Bundle("~/app/home")
                 .IncludeDirectory("~/Scripts/Areas/Home", "*.js", true)
                 .IncludeDirectory("~/Scripts/Services", "*.js", true));
 
             bundles.Add(new StyleBundle("~/css/home").Include(
-                "~/Content/bootstrap.min.css",
                 "~/Content/font-awesome.min.css",
                 "~/Content/Home.css",
                 "~/Content/shared.css",
