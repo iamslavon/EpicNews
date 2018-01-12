@@ -123,4 +123,7 @@
   <data name="LoadMore" xml:space="preserve">
     <value>ХОЧУ ЕЩЁ</value>
   </data>
+  <data name="GoToOtherNews" xml:space="preserve">
+    <value>К ДРУГИМ НОВОСТЯМ</value>
+  </data>
 </root>

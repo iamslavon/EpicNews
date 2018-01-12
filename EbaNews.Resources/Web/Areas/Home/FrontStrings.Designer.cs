@@ -61,6 +61,42 @@ namespace EbaNews.Resources.Web.Areas.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        /// </summary>
+        public static string AboutUsPopupText {
+            get {
+                return ResourceManager.GetString("AboutUsPopupText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ABOUT US.
+        /// </summary>
+        public static string AboutUsPopupTitle {
+            get {
+                return ResourceManager.GetString("AboutUsPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SOURCE.
+        /// </summary>
+        public static string GoToSource {
+            get {
+                return ResourceManager.GetString("GoToSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert the link.
+        /// </summary>
+        public static string InsertTheLink {
+            get {
+                return ResourceManager.GetString("InsertTheLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Link was copied to clipboard.
         /// </summary>
         public static string LinkCopiedToClipboard {
@@ -75,6 +111,24 @@ namespace EbaNews.Resources.Web.Areas.Home {
         public static string SomethingWentWrong {
             get {
                 return ResourceManager.GetString("SomethingWentWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SUGGEST.
+        /// </summary>
+        public static string Suggest {
+            get {
+                return ResourceManager.GetString("Suggest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SUGGEST NEWS.
+        /// </summary>
+        public static string SuggestNews {
+            get {
+                return ResourceManager.GetString("SuggestNews", resourceCulture);
             }
         }
         

@@ -3,7 +3,7 @@
         <div class="meta"><span class="date" ng-bind="convertDate(news.PublicationDate)"></span><span><span class="icon-visibility"></span>{{news.Views}}</span></div>
         <h2 ng-bind="news.Title"></h2>
         <div class="bottom-row">
-            <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" class="btn">ЧИТАТЬ В ИСТОЧНИКЕ</a>
+            <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" class="btn" ng-bind="strings.GoToSource"></a>
             <ul class="social">
                 <li><a ng-click="shareToTelegram(news)"><span class="icon-telegram"></span></a></li>
                 <!--<li><a href="#"><span class="icon-facebook"></span></a></li>-->

@@ -61,6 +61,15 @@ namespace EbaNews.Resources.Web.Areas.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GO TO OTHER NEWS.
+        /// </summary>
+        public static string GoToOtherNews {
+            get {
+                return ResourceManager.GetString("GoToOtherNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK WAIT....
         /// </summary>
         public static string Loading {

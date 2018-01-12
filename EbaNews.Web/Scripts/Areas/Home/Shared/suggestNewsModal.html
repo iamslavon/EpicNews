@@ -1,9 +1,9 @@
 ﻿<div class="suggest-popup">
-    <h2>SUGGEST NEWS</h2>
+    <h2 ng-bind="strings.SuggestNews"></h2>
     <form name="suggestModalForm">
         <div class="input-box">
             <input type="text"
-                   placeholder="Insert the source link"
+                   placeholder="{{strings.InsertTheLink}}"
                    ng-model="news.LinkToArticle"
                    name="addNewsLink"
                    ng-minlength="5"
@@ -12,8 +12,8 @@
         </div>
         <button class="btn"
                 ng-click="suggest()"
-                ng-class="{ disabled: suggestModalForm.$invalid }">
-            SUGGEST
+                ng-class="{ disabled: suggestModalForm.$invalid }"
+                ng-bind="strings.Suggest">
         </button>
     </form>
     <a href="javascript:void(0);" class="close suggest-opener" ng-click="closeModal()">

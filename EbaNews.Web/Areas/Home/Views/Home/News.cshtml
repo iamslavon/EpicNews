@@ -1,8 +1,9 @@
-﻿@model EbaNews.Core.Entities.News
+﻿@using strings = EbaNews.Resources.Web.Areas.Home.IndexStrings
+@model EbaNews.Core.Entities.News
 
 <div class="posts">
     <news-item data="@Newtonsoft.Json.JsonConvert.SerializeObject(Model)"></news-item>
 </div>
 <div class="more-box">
-    <a href="/" class="btn big-btn">GO TO OTHER NEWS &nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+    <a href="/" class="btn big-btn">@strings.GoToOtherNews&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 </div>
