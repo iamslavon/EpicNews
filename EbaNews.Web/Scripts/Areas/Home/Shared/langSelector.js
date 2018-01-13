@@ -1,27 +1,51 @@
 ﻿angular.module("langSelector", ["ngCookies"])
     .controller("langSelectorController", function ($scope, $cookies) {
-        $scope.language = "";
+        $scope.languages = [
+            {
+                culture: "en",
+                text: "EN"
+            },
+            {
+                culture: "ru",
+                text: "RU"
+            },
+            {
+                culture: "uk",
+                text: "UA"
+            }
+        ];
 
-        $scope.onLangSelect = function () {
-            var url = window.location.origin + "/language/change?language=" + $scope.language + "&returnUrl=" + window.location.href;
+        $scope.language = {};
+        $scope.opened = false;
+
+        $scope.langSelect = function (lang) {
+            var url = window.location.origin + "/language/change?language=" + lang + "&returnUrl=" + window.location.href;
             window.location.href = url;
         };
 
+        $scope.getLangOptions = function() {
+            return $scope.languages.filter(function(lang) {
+                return lang.culture !== $scope.language.culture;
+            });
+        };
+
         $scope.getCurrentLanguage = function() {
-            $scope.language = $cookies.get("EpicNews_culture");
+            var culture = $cookies.get("EpicNews_culture");
+
+            $scope.language = $scope.languages.filter(function (lang) {
+                return lang.culture === culture;
+            })[0];
         };
 
         $scope.getCurrentLanguage();
+
+        $scope.open = function() {
+            $scope.opened = !$scope.opened;
+        };
     })
     .directive("langSelector", function () {
         return {
             restrict: "E",
-            templateUrl: "/Scripts/Areas/Home/Shared/langSelector.html",
-            scope: {
-                
-            },
-            link: function (scope, element, attrs) {
-                
-            }
+            templateUrl: "/Scripts/Areas/Home/Shared/langSelector.html"
         };
     });

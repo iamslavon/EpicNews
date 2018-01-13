@@ -147,6 +147,16 @@
       <DependentUpon>NewsControllerStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Areas\Home\FrontStrings.uk.Designer.cs">
+      <DependentUpon>FrontStrings.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Areas\Home\FrontStrings.ru.Designer.cs">
+      <DependentUpon>FrontStrings.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Web\Areas\Home\FrontStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +277,14 @@
     <EmbeddedResource Include="Web\Areas\Api\Controllers\NewsControllerStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NewsControllerStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Home\FrontStrings.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontStrings.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Areas\Home\FrontStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrontStrings.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Web\Areas\Home\FrontStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

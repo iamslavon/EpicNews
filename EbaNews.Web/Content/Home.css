@@ -749,6 +749,15 @@ input[type="submit"] {
         position: absolute;
         right: 10px;
         top: 17px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #header .lang li {
+        float: right;
+        margin: 0 10px;
+        cursor: pointer;
     }
 
 #main {

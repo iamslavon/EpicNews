@@ -1,8 +1,10 @@
-﻿<div class="lang" ng-controller="langSelectorController">
-    <select ng-model="language"
-            ng-change="onLangSelect()">
-        <option value="en">Eng</option>
-        <option value="ru">Рус</option>
-        <option value="uk">Укр</option>
-    </select>
+﻿<div ng-controller="langSelectorController">
+    <ul class="lang">
+        <li ng-click="open()">
+            <span ng-bind="language.text"></span>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+        </li>
+        <li ng-repeat="option in getLangOptions()" ng-if="opened" ng-click="langSelect(option.culture)">
+            <span ng-bind="option.text"></span>
+        </li>
+    </ul>
 </div>
