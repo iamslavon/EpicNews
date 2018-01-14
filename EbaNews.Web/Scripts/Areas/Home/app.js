@@ -18,16 +18,14 @@ angular
             $scope.openAboutUsModal = function() {
                 ModalService.showModal({
                     templateUrl: "/Scripts/Areas/Home/Shared/aboutUsModal.html",
-                    controller: "aboutUsController",
-                    bodyClass: "about-active"
+                    controller: "aboutUsController"
                 });
             };
 
             $scope.openSuggestNewsModal = function () {
                 ModalService.showModal({
                     templateUrl: "/Scripts/Areas/Home/Shared/suggestNewsModal.html",
-                    controller: "suggestNewsController",
-                    bodyClass: "suggest-active"
+                    controller: "suggestNewsController"
                 });
             };
         }

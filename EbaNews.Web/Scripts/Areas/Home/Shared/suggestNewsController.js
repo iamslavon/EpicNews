@@ -22,7 +22,8 @@ app.controller("suggestNewsController",
                     });
         };
 
-        $scope.closeModal = function() {
+        $scope.closeModal = function(event) {
+            if (event && event.target !== event.currentTarget) return;
             close();
         };
     });

@@ -6,7 +6,8 @@
             text: translate.AboutUsPopupText
         };
 
-        $scope.closeModal = function() {
-                close();
-            };
-        });
+        $scope.closeModal = function(event) {
+            if (event && event.target !== event.currentTarget) return;
+            close();
+        };
+    });

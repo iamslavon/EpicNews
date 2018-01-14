@@ -1,7 +1,9 @@
-﻿<div class="about-popup">
-    <h2 ng-bind="strings.title"></h2>
-    <p ng-bind="strings.text"></p>
-    <a href="javascript:void(0);" ng-click="closeModal()" class="close about-opener">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </a>
+﻿<div class="overlay" ng-click="closeModal($event)">
+    <div class="about-popup">
+        <h2 ng-bind="strings.title"></h2>
+        <p ng-bind="strings.text"></p>
+        <a href="javascript:void(0);" ng-click="closeModal()" class="close about-opener">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+    </div>
 </div>

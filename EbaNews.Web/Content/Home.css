@@ -683,6 +683,14 @@ input[type="submit"] {
 #wrapper {
     overflow: hidden;
     position: relative;
+    min-height: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
 #header {
@@ -730,8 +738,6 @@ input[type="submit"] {
         margin: 0 10px;
         text-align: center;
         height: 32px;
-        background: rgba(161, 115, 190, .17);
-        border: 1px solid #a173be;
         border-radius: 32px;
         text-decoration: none;
         font-weight: 700;
@@ -740,10 +746,28 @@ input[type="submit"] {
         line-height: 32px;
     }
 
-        #header .btn:hover {
-            color: #fff;
-            background: #a173be;
-        }
+.btn-style-1 {
+    background: rgba(161, 115, 190, .17);
+    border: 1px solid #a173be;
+    color: #DDA9FF;
+}
+
+.btn-style-1:hover {
+    color: #fff;
+    background: #a173be;
+}
+
+.btn-style-2 {
+    background: #a173be;
+    border: 1px solid #a173be;
+    color: #fff;
+}
+
+    .btn-style-2:hover {
+        background: rgba(161, 115, 190, .17);
+        border: 1px solid #a173be;
+        color: #DDA9FF;
+    }
 
     #header .lang {
         position: absolute;
@@ -752,6 +776,8 @@ input[type="submit"] {
         margin: 0;
         padding: 0;
         list-style-type: none;
+        outline: none;
+        font-size: 14px;
     }
 
     #header .lang li {
@@ -759,6 +785,14 @@ input[type="submit"] {
         margin: 0 10px;
         cursor: pointer;
     }
+
+.lang-option {
+    color: #aaa;
+}
+
+.lang-option:hover {
+    color: #fff;
+}
 
 #main {
     margin: 0 auto;
@@ -911,7 +945,7 @@ input[type="submit"] {
 
             #main .posts .post .btn:hover {
                 color: #fff;
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.2);
             }
 
     #main .more-box {
@@ -951,7 +985,7 @@ input[type="submit"] {
 
             #main .more-box .btn:hover {
                 color: #a173be;
-                background: #fff;
+                background: #f3efff;
             }
 
 #footer {
@@ -988,9 +1022,6 @@ input[type="submit"] {
         vertical-align: top;
         text-align: center;
         height: 32px;
-        color: #fff;
-        background: #a173be;
-        border: 1px solid #a173be;
         border-radius: 32px;
         text-decoration: none;
         font-size: 12px;
@@ -999,11 +1030,6 @@ input[type="submit"] {
         padding: 0 24px;
         line-height: 32px;
     }
-
-        #footer .btn:hover {
-            color: #a173be;
-            background: #fff;
-        }
 
     #footer .list {
         border-top: 1px solid rgba(255, 255, 255, .12);
@@ -1055,7 +1081,7 @@ input[type="submit"] {
                     color: #fff;
                 }
 
-.about-active:before {
+.overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -1076,8 +1102,6 @@ input[type="submit"] {
     transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
     position: fixed;
     z-index: 999;
-    opacity: 0;
-    visibility: hidden;
     background: #f3efff;
     font-size: 14px;
     line-height: 17px;
@@ -1224,7 +1248,7 @@ input[type="submit"] {
 
         .suggest-popup .btn:hover {
             color: #a173be;
-            background: #fff;
+            background: #f3efff;
         }
 
     .suggest-popup .close.suggest-opener {

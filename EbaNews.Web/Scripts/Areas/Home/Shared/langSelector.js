@@ -42,6 +42,10 @@
         $scope.open = function() {
             $scope.opened = !$scope.opened;
         };
+
+        $scope.close = function () {
+            $scope.opened = false;
+        };
     })
     .directive("langSelector", function () {
         return {

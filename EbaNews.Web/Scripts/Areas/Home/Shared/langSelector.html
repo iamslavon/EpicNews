@@ -1,9 +1,13 @@
 ﻿<div ng-controller="langSelectorController">
-    <ul class="lang">
+    <ul class="lang" tabindex="-1" ng-blur="close()">
         <li ng-click="open()">
-            <span ng-bind="language.text"></span>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+            <span ng-bind="language.text"></span>&nbsp;
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
         </li>
-        <li ng-repeat="option in getLangOptions()" ng-if="opened" ng-click="langSelect(option.culture)">
+        <li ng-repeat="option in getLangOptions()" 
+            ng-if="opened" 
+            ng-click="langSelect(option.culture)"
+            class="lang-option">
             <span ng-bind="option.text"></span>
         </li>
     </ul>

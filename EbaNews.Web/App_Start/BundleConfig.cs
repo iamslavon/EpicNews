@@ -6,11 +6,11 @@ namespace EbaNews.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-#if DEBUG
-            BundleTable.EnableOptimizations = false;
-#else
-            BundleTable.EnableOptimizations = true;
-#endif
+//#if DEBUG
+//            BundleTable.EnableOptimizations = false;
+//#else
+//            BundleTable.EnableOptimizations = true;
+//#endif
             bundles
                 .RegisterHomeBundles()
                 .RegisterAdminBundles()

@@ -16,8 +16,8 @@
             <div class="container">
                 <strong class="logo"><a href="@Url.Action("Index", "Home")"><img src="/Content/images/logo.png" alt="Epic News..."><span>@strings.SiteMoto</span></a></strong>
                 <div class="btns">
-                    <button class="btn about-opener" ng-click="openAboutUsModal()">@strings.AboutUs</button>
-                    <button class="btn suggest-opener" ng-click="openSuggestNewsModal()">@strings.SuggestNews</button>
+                    <button class="btn btn-style-1" ng-click="openAboutUsModal()">@strings.AboutUs</button>
+                    <button class="btn btn-style-2" ng-click="openSuggestNewsModal()">@strings.SuggestNews</button>
                 </div>
                 <lang-selector></lang-selector>
             </div>
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="box">
                     <h2><small>@strings.DidYouLikeTheNews</small>@strings.YouCanAddYour</h2>
-                    <a href="javascript:void(0);" ng-click="openSuggestNewsModal()" class="btn suggest-opener">@strings.SuggestNews</a>
+                    <a href="javascript:void(0);" ng-click="openSuggestNewsModal()" class="btn btn-style-2">@strings.SuggestNews</a>
                 </div>
                 <ul class="list">
                     @*<li><a href="#"><span class="icon-mail"></span>epicnews.com</a></li>*@
