@@ -7,7 +7,7 @@ namespace EbaNews.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
 //#if DEBUG
-//            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = false;
 //#else
 //            BundleTable.EnableOptimizations = true;
 //#endif

@@ -683,13 +683,9 @@ input[type="submit"] {
 #wrapper {
     overflow: hidden;
     position: relative;
-    min-height: 100%;
-}
-
-.flex-container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     justify-content: space-between;
 }
 
@@ -905,6 +901,8 @@ input[type="submit"] {
             }
 
             #main .posts .post .social a {
+                -webkit-transition: color .3s ease-in-out, background .3s ease-in-out;
+                transition: color .3s ease-in-out, background .3s ease-in-out;
                 display: block;
                 text-align: center;
                 width: 44px;
@@ -920,8 +918,7 @@ input[type="submit"] {
             }
 
                 #main .posts .post .social a:hover {
-                    background: #fff;
-                    color: #a173be;
+                    background: rgba(255, 255, 255, 0.2);
                 }
 
         #main .posts .post .btn {
