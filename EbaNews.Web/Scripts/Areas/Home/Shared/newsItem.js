@@ -44,6 +44,20 @@
                 }
             });
         };
+
+        $scope.shareToFacebook = function (news) {
+            Socialshare.share({
+                'provider': "facebook",
+                'attrs': {
+                    'socialshareVia': "",
+                    'socialshareQuote': news.Title,
+                    'socialshareUrl': $scope.getNewsLink(news.Id),
+                    'socialshareHashtags': "epicnews",
+                    'socialsharePopupHeight': "400",
+                    'socialsharePopupWidth': "600"
+                }
+            });
+        };
     })
     .directive("newsItem", function () {
         return {

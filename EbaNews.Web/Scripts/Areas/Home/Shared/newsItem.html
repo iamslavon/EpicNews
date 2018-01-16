@@ -6,7 +6,7 @@
             <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank" class="btn" ng-bind="strings.GoToSource"></a>
             <ul class="social">
                 <li><a ng-click="shareToTelegram(news)"><span class="icon-telegram"></span></a></li>
-                <!--<li><a href="#"><span class="icon-facebook"></span></a></li>-->
+                <li><a ng-click="shareToFacebook(news)"><span class="icon-facebook"></span></a></li>
                 <li><a ng-click="shareToTwitter(news)"><span class="icon-twitter"></span></a></li>
                 <li ng-if="showCopyButton()"><a ng-click="copyToClipboard(news.Id)"><span class="icon-link"></span></a></li>
             </ul>
