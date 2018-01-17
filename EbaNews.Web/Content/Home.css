@@ -655,25 +655,30 @@ input[type="submit"] {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-telegram:before {
+.icon-close:before {
     content: "\e900";
     margin-left: -2px;
 }
 
-.icon-visibility:before {
+.icon-telegram:before {
     content: "\e901";
+    margin-left: -2px;
 }
 
-.icon-twitter:before {
+.icon-visibility:before {
     content: "\e902";
 }
 
-.icon-facebook:before {
+.icon-twitter:before {
     content: "\e903";
 }
 
-.icon-mail:before {
+.icon-facebook:before {
     content: "\e904";
+}
+
+.icon-mail:before {
+    content: "\e905";
 }
 
 .icon-link:before {
@@ -1127,26 +1132,23 @@ input[type="submit"] {
     }
 
     .about-popup .close.about-opener {
-        -webkit-transition: color .3s ease-in-out, background .3s ease-in-out;
-        transition: color .3s ease-in-out, background .3s ease-in-out;
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
         position: absolute;
         top: 10px;
         right: 10px;
-        border-radius: 100%;
-        border: 2px solid #919191;
         width: 24px;
         height: 24px;
         font-weight: 700;
-        line-height: 20px;
-        font-size: 17px;
+        line-height: 24px;
+        font-size: 24px;
         text-align: center;
         text-decoration: none;
-        color: #919191;
+        color: #C0B5CD;
     }
 
         .about-popup .close.about-opener:hover {
-            color: #fff;
-            background: #a173be;
+            color: #a173be;
         }
 
 .suggest-active:before {
@@ -1249,26 +1251,23 @@ input[type="submit"] {
         }
 
     .suggest-popup .close.suggest-opener {
-        -webkit-transition: color .3s ease-in-out, background .3s ease-in-out;
-        transition: color .3s ease-in-out, background .3s ease-in-out;
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
         position: absolute;
         top: 10px;
         right: 10px;
-        border-radius: 100%;
-        border: 2px solid #919191;
         width: 24px;
         height: 24px;
         font-weight: 700;
-        line-height: 20px;
-        font-size: 17px;
+        line-height: 24px;
+        font-size: 24px;
         text-align: center;
         text-decoration: none;
-        color: #919191;
+        color: #C0B5CD;
     }
 
         .suggest-popup .close.suggest-opener:hover {
-            color: #fff;
-            background: #a173be;
+            color: #a173be;
         }
 
 
