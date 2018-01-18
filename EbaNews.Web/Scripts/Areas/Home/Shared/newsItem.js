@@ -49,7 +49,6 @@
             Socialshare.share({
                 'provider': "facebook",
                 'attrs': {
-                    'socialshareVia': "",
                     'socialshareQuote': news.Title,
                     'socialshareUrl': $scope.getNewsLink(news.Id),
                     'socialshareHashtags': "epicnews",
