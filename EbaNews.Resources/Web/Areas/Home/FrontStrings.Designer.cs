@@ -61,7 +61,7 @@ namespace EbaNews.Resources.Web.Areas.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        ///   Looks up a localized string similar to From time to time we meet the titles of news which impress us with its weirdness. Reading them we usually feel cognitive dissonance and delight at the same time. We collect these titles in one place. We do not claim the originality, relevance and the reliability of the information but each title has its own source..
         /// </summary>
         public static string AboutUsPopupText {
             get {

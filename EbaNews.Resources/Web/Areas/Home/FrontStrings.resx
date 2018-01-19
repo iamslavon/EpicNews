@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutUsPopupText" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</value>
+    <value>From time to time we meet the titles of news which impress us with its weirdness. Reading them we usually feel cognitive dissonance and delight at the same time. We collect these titles in one place. We do not claim the originality, relevance and the reliability of the information but each title has its own source.</value>
   </data>
   <data name="AboutUsPopupTitle" xml:space="preserve">
     <value>ABOUT US</value>
