@@ -726,7 +726,7 @@ input[type="submit"] {
 
     #header .btns {
         margin: 0 -10px;
-        text-align: center;
+        text-align: left;
     }
 
 .btn { outline: none; }
@@ -885,8 +885,8 @@ input[type="submit"] {
             margin-bottom: 20px;
             font-weight: 400;
             font-family: "Rubik", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-            font-size: 28px;
-            line-height: 1.2;
+            font-size: 20px;
+            line-height: 1.4;
             text-shadow: 0 2px 1px rgba(31, 31, 31, .2);
             color: #f7f7f7;
         }
@@ -896,7 +896,7 @@ input[type="submit"] {
         }
 
         #main .posts .post .social {
-            text-align: center;
+            text-align: left;
         }
 
             #main .posts .post .social li {
@@ -1407,9 +1407,7 @@ body > .jcf-select-drop {
 }
 
 @media (min-width: 768px) {
-    #header .container {
-        padding: 22px 15px;
-    }
+    #header .container { padding: 22px 15px; }
 
     #header .logo {
         float: left;
@@ -1422,47 +1420,50 @@ body > .jcf-select-drop {
         margin: 32px -10px 0;
     }
 
-    #header .btn {
+    #header .btn { margin: 0 10px 0 3px; }
+
+    #main { padding: 40px 15px; }
+
+    #main .posts .post { margin-bottom: 43px; }
+
+    #main .posts .post .frame { padding: 50px; }
+
+    #main .posts .post h2 {
+        min-height: 194px;
+        margin-bottom: 33px;
+    }
+
+    #main .posts .post .social {
+        float: right;
+        text-align: left;
+    }
+
+    #main .posts .post .social li { margin: 0 0 0 5px; }
+
+    #main .posts .post .btn {
+        margin: 6px 0;
+        float: left;
+    }
+
+    #main .more-box .btn {
         margin: 0 10px 0 3px;
+        padding: 0 33px;
     }
 
-    #main {
-        padding: 40px 15px;
+    #main .posts .post h2.title-small {
+        font-size: 32px;
+        line-height: 44px;
     }
 
-        #main .posts .post {
-            margin-bottom: 43px;
-        }
+    #main .posts .post h2.title-medium {
+        font-size: 38px;
+        line-height: 50px;
+    }
 
-            #main .posts .post .frame {
-                padding: 50px;
-            }
-
-            #main .posts .post h2 {
-                min-height: 194px;
-                margin-bottom: 33px;
-                font-size: 38px;
-                line-height: 50px;
-            }
-
-            #main .posts .post .social {
-                float: right;
-                text-align: left;
-            }
-
-                #main .posts .post .social li {
-                    margin: 0 0 0 5px;
-                }
-
-            #main .posts .post .btn {
-                margin: 6px 0;
-                float: left;
-            }
-
-        #main .more-box .btn {
-            margin: 0 10px 0 3px;
-            padding: 0 33px;
-        }
+    #main .posts .post h2.title-big {
+        font-size: 48px;
+        line-height: 62px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -1523,5 +1524,21 @@ body > .jcf-select-drop {
         -webkit-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
         transform: translate(0, -50%);
+    }
+
+    #main .posts .post .social li:first-child {
+        margin-left: 0;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    #footer .list {
+        display: none;
+    }
+
+    #footer .box {
+        text-align: center;
     }
 }

@@ -20,6 +20,12 @@
             ngNotify.set(translate.LinkCopiedToClipboard, "success");
         };
 
+        $scope.getTitleClass = function(title) {
+            if (title.length < 60) return "title-big";
+            if (title.length > 90) return "title-small";
+            return "title-medium";
+        };
+
         $scope.shareToTwitter = function(news) {
             Socialshare.share({
                 'provider': "twitter",
