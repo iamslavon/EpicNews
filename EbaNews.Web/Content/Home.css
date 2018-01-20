@@ -1119,6 +1119,30 @@ input[type="submit"] {
     border-radius: 15px;
 }
 
+    .about-popup .btn {
+        -webkit-transition: color .3s ease-in-out, background .3s ease-in-out;
+        transition: color .3s ease-in-out, background .3s ease-in-out;
+        display: inline-block;
+        text-align: center;
+        width: 44px;
+        overflow: hidden;
+        font-size: 23px;
+        line-height: 46px;
+        height: 44px;
+        border-radius: 100%;
+        border: 1px solid #a173be;
+        color: #a173be;
+        cursor: pointer;
+        vertical-align: middle;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+        .about-popup .btn:hover {
+            background: #a173be;
+            color: #f3efff;
+        }
+
     .about-popup h2 {
         font-size: 22px;
         text-align: center;
