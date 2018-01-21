@@ -18,8 +18,6 @@ namespace EbaNews.Core.Interfaces.Services
 
         void RemoveNews(int newsId);
 
-        void SwitchOnlineStatus(int newsId, bool online);
-
         void IncrementViewsCount(int id);
     }
 }

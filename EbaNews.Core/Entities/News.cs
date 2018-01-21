@@ -18,5 +18,10 @@ namespace EbaNews.Core.Entities
         /// Number of views
         /// </summary>
         public long Views { get; set; }
+
+        /// <summary>
+        /// If news has already published to social networks
+        /// </summary>
+        public bool SocialNetworksPublished { get; set; }
     }
 }

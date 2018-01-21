@@ -15,10 +15,12 @@ namespace EbaNews.Web.Areas.Admin.Controllers
     public class NewsController : BaseController
     {
         private readonly INewsService newsService;
+        private readonly ITelegramService telegramService;
 
-        public NewsController(INewsService newsService)
+        public NewsController(INewsService newsService, ITelegramService telegramService)
         {
             this.newsService = newsService;
+            this.telegramService = telegramService;
         }
 
         [HttpGet]
@@ -51,9 +53,21 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult SwitchOnlineStatus(int newsId, bool online)
         {
+            var news = newsService.GetNews(newsId);
+
+            if (news == null) return InternalError("News not found");
+
             try
             {
-                newsService.SwitchOnlineStatus(newsId, online);
+                if (online && !news.SocialNetworksPublished)
+                {
+                    telegramService.PublishAsync(news);
+                    news.SocialNetworksPublished = true;
+                }
+
+                news.Online = online;
+                newsService.EditNews(news);
+
                 return Ok();
             }
             catch (Exception ex)
