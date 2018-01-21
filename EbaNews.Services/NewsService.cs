@@ -1,10 +1,10 @@
-﻿using System.Data.Entity.Core;
-using EbaNews.Core.Entities;
+﻿using EbaNews.Core.Entities;
+using EbaNews.Core.Filters;
 using EbaNews.Core.Interfaces;
 using EbaNews.Core.Interfaces.Services;
 using EbaNews.Core.Responses;
+using System.Data.Entity.Core;
 using System.Linq;
-using EbaNews.Core.Filters;
 
 namespace EbaNews.Services
 {
@@ -91,12 +91,6 @@ namespace EbaNews.Services
         public void RemoveNews(int newsId)
         {
             repository.Remove(newsId);
-            repository.SaveChanges();
-        }
-
-        public void SwitchOnlineStatus(int newsId, bool online)
-        {
-            repository.Get(newsId).Online = online;
             repository.SaveChanges();
         }
 
