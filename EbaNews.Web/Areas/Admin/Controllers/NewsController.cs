@@ -61,7 +61,9 @@ namespace EbaNews.Web.Areas.Admin.Controllers
             {
                 if (online && !news.SocialNetworksPublished)
                 {
-                    telegramService.PublishAsync(news);
+                    var url = $"{Request.Url.Scheme}://{Request.Url.Authority}/news/{news.Id}"; 
+                    var message = $"{news.Title}{Environment.NewLine}{url}";
+                    telegramService.SendAsync(Settings.TelegramPublicChannelId, message);
                     news.SocialNetworksPublished = true;
                 }
 

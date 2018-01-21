@@ -1,10 +1,9 @@
-﻿using EbaNews.Core.Entities;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace EbaNews.Core.Interfaces.Services
 {
     public interface ITelegramService
     {
-        Task PublishAsync(News news);
+        Task SendAsync(string channelId, string message);
     }
 }

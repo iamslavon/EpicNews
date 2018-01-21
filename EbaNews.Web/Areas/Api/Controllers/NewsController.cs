@@ -12,11 +12,13 @@ namespace EbaNews.Web.Areas.Api.Controllers
     {
         private readonly INewsService newsService;
         private readonly ISuggestedNewsService suggestedNewsService;
+        private readonly ITelegramService telegramService;
 
-        public NewsController(INewsService newsService, ISuggestedNewsService suggestedNewsService)
+        public NewsController(INewsService newsService, ISuggestedNewsService suggestedNewsService, ITelegramService telegramService)
         {
             this.newsService = newsService;
             this.suggestedNewsService = suggestedNewsService;
+            this.telegramService = telegramService;
         }
 
         [HttpGet]
@@ -71,12 +73,20 @@ namespace EbaNews.Web.Areas.Api.Controllers
             {
                 news.Title = suggestedNewsService.TryGetTitleFromUrl(news.LinkToArticle);
                 suggestedNewsService.AddSuggestedNews(news);
+                SuggestionNotify(news);
+
                 return new HttpStatusCodeResult(200);
             }
             catch (Exception ex)
             {
                 return new HttpStatusCodeResult(500, ex.Message);
             }
+        }
+
+        private void SuggestionNotify(SuggestedNews news)
+        {
+            var message = $"{news.Title}{Environment.NewLine}{news.LinkToArticle}";
+            telegramService.SendAsync(Settings.TelegramSuggestionChannelId, message);
         }
     }
 }

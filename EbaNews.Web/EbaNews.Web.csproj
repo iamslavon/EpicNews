@@ -346,6 +346,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="TelegramSettings.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,12 +15,21 @@ namespace EbaNews.Web
 
         public static string CultureCookieName => $"{CookieName}_culture";
 
+        public static string TelegramApiToken { get; private set; }
+
+        public static string TelegramPublicChannelId { get; private set; }
+
+        public static string TelegramSuggestionChannelId { get; private set; }
+
         public static void Init()
         {
             AllowedNewsCount = Convert.ToInt32(ConfigurationManager.AppSettings["AllowedNewsCount"]);
             AvailableCultures = ConfigurationManager.AppSettings["AvailableCultures"].Split(',');
             DefaultCulture = ConfigurationManager.AppSettings["DefaultCulture"];
             CookieName = ConfigurationManager.AppSettings["CookieName"];
+            TelegramApiToken = ConfigurationManager.AppSettings["TelegramApiToken"];
+            TelegramPublicChannelId = ConfigurationManager.AppSettings["TelegramPublicChannelId"];
+            TelegramSuggestionChannelId = ConfigurationManager.AppSettings["TelegramSuggestionChannelId"];
         }
     }
 }

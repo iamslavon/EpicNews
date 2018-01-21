@@ -8,3 +8,4 @@ EbaNews.Web/ConnectionStrings.config
 *.mdf
 *.ldf
 *.pubxml
+EbaNews.Web/TelegramSettings.config
