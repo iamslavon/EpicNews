@@ -4,7 +4,9 @@
             <span class="date" ng-bind="convertDate(news.PublicationDate)"></span>
             <!--<span><span class="icon-visibility"></span>{{news.Views}}</span>-->
         </div>
-        <h2 ng-bind="news.Title" ng-class="getTitleClass(news.Title)"></h2>
+        <a ng-href="{{getNewsLink(news.Id)}}">
+            <h2 ng-bind="news.Title" ng-class="getTitleClass(news.Title)"></h2>
+        </a>
         <div class="bottom-row">
             <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank" class="btn" ng-bind="strings.GoToSource"></a>
             <ul class="social">
