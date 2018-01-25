@@ -132,6 +132,9 @@
   <data name="SuggestNews" xml:space="preserve">
     <value>SUGGEST NEWS</value>
   </data>
+  <data name="TelegramChannel" xml:space="preserve">
+    <value>Telegram channel</value>
+  </data>
   <data name="YouCanAddYour" xml:space="preserve">
     <value>You can add yours!</value>
   </data>

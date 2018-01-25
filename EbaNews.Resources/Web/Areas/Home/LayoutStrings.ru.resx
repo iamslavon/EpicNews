@@ -132,6 +132,9 @@
   <data name="SuggestNews" xml:space="preserve">
     <value>ПРЕДЛОЖИТЬ НОВОСТЬ</value>
   </data>
+  <data name="TelegramChannel" xml:space="preserve">
+    <value>Telegram канал</value>
+  </data>
   <data name="YouCanAddYour" xml:space="preserve">
     <value>Добавь свою!</value>
   </data>

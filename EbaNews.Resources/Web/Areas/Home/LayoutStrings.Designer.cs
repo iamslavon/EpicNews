@@ -106,6 +106,15 @@ namespace EbaNews.Resources.Web.Areas.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Telegram channel.
+        /// </summary>
+        public static string TelegramChannel {
+            get {
+                return ResourceManager.GetString("TelegramChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can add yours!.
         /// </summary>
         public static string YouCanAddYour {

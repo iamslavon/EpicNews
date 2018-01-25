@@ -123,8 +123,11 @@
   <data name="AboutUsPopupTitle" xml:space="preserve">
     <value>О НАС</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Контакт:</value>
+  </data>
   <data name="GoToSource" xml:space="preserve">
-    <value>ЧИТАТЬ В ИСТОЧНИКЕ</value>
+    <value>ИСТОЧНИК</value>
   </data>
   <data name="InsertTheLink" xml:space="preserve">
     <value>Вставьте ссылку</value>

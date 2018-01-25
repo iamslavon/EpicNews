@@ -5,6 +5,8 @@ namespace EbaNews.Web
 {
     public static class Settings
     {
+        public static string ContactEmail { get; private set; }
+
         public static int AllowedNewsCount { get; private set; }
 
         public static string[] AvailableCultures { get; private set; }
@@ -23,6 +25,7 @@ namespace EbaNews.Web
 
         public static void Init()
         {
+            ContactEmail = ConfigurationManager.AppSettings["ContactEmail"];
             AllowedNewsCount = Convert.ToInt32(ConfigurationManager.AppSettings["AllowedNewsCount"]);
             AvailableCultures = ConfigurationManager.AppSettings["AvailableCultures"].Split(',');
             DefaultCulture = ConfigurationManager.AppSettings["DefaultCulture"];

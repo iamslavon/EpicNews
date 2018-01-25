@@ -123,6 +123,9 @@
   <data name="AboutUsPopupTitle" xml:space="preserve">
     <value>ПРО НАС</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Контакт:</value>
+  </data>
   <data name="GoToSource" xml:space="preserve">
     <value>ДЖЕРЕЛО</value>
   </data>

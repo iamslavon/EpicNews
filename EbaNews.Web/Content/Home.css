@@ -1175,6 +1175,15 @@ input[type="submit"] {
             color: #a173be;
         }
 
+    .about-popup .buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .about-popup a {
+        text-decoration: none;
+    }
+
 .suggest-active:before {
     position: fixed;
     top: 0;

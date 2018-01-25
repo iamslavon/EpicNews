@@ -3,7 +3,10 @@
         <h2 ng-bind="strings.title"></h2>
         <p ng-bind="strings.text"></p>
         <div>
-            <span>Subscribe:</span>
+            <span ng-bind="strings.contact"></span>&nbsp;
+            <a href="mailto:info@epic-news.com">info@epic-news.com</a>
+        </div>
+        <div class="buttons">
             <a class="btn" href="https://t.me/epic_news" target="_blank"><span class="icon-telegram"></span></a>
         </div>
         <a href="javascript:void(0);" ng-click="closeModal()" class="close about-opener icon-close"></a>

@@ -22,11 +22,14 @@ namespace EbaNews.Web.Areas.Home.Controllers
         }
 
         [HttpGet]
+        [OutputCache(NoStore = true, Duration = 0)]
         public ActionResult News(int id)
         {
             try
             {
                 var news = newsService.GetNews(id);
+                if (!news.Online) return RedirectToActionPermanent("Index");
+
                 return View(news);
             }
             catch (Exception)

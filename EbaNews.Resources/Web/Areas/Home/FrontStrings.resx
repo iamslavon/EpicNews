@@ -123,6 +123,9 @@
   <data name="AboutUsPopupTitle" xml:space="preserve">
     <value>ABOUT US</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact:</value>
+  </data>
   <data name="GoToSource" xml:space="preserve">
     <value>SOURCE</value>
   </data>

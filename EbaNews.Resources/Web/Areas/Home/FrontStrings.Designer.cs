@@ -79,6 +79,15 @@ namespace EbaNews.Resources.Web.Areas.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact:.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SOURCE.
         /// </summary>
         public static string GoToSource {
