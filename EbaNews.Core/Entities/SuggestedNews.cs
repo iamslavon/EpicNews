@@ -20,5 +20,10 @@ namespace EbaNews.Core.Entities
         /// Status of suggested news
         /// </summary>
         public SuggestedNewsStatus Status { get; set; }
+
+        /// <summary>
+        /// IP address of user who suggests the news 
+        /// </summary>
+        public string Ip { get; set; }
     }
 }

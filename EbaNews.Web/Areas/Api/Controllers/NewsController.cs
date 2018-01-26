@@ -71,6 +71,7 @@ namespace EbaNews.Web.Areas.Api.Controllers
 
             try
             {
+                news.Ip = GetIpAddress();
                 news.Title = suggestedNewsService.TryGetTitleFromUrl(news.LinkToArticle);
                 suggestedNewsService.AddSuggestedNews(news);
                 SuggestionNotify(news);
@@ -87,6 +88,16 @@ namespace EbaNews.Web.Areas.Api.Controllers
         {
             var message = $"{news.Title}{Environment.NewLine}{news.LinkToArticle}";
             telegramService.SendAsync(Settings.TelegramSuggestionChannelId, message);
+        }
+
+        private string GetIpAddress()
+        {
+            var context = System.Web.HttpContext.Current;
+            var ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            return string.IsNullOrEmpty(ipAddress)
+                ? context.Request.ServerVariables["REMOTE_ADDR"]
+                : ipAddress.Split(',')[0];
         }
     }
 }
