@@ -41,15 +41,14 @@ namespace EbaNews.Services
 
         public PagedResponse<News> GetNewsList(int start, int count, string culture)
         {
-            var total = repository
+            var query = repository
                 .GetAll()
                 .Where(x => x.Language.Culture == culture)
-                .Count(x => x.Online);
+                .Where(x => x.Online);
 
-            var news = repository
-                .GetAll()
-                .Where(x => x.Language.Culture == culture)
-                .Where(x => x.Online)
+            var total = query.Count();
+
+            var news = query
                 .OrderByDescending(x => x.PublicationDate)
                 .Skip(start)
                 .Take(count)
