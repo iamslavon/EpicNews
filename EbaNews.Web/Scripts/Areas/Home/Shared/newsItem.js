@@ -1,5 +1,5 @@
 ﻿angular.module("newsItem", ["ngNotify", "angular-clipboard", "720kb.socialshare"])
-    .controller("newsItemController", function ($scope, clipboard, ngNotify, translate, Socialshare) {
+    .controller("newsItemController", function ($scope, clipboard, ngNotify, translate, Socialshare, $http) {
         $scope.strings = translate;
 
         $scope.showCopyButton = function() {
@@ -37,6 +37,8 @@
                     'socialsharePopupWidth': "600"
                 }
             });
+
+            $scope.incrementShareCount(news.Id);
         };
 
         $scope.shareToTelegram = function (news) {
@@ -49,6 +51,8 @@
                     'socialsharePopupWidth': "600"
                 }
             });
+
+            $scope.incrementShareCount(news.Id);
         };
 
         $scope.shareToFacebook = function (news) {
@@ -62,6 +66,13 @@
                     'socialsharePopupWidth': "600"
                 }
             });
+
+            $scope.incrementShareCount(news.Id);
+        };
+
+        $scope.incrementShareCount = function (id) {
+            var url = window.location.origin + "/api/news/shares/inc?id=" + id;
+            $http.get(url);
         };
     })
     .directive("newsItem", function () {

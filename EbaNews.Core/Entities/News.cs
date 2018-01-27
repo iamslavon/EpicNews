@@ -15,9 +15,9 @@ namespace EbaNews.Core.Entities
         public bool Online { get; set; }
 
         /// <summary>
-        /// Number of views
+        /// Number of shares
         /// </summary>
-        public long Views { get; set; }
+        public long ShareCount { get; set; }
 
         /// <summary>
         /// If news has already published to social networks

@@ -25,6 +25,12 @@ namespace EbaNews.Web.Areas.Api
                 "api/news/suggest",
                 new { area = AreaName, controller = "News", action = "SuggestNews" }
             );
+
+            context.MapRoute(
+                "",
+                "api/news/shares/inc",
+                new { area = AreaName, controller = "News", action = "IncrementShareCount" }
+            );
         }
     }
 }

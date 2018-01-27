@@ -18,6 +18,6 @@ namespace EbaNews.Core.Interfaces.Services
 
         void RemoveNews(int newsId);
 
-        void IncrementViewsCount(int id);
+        void IncrementShareCount(int id);
     }
 }

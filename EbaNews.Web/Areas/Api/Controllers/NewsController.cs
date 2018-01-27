@@ -84,6 +84,13 @@ namespace EbaNews.Web.Areas.Api.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult IncrementShareCount(int id)
+        {
+            newsService.IncrementShareCount(id);
+            return new HttpStatusCodeResult(200);
+        }
+
         private void SuggestionNotify(SuggestedNews news)
         {
             var message = $"{news.Title}{Environment.NewLine}{news.LinkToArticle}";

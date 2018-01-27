@@ -6,7 +6,7 @@
 }
 
 <div class="container" ng-controller="suggestedNewsController">
-    <div class=" margin-top-30 col-xs-12 col-sm-10 col-sm-offset-1">
+    <div class=" margin-top-30 col-xs-12 col-sm-12">
         <div class="text-center" ng-if="loading">
             <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
             <span class="sr-only">@commonNewsStr.Loading</span>
@@ -20,6 +20,7 @@
                     <th class="text-center">@suggestedNewsStr.Title</th>
                     <th class="text-center">@suggestedNewsStr.LinkToSource</th>
                     <th class="text-center">@suggestedNewsStr.SuggestionDate</th>
+                    <th class="text-center">IP</th>
                     <th class="text-center"></th>
                     <th class="text-center"></th>
                 </tr>
@@ -33,6 +34,7 @@
                         </a>
                     </td>
                     <td class="text-center" ng-bind="convertDate(news.SuggestionDate)"></td>
+                    <td class="text-center" ng-bind="news.Ip"></td>
                     <td class="text-center">
                         <button class="btn btn-success" ng-click="openApproveModal(news)">
                             <i class="fa fa-check" aria-hidden="true"></i>&nbsp;@suggestedNewsStr.Approve

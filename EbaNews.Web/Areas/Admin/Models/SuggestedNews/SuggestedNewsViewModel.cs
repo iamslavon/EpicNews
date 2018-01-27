@@ -11,6 +11,8 @@ namespace EbaNews.Web.Areas.Admin.Models.SuggestedNews
 
         public string LinkToArticle { get; set; }
 
+        public string Ip { get; set; }
+
         public Language Language { get; set; }
 
         public DateTime SuggestionDate { get; set; }

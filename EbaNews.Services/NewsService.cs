@@ -69,8 +69,6 @@ namespace EbaNews.Services
             if (news == null)
                 throw new ObjectNotFoundException();
 
-            IncrementViewsCount(id);
-
             return news;
         }
 
@@ -94,9 +92,9 @@ namespace EbaNews.Services
             repository.SaveChanges();
         }
 
-        public void IncrementViewsCount(int id)
+        public void IncrementShareCount(int id)
         {
-            repository.Get(id).Views++;
+            repository.Get(id).ShareCount++;
             repository.SaveChanges();
         }
     }
