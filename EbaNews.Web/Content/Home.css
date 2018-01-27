@@ -1303,6 +1303,15 @@ input[type="submit"] {
             color: #a173be;
         }
 
+    .suggest-popup .btn-container {
+        height: 46px;
+        overflow: hidden;
+    }
+
+    .suggest-popup .spinner {
+         color: #a173be;
+    }
+
 
 .loader {
     margin-top: 30px;

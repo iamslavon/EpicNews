@@ -10,14 +10,27 @@ app.controller("suggestNewsController",
             InsertTheLink: translate.InsertTheLink
         };
 
+        $scope.loading = false;
+
+        $scope.startLoading = function() {
+            $scope.loading = true;
+        }
+
+        $scope.stopLoading = function () {
+            $scope.loading = false;
+        }
+
         $scope.suggest = function() {
+            $scope.startLoading();
             $http.post("/api/news/suggest", $scope.news)
                 .then(
                     function() {
+                        $scope.stopLoading();
                         ngNotify.set(translate.YourNewsSuccessfullySuggested, "success");
                         close();
                     },
                     function(error) {
+                        $scope.stopLoading();
                         ngNotify.set(translate.SomethingWentWrong, "error");
                     });
         };

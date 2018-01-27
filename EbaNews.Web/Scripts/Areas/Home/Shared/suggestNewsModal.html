@@ -11,11 +11,18 @@
                        required>
                 <span class="icon-link"></span>
             </div>
-            <button class="btn"
-                    ng-click="suggest()"
-                    ng-class="{ disabled: suggestModalForm.$invalid }"
-                    ng-bind="strings.Suggest">
-            </button>
+            <div class="btn-container">
+                <button class="btn"
+                        ng-if="!loading"
+                        ng-click="suggest()"
+                        ng-class="{ disabled: suggestModalForm.$invalid }"
+                        ng-bind="strings.Suggest">
+                </button>
+                <!--loader-->
+                <div class="spinner" ng-if="loading">
+                    <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                </div>
+            </div>
         </form>
         <a href="javascript:void(0);" class="close suggest-opener icon-close" ng-click="closeModal()"></a>
     </div>
