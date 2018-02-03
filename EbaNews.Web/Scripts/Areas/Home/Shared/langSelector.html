@@ -1,13 +1,19 @@
 ﻿<div ng-controller="langSelectorController">
-    <ul class="lang" tabindex="-1" ng-blur="close()">
+    <ul class="lang"
+        tabindex="-1"
+        ng-blur="close()"
+        ng-mouseover="hovered = true"
+        ng-mouseleave="hovered = false">
         <li ng-click="open()">
             <span ng-bind="language.text"></span>&nbsp;
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
+            <i class="fa fa-caret-down" 
+               ng-class="{'hovered': hovered || opened}"
+               aria-hidden="true"></i>
         </li>
-        <li ng-repeat="option in getLangOptions()" 
-            ng-if="opened" 
+        <li ng-repeat="option in getLangOptions()"
             ng-click="langSelect(option.culture)"
-            class="lang-option">
+            class="lang-option"
+            ng-class="{'active': opened}">
             <span ng-bind="option.text"></span>
         </li>
     </ul>

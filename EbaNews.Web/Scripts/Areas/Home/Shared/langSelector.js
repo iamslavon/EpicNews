@@ -17,6 +17,7 @@
 
         $scope.language = {};
         $scope.opened = false;
+        $scope.hovered = false;
 
         $scope.langSelect = function (lang) {
             var url = window.location.origin + "/language/change?language=" + lang + "&returnUrl=" + window.location.href;

@@ -787,6 +787,19 @@ input[type="submit"] {
         cursor: pointer;
     }
 
+        #header .lang li.lang-option {
+            transition: all .1s ease-in-out;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+            #header .lang li.lang-option.active {
+                margin: 0 10px;
+                opacity: 1;
+                visibility: visible
+            }
+
 .lang-option {
     color: #aaa;
 }
@@ -794,6 +807,15 @@ input[type="submit"] {
 .lang-option:hover {
     color: #fff;
 }
+
+.fa-caret-down {
+    transition: all .2s ease-in-out;
+}
+
+    .fa-caret-down.hovered {
+        transform: rotate(90deg);
+        color: #a173be;
+    }
 
 #main {
     margin: 0 auto;
