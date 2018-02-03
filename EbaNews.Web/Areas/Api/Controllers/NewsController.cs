@@ -93,8 +93,7 @@ namespace EbaNews.Web.Areas.Api.Controllers
 
         private void SuggestionNotify(SuggestedNews news)
         {
-            var message = $"{news.Title}{Environment.NewLine}{news.LinkToArticle}";
-            telegramService.SendAsync(Settings.TelegramSuggestionChannelId, message);
+            telegramService.SendAsync(Settings.TelegramSuggestionChannelId, news.LinkToArticle);
         }
 
         private string GetIpAddress()

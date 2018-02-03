@@ -34,6 +34,7 @@
                 <th class="text-center">@newsStr.LinkToSource</th>
                 <th class="text-center">@newsStr.PublicationDate</th>
                 <th class="text-center">@newsStr.Language</th>
+                <th class="text-center">@newsStr.Shares</th>
                 <th class="text-center">@newsStr.Online</th>
                 <th class="text-center"></th>
                 @if (Context.User.IsInRole("owner"))
@@ -52,6 +53,7 @@
                 </td>
                 <td class="text-center" ng-bind="convertDate(news.PublicationDate)"></td>
                 <td class="text-center" ng-bind="news.Language.Name"></td>
+                <td class="text-center" ng-bind="news.ShareCount"></td>
                 <td class="text-center">
                     <input ng-click="switchOnlineStatus(news)" ng-model="news.Online" type="checkbox"/>
                 </td>

@@ -16,5 +16,7 @@ namespace EbaNews.Web.Areas.Admin.Models.News
         public bool Online { get; set; }
 
         public Language Language { get; set; }
+
+        public long ShareCount { get; set; }
     }
 }
