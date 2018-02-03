@@ -6,11 +6,11 @@ namespace EbaNews.Web
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-//#if DEBUG
+            //#if DEBUG
             BundleTable.EnableOptimizations = false;
-//#else
-//            BundleTable.EnableOptimizations = true;
-//#endif
+            //#else
+            //            BundleTable.EnableOptimizations = true;
+            //#endif
             bundles
                 .RegisterHomeBundles()
                 .RegisterAdminBundles()
@@ -29,7 +29,8 @@ namespace EbaNews.Web
                 "~/Scripts/Libs/ng-notify.min.js",
                 "~/Scripts/Libs/angular-clipboard.js",
                 "~/Scripts/Libs/angular-socialshare.min.js",
-                "~/Scripts/Libs/angular-modal-service.js"));
+                "~/Scripts/Libs/angular-modal-service.js",
+                "~/Scripts/Libs/angular-scroll.min.js"));
 
             bundles.Add(new Bundle("~/app/home")
                 .IncludeDirectory("~/Scripts/Areas/Home", "*.js", true)

@@ -9,3 +9,4 @@ EbaNews.Web/ConnectionStrings.config
 *.ldf
 *.pubxml
 EbaNews.Web/TelegramSettings.config
+*.stackdump

@@ -1,6 +1,6 @@
 angular
     .module("home",
-        ["ngNotify", "angular-clipboard", "newsItem", "langSelector", "translateService", "angularModalService"])
+    ["ngNotify", "angular-clipboard", "newsItem", "langSelector", "translateService", "angularModalService", "duScroll"])
     .run(function(ngNotify) {
             ngNotify.config({
                 theme: "pure",
@@ -13,7 +13,7 @@ angular
         }
     )
     .controller("mainController",
-        function($scope, $http, ngNotify, translate, ModalService) {
+        function($scope, $document, ModalService) {
 
             $scope.openAboutUsModal = function() {
                 ModalService.showModal({
@@ -28,5 +28,19 @@ angular
                     controller: "suggestNewsController"
                 });
             };
+
+            $scope.scrollTop = function () {
+                $document.scrollTopAnimated(0);
+            };
+
+            $scope.showGoTopButton = function () {
+                return window.scrollY > 1000;
+            };
+
+            $document.on('scroll', function () {
+                $scope.$apply(function() {
+                    $scope.pixelsScrolled = window.scrollY;
+                });
+            });
         }
     );

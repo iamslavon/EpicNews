@@ -1312,6 +1312,28 @@ input[type="submit"] {
          color: #a173be;
     }
 
+.arrow-up {
+    -webkit-transition: visibility .5s, opacity .5s ease-in-out;
+    transition: visibility .5s, opacity .5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d6bae8;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    border-radius: 100%;
+    background-image: url(images/arrow_up.png);
+    background-repeat: no-repeat;
+    background-position: 11px 14px;
+}
+
+    .arrow-up.active {
+        visibility: visible;
+        opacity: 1;
+    }
 
 .loader {
     margin-top: 30px;
@@ -1547,6 +1569,12 @@ body > .jcf-select-drop {
             line-height: 46px;
             padding: 0 39px;
         }
+}
+
+@media (max-width: 920px) {
+    .arrow-up {
+        display: none;
+    }
 }
 
 @media (max-width: 479px) {

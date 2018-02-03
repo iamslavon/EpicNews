@@ -38,6 +38,7 @@
 
         <main id="main">
             @RenderBody()
+            <a ng-class="{'active': showGoTopButton()}" class="arrow-up" ng-click="scrollTop()"></a>
         </main>
 
         <footer id="footer">
@@ -49,7 +50,7 @@
                 <ul class="list">
                     <li><a href="mailto:@Settings.ContactEmail"><span class="icon-mail"></span>@Settings.ContactEmail</a></li>
                     <li><a href="javascript:void(0);" ng-click="openAboutUsModal()" class="about-opener">@strings.AboutUsFooter</a></li>
-                    <li><a href="https://t.me/epic_news" target="_blank">@strings.TelegramChannel</a></li>
+                    <li><a href="https://t.me/joinchat/AAAAAEvVZnBslFKN7lcZQA" target="_blank">@strings.TelegramChannel</a></li>
                 </ul>
             </div>
         </footer>

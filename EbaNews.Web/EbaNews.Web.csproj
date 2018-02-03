@@ -205,6 +205,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\arrow_up.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\ng-notify.min.css" />
     <Content Include="Content\shared.css" />
@@ -274,6 +275,7 @@
     <Content Include="Scripts\Libs\angular-sanitize.js" />
     <Content Include="Scripts\Libs\angular-sanitize.min.js" />
     <Content Include="Scripts\Libs\angular-scenario.js" />
+    <Content Include="Scripts\Libs\angular-scroll.min.js" />
     <Content Include="Scripts\Libs\angular-socialshare.min.js" />
     <Content Include="Scripts\Libs\angular-touch.js" />
     <Content Include="Scripts\Libs\angular-touch.min.js" />
