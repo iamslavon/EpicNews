@@ -86,6 +86,9 @@
             link: function (scope, element, attrs) {
                 if (window.angular.isUndefined(scope.styleName)) {
                     scope.styleName = "style-" + Math.floor(Math.random() * 5 + 1);
+                    scope.fullMode = true;
+                } else {
+                    scope.fullMode = false;
                 }
             }
         };

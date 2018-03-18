@@ -138,6 +138,9 @@
   <data name="LinkToSourcePlaceholder" xml:space="preserve">
     <value>Link to source</value>
   </data>
+  <data name="NewsText" xml:space="preserve">
+    <value>News text</value>
+  </data>
   <data name="NewsTitle" xml:space="preserve">
     <value>News</value>
   </data>

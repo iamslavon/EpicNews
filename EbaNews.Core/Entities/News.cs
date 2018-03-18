@@ -5,6 +5,11 @@ namespace EbaNews.Core.Entities
     public class News : NewsBase
     {
         /// <summary>
+        /// Text of the news
+        /// </summary>
+        public string Text { get; set; }
+
+        /// <summary>
         /// Date when news was published
         /// </summary>
         public DateTime PublicationDate { get; set; }

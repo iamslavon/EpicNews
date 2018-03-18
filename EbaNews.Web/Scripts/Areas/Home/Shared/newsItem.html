@@ -7,6 +7,8 @@
         <a ng-href="{{getNewsLink(news.Id)}}">
             <h2 ng-bind="news.Title" ng-class="getTitleClass(news.Title)"></h2>
         </a>
+        <span ng-if="fullMode" 
+              ng-bind="news.Text"></span>
         <div class="bottom-row">
             <a ng-if="news.LinkToArticle" href="{{news.LinkToArticle}}" target="_blank" class="btn" ng-bind="strings.GoToSource"></a>
             <ul class="social">

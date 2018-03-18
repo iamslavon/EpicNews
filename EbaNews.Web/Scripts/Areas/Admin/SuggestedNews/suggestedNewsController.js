@@ -81,9 +81,10 @@ app.controller("suggestedNewsController", function ($scope, $http, ngNotify) {
 
     $scope.approveNews = function () {
         var data = {
-            newsId: $scope.approvingNews.Id,
-            languageId: $scope.approvingNews.Language.Id,
-            title: $scope.approvingNews.Title
+            Id: $scope.approvingNews.Id,
+            LanguageId: $scope.approvingNews.Language.Id,
+            Title: $scope.approvingNews.Title,
+            Text: $scope.approvingNews.Text
         };
 
         $http.post("/mngmnt/news/suggested/approve", data)

@@ -124,6 +124,15 @@ namespace EbaNews.Resources.Web.Areas.Admin.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to News text.
+        /// </summary>
+        public static string NewsText {
+            get {
+                return ResourceManager.GetString("NewsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to News.
         /// </summary>
         public static string NewsTitle {

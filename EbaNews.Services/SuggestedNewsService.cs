@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using System.Net;
 using System.Text;
+using EbaNews.Core.Dto;
 using NLog;
 
 namespace EbaNews.Services
@@ -55,15 +56,16 @@ namespace EbaNews.Services
             return news.Id;
         }
 
-        public void ApproveSuggestedNews(int newsId, int languageId, string title)
+        public void ApproveSuggestedNews(ApproveSuggestedNewsDto model)
         {
-            var suggestedNews = suggestedNewsRepository.Get(newsId);
-            suggestedNews.Title = title;
-            suggestedNews.LanguageId = languageId;
+            var suggestedNews = suggestedNewsRepository.Get(model.Id);
+            suggestedNews.Title = model.Title;
+            suggestedNews.LanguageId = model.LanguageId;
             suggestedNews.Status = SuggestedNewsStatus.Approved;
             suggestedNewsRepository.SaveChanges();
 
             var news = Mapper.Map<News>(suggestedNews);
+            news.Text = model.Text;
             news.PublicationDate = DateTime.Now;
             newsRepository.Add(news);
             newsRepository.SaveChanges();

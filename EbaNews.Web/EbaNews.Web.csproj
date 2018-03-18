@@ -352,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Statistics\" />
     <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>

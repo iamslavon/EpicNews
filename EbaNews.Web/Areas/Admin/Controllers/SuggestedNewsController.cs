@@ -5,6 +5,7 @@ using EbaNews.Web.Areas.Admin.Models.SuggestedNews;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using EbaNews.Core.Dto;
 
 namespace EbaNews.Web.Areas.Admin.Controllers
 {
@@ -60,11 +61,11 @@ namespace EbaNews.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult ApproveNews(int newsId, int languageId, string title)
+        public ActionResult ApproveNews(ApproveSuggestedNewsDto model)
         {
             try
             {
-                suggestedNewsService.ApproveSuggestedNews(newsId, languageId, title);
+                suggestedNewsService.ApproveSuggestedNews(model);
                 return Ok();
             }
             catch (Exception ex)

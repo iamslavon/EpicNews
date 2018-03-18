@@ -1,4 +1,5 @@
-﻿using EbaNews.Core.Entities;
+﻿using EbaNews.Core.Dto;
+using EbaNews.Core.Entities;
 using EbaNews.Core.Responses;
 
 namespace EbaNews.Core.Interfaces.Services
@@ -9,7 +10,7 @@ namespace EbaNews.Core.Interfaces.Services
 
         int AddSuggestedNews(SuggestedNews news);
 
-        void ApproveSuggestedNews(int newsId, int languageId, string title);
+        void ApproveSuggestedNews(ApproveSuggestedNewsDto model);
 
         void DeclineSuggestedNews(int id);
 

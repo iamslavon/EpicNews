@@ -9,6 +9,8 @@ namespace EbaNews.Web.Areas.Admin.Models.News
 
         public string Title { get; set; }
 
+        public string Text { get; set; }
+
         public string LinkToArticle { get; set; }
 
         public DateTime PublicationDate { get; set; }
