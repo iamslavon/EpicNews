@@ -36,14 +36,14 @@ namespace EbaNews.Web.Areas.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetNewsList(int start, int count)
+        public ActionResult GetNewsList(int start, int count, string culture)
         {
             if (count > Settings.AllowedNewsCount)
             {
                 return new HttpStatusCodeResult(422, string.Format(Strings.CanNotGetManyNews, Settings.AllowedNewsCount));
             }
 
-            var culture = CultureHelper.GetUiCulture();
+            if (culture == null) culture = CultureHelper.GetUiCulture();
 
             if (!Settings.AvailableCultures.Contains(culture))
             {
