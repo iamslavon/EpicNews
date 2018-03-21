@@ -20,7 +20,7 @@ Available cultures:
 * 'ru' (Russian)
 * 'uk' (Ukrainian)
 
-Parameter **culture** is optional in request. If you don't pass this parameter, culture will be selected by default value - **ru**. All news sorted by publication date starting from the newest. Number of news you can get per one request are limited to 10.
+Parameter **culture** is optional in request. If you don't pass this parameter, culture will be selected by default value - **ru**. All news sorted by publication date starting from the newest. Number of news you can get per one request is limited to 10.
 
 ### Response
 API returns response in JSON format 
