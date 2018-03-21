@@ -8,13 +8,19 @@ http://epic-news.com/
 ## Get list of news
 ### Request
 ```
-GET: http://epic-news.com/api/newslist/get?count=5&start=0
+GET: http://epic-news.com/api/newslist/get?count=5&start=0&culture=en
 ```
-where: 
-* **count** - getting news count
-* **start** - starting position
+Parameters: 
+* **count** (number) - getting news count
+* **start** (number) - starting position
+* **culture** (string, optional) - news language
 
-In this example API returns 5 news titles starting from position 0. All news sorted by publication date starting from the newest.
+Available cultures:
+* 'en' (English)
+* 'ru' (Russian)
+* 'uk' (Ukrainian)
+
+Parameter **culture** is optional in request. If you don't pass this parameter, culture will be selected by default value - **ru**. All news sorted by publication date starting from the newest. Number of news you can get per one request are limited to 10.
 
 ### Response
 API returns response in JSON format 
