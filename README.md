@@ -14,7 +14,7 @@ where:
 * **count** - getting news count
 * **start** - starting position
 
-In this exaple API returns 5 news titles starting from position 0. All news sorted by publication date starting from the newest.
+In this example API returns 5 news titles starting from position 0. All news sorted by publication date starting from the newest.
 
 ### Response
 API returns response in JSON format 
@@ -32,8 +32,8 @@ API returns response in JSON format
          "Online":true,
          "ShareCount":0,
          "SocialNetworksPublished":true,
-         "Title":"Исчезнувшего кенийского таксиста нашли пьяным в день его похорон",
-         "LinkToArticle":"https://lenta.ru/news/2017/04/04/dead/",
+         "Title":"Crazy news title will be here",
+         "LinkToArticle":"http://url-to-news",
          "LanguageId":2,
          "Id":4154
       }
@@ -41,7 +41,6 @@ API returns response in JSON format
 }
 ```
 where **Total** - total news count in DB by language (RUS)
-
 
 ## Get particular news
 ### Request
@@ -62,8 +61,8 @@ where **id** - news id
    "Online":true,
    "ShareCount":0,
    "SocialNetworksPublished":true,
-   "Title":"Харьковчанин избил женщину за пение под караоке",
-   "LinkToArticle":"http://newsroom.kh.ua/news/harkovchanin-izbil-zhenshchinu-za-penie-pod-karaoke-sud-vynes-prigovor",
+   "Title":"Crazy news title will be here",
+   "LinkToArticle":"http://url-to-news",
    "LanguageId":2,
    "Id":1
 }
