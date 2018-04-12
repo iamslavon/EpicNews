@@ -35,12 +35,9 @@ API returns response in JSON format
             "Id":2
          },
          "PublicationDate":"\/Date(1521623787507)\/",
-         "Online":true,
          "ShareCount":0,
-         "SocialNetworksPublished":true,
          "Title":"Crazy news title will be here",
          "LinkToArticle":"http://url-to-news",
-         "LanguageId":2,
          "Id":4154
       }
    ]
@@ -64,12 +61,10 @@ where **id** - news id
       "Id":2
    },
    "PublicationDate":"\/Date(1511906695893)\/",
-   "Online":true,
    "ShareCount":0,
-   "SocialNetworksPublished":true,
    "Title":"Crazy news title will be here",
+   "Text":"News text will be here",
    "LinkToArticle":"http://url-to-news",
-   "LanguageId":2,
    "Id":1
 }
 ```
