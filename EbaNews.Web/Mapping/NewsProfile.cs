@@ -2,6 +2,7 @@
 using EbaNews.Core.Entities;
 using EbaNews.Web.Areas.Admin.Models.News;
 using EbaNews.Web.Areas.Admin.Models.SuggestedNews;
+using EbaNews.Web.Areas.Api.Models;
 
 namespace EbaNews.Web.Mapping
 {
@@ -16,6 +17,8 @@ namespace EbaNews.Web.Mapping
             CreateMap<SuggestedNews, News>()
                 .ForMember(dest => dest.Language, opt => opt.Ignore());
             CreateMap<SuggestedNews, SuggestedNewsViewModel>().ReverseMap();
+            CreateMap<News, NewsModel>();
+            CreateMap<News, ExtendedNewsModel>();
         }
     }
 }

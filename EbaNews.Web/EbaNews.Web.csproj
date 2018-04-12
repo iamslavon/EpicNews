@@ -184,6 +184,8 @@
     <Compile Include="Areas\Admin\Models\Users\UserViewModel.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Api\Models\ExtendedNewsModel.cs" />
+    <Compile Include="Areas\Api\Models\NewsModel.cs" />
     <Compile Include="Areas\Home\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Home\Controllers\FrontLocalizeController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
@@ -352,7 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Api\Models\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>
   <ItemGroup>
